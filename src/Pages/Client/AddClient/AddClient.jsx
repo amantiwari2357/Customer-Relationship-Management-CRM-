@@ -293,30 +293,62 @@ const AddClient = () => {
                 {/* personal detail tab  */}
                 <div className="add-client-form">
                   <div className="row">
-                    {/* profile sourced form */}
-                    <div className="col-md-2 mb-1">
-                      <label
-                        htmlFor="religion"
-                        className="form-label required"
-                      >
-                        Profile Sourced From:
-                      </label>
-                      <select
-                        onChange={handleChange}
-                        id="religion"
-                        className="form-select"
-                        name="ProfileSourcedFrom"
-                        required
-                      >
-                        <option value="">Select Profile Source</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                      </select>
-                    </div>
+{/* //////////////////aman/////////////// */}
+{/* Profile Sourced From */}
+<div className="col-md-2 mb-1">
+  <label htmlFor="profileSource" className="form-label required">
+    Profile Sourced From:
+  </label>
+  
+  <div className="position-relative">
+    <input
+      list="profileSourceOptions"
+      id="profileSource"
+      className="form-control combobox-input"
+      name="ProfileSourcedFrom"
+      onChange={(e) => {
+        handleChange(e);
+      }}
+      placeholder="Type or select..."
+      required
+      style={{
+        paddingRight: '30px', // Make space for the icon
+        backgroundImage: 'none' // Remove default datalist arrow if any
+      }}
+    />
+    
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+  
+  <datalist id="profileSourceOptions">
+    <option value="Website Registration" />
+    <option value="Mobile App" />
+    <option value="Referral" />
+    <option value="Walk-in" />
+    <option value="Social Media" />
+    <option value="Advertisement" />
+    <option value="Event" />
+  </datalist>
+</div>
 
-                    {/* name  */}
+             {/* name  */}
                     <div className="col-md-2 mb-1">
                       <label htmlFor="name" className="form-label required">
                         Name<span>*</span>
@@ -365,7 +397,7 @@ const AddClient = () => {
                     </div>
 
                     {/* Profile Comment */}
-                    <div className="col-md-2 mb-1">
+                    {/* <div className="col-md-2 mb-1">
                       <label htmlFor="profile-comment" className="form-label">
                         Profile Comment
                       </label>
@@ -377,7 +409,7 @@ const AddClient = () => {
                         placeholder="Enter your comment"
                         rows="1"
                       ></textarea>
-                    </div>
+                    </div> */}
 
                     {/* Gender */}
                     <div className="col-md-2 mb-1">
@@ -422,91 +454,132 @@ const AddClient = () => {
                         <option value="married">Married</option>
                       </select>
                     </div>
-                    {/* Religion */}
-                    <div className="col-md-2 mb-1">
-                      <label
-                        htmlFor="religion"
-                        className="form-label required"
-                      >
-                        Religion<span>*</span>
-                      </label>
-                      <select
-                        onChange={handleChange}
-                        id="religion"
-                        name="Religion"
-                        className="form-select"
-                        required
-                      >
-                        <option value="--Select Religion--">
-                          Select Religion
-                        </option>
-                        <option value="hindu">Hindu</option>
-                        <option value="muslim">Muslim</option>
-                        <option value="christian">Christian</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
+{/* ////////////////////////////////////aman///////////////////// */}
+                 {/* Profile Religion From */}
+<div className="col-md-2 mb-1">
+  <label htmlFor="religionInput" className="form-label required">
+    Religion:
+  </label>
 
-                    {/* Caste */}
-                    <div className="col-md-2 mb-1">
-                      <label htmlFor="caste" className="form-label required">
-                        Caste<span>*</span>
-                      </label>
-                      <select
-                        onChange={handleChange}
-                        id="caste"
-                        name="Caste"
-                        className="form-select"
-                        required
-                      >
-                        <option value="--Select Caste--">Select Caste</option>
-                        <option value="">-- Select Caste --</option>
-                        <optgroup label="General">
-                          <option value="brahmin">Brahmin</option>
-                          <option value="pandit">Pandit</option>
-                          <option value="panchal">Panchal</option>
-                          <option value="rajput">Rajput</option>
-                          <option value="vaishya">Vaishya</option>
-                          <option value="kshatriya">Kshatriya</option>
-                          <option value="kayastha">Kayastha</option>
-                          <option value="baniya">Baniya</option>
-                        </optgroup>
+  <div className="position-relative">
+  <input
+    list="religionOptions"
+    id="religionInput"
+    className="form-control"
+    name="Religion"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="Type or select..."
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
 
-                        <optgroup label="Other Backward Classes (OBC)">
-                          <option value="yadav">Yadav</option>
-                          <option value="gujjar">Gujjar</option>
-                          <option value="kurmi">Kurmi</option>
-                          <option value="teli">Teli</option>
-                          <option value="saini">Saini</option>
-                          <option value="jaiswal">Jaiswal</option>
-                          <option value="aggarwal">Aggarwal</option>
-                        </optgroup>
+  <datalist id="religionOptions">
+    <option value="Hindu" />
+    <option value="Muslim" />
+    <option value="Christian" />  {/* Fixed spelling */}
+    <option value="Buddhist" />  {/* Fixed spelling */}
+    <option value="Jewish" />  {/* Fixed spelling */}
+    <option value="Sikh" />
+    <option value="Jain" />
+    <option value="Other" />
+  </datalist>
+</div>
 
-                        <optgroup label="Scheduled Caste (SC)">
-                          <option value="chamar">Chamar</option>
-                          <option value="valmiki">Valmiki</option>
-                          <option value="jatav">Jatav</option>
-                          <option value="mehtar">Mehtar</option>
-                          <option value="dhobi">Dhobi</option>
-                        </optgroup>
+     {/* /////////////////////////aman///////////////// */}
+   {/* Caste */}
+<div className="col-md-2 mb-1">
+  <label htmlFor="caste" className="form-label required">
+    Caste<span>*</span>
+  </label>
 
-                        <optgroup label="Scheduled Tribe (ST)">
-                          <option value="gond">Gond</option>
-                          <option value="santhal">Santhal</option>
-                          <option value="bhil">Bhil</option>
-                          <option value="munda">Munda</option>
-                          <option value="kharia">Kharia</option>
-                          <option value="oraon">Oraon</option>
-                        </optgroup>
-                        <optgroup label="Other">
-                          <option value="ews">
-                            Economically Weaker Section (EWS)
-                          </option>
-                          <option value="other">Other</option>
-                        </optgroup>
-                      </select>
-                    </div>
+  <div className="position-relative">
+  <input
+    list="casteOptions"
+    id="caste"
+    className="form-control"
+    name="Caste"
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="Type or select..."
+      required
+      style={{
+        paddingRight: '30px', // Make space for the icon
+        backgroundImage: 'none' // Remove default datalist arrow if any
+      }}
+  />
 
+   {/* Chevron down icon */}
+   <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+  
+  <datalist id="casteOptions">
+    <option value="">Select Caste</option>
+    <optgroup label="General">
+      <option value="brahmin">Brahmin</option>
+    </optgroup>
+
+    <optgroup label="Other Backward Classes (OBC)">
+      <option value="yadav">Yadav</option>
+    </optgroup>
+
+    <optgroup label="Scheduled Caste (SC)">
+      <option value="chamar">Chamar</option>
+    </optgroup>
+
+    <optgroup label="Scheduled Tribe (ST)">
+      <option value="gond">Gond</option>
+    </optgroup>
+    
+    <optgroup label="Other">
+      <option value="ews">Economically Weaker Section (EWS)</option>
+      <option value="other">Other</option>
+    </optgroup>
+  </datalist>
+  <small className="text-muted">
+  
+  </small>
+</div>
                     {/* Sub Caste */}
                     <div className="col-md-2 mb-1">
                       <label htmlFor="sub-caste" className="form-label">
@@ -926,22 +999,6 @@ const AddClient = () => {
                       </select>
                     </div>
 
-                    {/* member status change comment  */}
-                    <div className="col-md-2 mb-1">
-                      <label
-                        htmlFor="Member Status Change Comment"
-                        className="form-label">
-                        Member Status Change Comment :
-                      </label>
-                      <textarea
-                        onChange={handleChange}
-                        className="form-control"
-                        name="MemberStatusChangeComment"
-                        id=""
-                        rows="1"
-                      ></textarea>
-                    </div>
-
                     {/* Is Premium */}
                     <div className="col-md-2 mb-1">
                       <label htmlFor="is-premium" className="form-label">
@@ -1048,6 +1105,23 @@ const AddClient = () => {
                         <option value="no">No</option>
                       </select>
                     </div>
+
+                    {/* member status change comment  */}
+                     <div className="col-md-2 mb-1">
+                      <label
+                        htmlFor="Member Status Change Comment"
+                        className="form-label">
+                        Member Status Change Comment :
+                      </label>
+                      <textarea
+                        onChange={handleChange}
+                        className="form-control"
+                        name="MemberStatusChangeComment"
+                        id=""
+                        rows="1"
+                      ></textarea>
+                    </div>
+
 
                     <div className="col-12 mt-3 text-center">
                       <button type="submit" className="add-client-btn">

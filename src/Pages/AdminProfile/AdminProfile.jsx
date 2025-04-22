@@ -4,9 +4,9 @@ import image from "../../Images/admin-profile.jpeg";
 
 const AdminProfile = () => {
   const [profile, setProfile] = useState({
-    username: "Aman Tiwari",
+    username: "John Doe",
     email: "john.doe@gmail.com",
-    phone: "+91 9031359720",
+    phone: "+91 22335588",
     address: "32/4 Rohini, Delhi",
   });
 
@@ -166,6 +166,7 @@ const AdminProfile = () => {
       </section>
 
       {/* Edit Profile Modal */}
+      
       <div
         className="modal fade"
         id="editProfileModal"
