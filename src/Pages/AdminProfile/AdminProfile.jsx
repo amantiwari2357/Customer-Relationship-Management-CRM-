@@ -4,9 +4,9 @@ import image from "../../Images/admin-profile.jpeg";
 
 const AdminProfile = () => {
   const [profile, setProfile] = useState({
-    username: "John Doe",
+    username: "Aman Tiwari",
     email: "john.doe@gmail.com",
-    phone: "+91 22335588",
+    phone: "+91 9031359720",
     address: "32/4 Rohini, Delhi",
   });
 
