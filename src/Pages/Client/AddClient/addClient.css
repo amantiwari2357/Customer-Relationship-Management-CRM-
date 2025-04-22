@@ -265,3 +265,20 @@
   height: 100%;
   object-fit: cover;
 } */
+
+
+/* Style for the combobox container */
+.position-relative {
+  position: relative;
+}
+
+/* Remove default dropdown arrow in some browsers */
+.combobox-input::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+
+/* Optional: Add focus styling */
+.combobox-input:focus {
+  border-color: #86b7fe;
+  /* box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); */
+}
