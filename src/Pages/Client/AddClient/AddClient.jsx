@@ -410,50 +410,107 @@ const AddClient = () => {
                         rows="1"
                       ></textarea>
                     </div> */}
-
+{/* ////////////////////AMAN///////////////////////// */}
                     {/* Gender */}
                     <div className="col-md-2 mb-1">
-                      <label htmlFor="gender" className="form-label required">
-                        Gender<span>*</span>
-                      </label>
-                      <select
-                        id="gender"
-                        name="Gender"
-                        onChange={handleChange}
-                        className="form-select"
-                        required
-                      >
-                        <option value="--Select Gender--">
-                          Select Gender
-                        </option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
+                    <label htmlFor="GenderInput" className="form-label required">
+    Gender:
+  </label>
+
+  <div className="position-relative">
+  <input
+    list="genderOptions"
+    id="GenderInput"
+    className="form-control"
+    name="gender"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="Type or select..."
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="genderOptions">
+    <option value="Male" />
+    <option value="Female" />
+    <option value="both" />
+    
+  </datalist>
+</div>
+{/* //////////////////////////aman/////////////////////////// */}
 
                     {/* Marital Status */}
                     <div className="col-md-2 mb-1">
-                      <label
-                        htmlFor="marital-status"
-                        className="form-label required"
-                      >
-                        Marital Status<span>*</span>
-                      </label>
-                      <select
-                        id="marital-status"
-                        name="MaritalStatus"
-                        onChange={handleChange}
-                        className="form-select"
-                        required
-                      >
-                        <option value="--select Marital Status--">
-                          Select Marital Status
-                        </option>
-                        <option value="single">Single</option>
-                        <option value="married">Married</option>
-                      </select>
-                    </div>
+                    <label htmlFor="maritalInput" className="form-label required">
+    Marital status:
+  </label>
+  <div className="position-relative">
+  <input
+    list="maritalOptions"
+    id="maritalInput"
+    className="form-control"
+    name="marital status"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="Type or select..."
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+
+  {/* Chevron down icon */}
+  <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="maritalOptions">
+    <option value="Married" />
+    <option value="Unmarried" />
+    {/* <option value="both" /> */}
+    
+  </datalist>
+</div>
 {/* ////////////////////////////////////aman///////////////////// */}
                  {/* Profile Religion From */}
 <div className="col-md-2 mb-1">
@@ -650,27 +707,55 @@ const AddClient = () => {
                       />
                     </div>
 
-                    {/* Astrologically */}
-                    <div className="col-md-2 mb-1">
-                      <label
-                        htmlFor="astrologically"
-                        className="form-label required"
-                      >
-                        Astrologically<span>*</span>
-                      </label>
-                      <select
-                        name="Astrologically"
-                        id="astrologically"
-                        onChange={handleChange}
-                        className="form-select"
-                        required
-                      >
-                        <option value="">Select Option</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      </select>
-                    </div>
+{/* //////////////////////aman////////////////////// */}
+                     {/* Marital Status */}
+                     <div className="col-md-2 mb-1">
+                    <label htmlFor="astrologyInput" className="form-label required">
+    Astrology:
+  </label>
+  <div className="position-relative">
+  <input
+    list="astrologyOptions"
+    id="astrologyInput"
+    className="form-control"
+    name="astrology"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="Type or select..."
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
 
+  {/* Chevron down icon */}
+  <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="astrologyOptions">
+    <option value="yes" />
+    <option value="no" />
+  </datalist>
+</div>
+{/* ////////////////////////////aman////////////////// */}
                     {/* Gotra */}
                     <div className="col-md-2 mb-1">
                       <label htmlFor="gotra" className="form-label required">
@@ -718,117 +803,157 @@ const AddClient = () => {
                       />
                     </div>
 
-                    {/* Complexion */}
-                    <div className="col-md-2 mb-1">
-                      <label
-                        htmlFor="complexion"
-                        className="form-label required"
-                      >
-                        Complexion<span>*</span>
-                      </label>
-                      <select
-                        id="complexion"
-                        name="Complexion"
-                        className="form-select"
-                        onChange={handleChange}
-                        required
-                      >
-                        <option value="--Select Complexion--">
-                          Select Complexion
-                        </option>
-                        <option value="fair">Fair</option>
-                        <option value="wheatish">Wheatish</option>
-                        <option value="dark">Dark</option>
-                      </select>
-                    </div>
+                    {/* ///////////////aman////////////complextions */}
+
+                 <div className="col-md-2 mb-1">
+  <label htmlFor="complextionsInput" className="form-label required">
+    complextions:
+  </label>
+
+  <div className="position-relative">
+  <input
+    list="complextionsOptions"
+    id="complextionsInput"
+    className="form-control"
+    name="Religion"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="Type or select..."
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="complextionsOptions">
+    <option value="fair" />
+    <option value="dark" />
+    <option value="black coal" />  {/* Fixed spelling */}
+    
+  </datalist>
+</div>
+{/* //////////////////aman///////////////////// */}
 
                     {/* Personality */}
                     <div className="col-md-2 mb-1">
-                      <label htmlFor="Personality :" className="form-label">
-                        Personality :
-                      </label>
-                      <select
-                        id="Personality"
-                        onChange={handleChange}
-                        className="form-select"
-                        name="Personality"
-                      >
-                        <option value="">Select Personality :</option>
-                        <option value="Slim">Slim</option>
-                        <option value="Average">Average</option>
-                        <option value="Athletic">Athletic</option>
-                        <option value="Heavy">Heavy</option>
-                      </select>
-                    </div>
+  <label htmlFor="PersonalityInput" className="form-label required">
+    Personality:
+  </label>
 
-                    {/* Drinking Habits */}
-                    <div className="col-md-2 mb-1">
-                      <label
-                        htmlFor="drinking-habits"
-                        className="form-label required"
-                      >
-                        Drinking Habits<span>*</span>
-                      </label>
-                      <select
-                        id="drinking-habits"
-                        name="DrinkingHabits"
-                        onChange={handleChange}
-                        className="form-select"
-                      >
-                        <option value="--Select Drinking Habits--">
-                          Select Drinking Habits
-                        </option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                        <option value="occasionally">Occasionally</option>
-                      </select>
-                    </div>
+  <div className="position-relative">
+  <input
+    list="PersonalityOptions"
+    id="PersonalityInput"
+    className="form-control"
+    name="Religion"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="Type or select..."
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
 
-                    {/* Eating Habits */}
-                    <div className="col-md-2 mb-1">
-                      <label
-                        htmlFor="eating-habits"
-                        className="form-label required"
-                      >
-                        Eating Habits<span>*</span>
-                      </label>
-                      <select
-                        id="eating-habits"
-                        name="EatingHabits"
-                        onChange={handleChange}
-                        className="form-select"
-                      >
-                        <option value="--Select Eating Habits--">
-                          Select Eating Habits
-                        </option>
-                        <option value="vegetarian">Vegetarian</option>
-                        <option value="non-vegetarian">Non-Vegetarian</option>
-                        <option value="both">Both</option>
-                      </select>
-                    </div>
-
+  <datalist id="PersonalitysOptions">
+    <option value="good " />
+    <option value="handsome" />
+    <option value="black coal" />  {/* Fixed spelling */}
+    
+  </datalist>
+</div>
+{/* ////////////////////////////aman/////////////////// */}
                     {/* Smoking Habits */}
-                    <div className="col-md-2 mb-1">
-                      <label
-                        htmlFor="smoking-habits"
-                        className="form-label required"
-                      >
-                        Smoking Habits<span>*</span>
-                      </label>
-                      <select
-                        name="SmokingHabits"
-                        id="smoking-habits"
-                        onChange={handleChange}
-                        className="form-select"
-                      >
-                        <option value="--Select Smoking Habits--">
-                          Select Smoking Habits
-                        </option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                        <option value="occasionally">Occasionally</option>
-                      </select>
-                    </div>
+                      <div className="col-md-2 mb-1">
+  <label htmlFor="smokingInput" className="form-label required">
+    smoking habbit:
+  </label>
+
+  <div className="position-relative">
+  <input
+    list="smokingOptions"
+    id="smokingInput"
+    className="form-control"
+    name="Religion"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="Type or select..."
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="smokingOptions">
+    <option value="yes" />
+    <option value="no" />
+    <option value="occasionaly" />  {/* Fixed spelling */}
+    
+  </datalist>
+</div>
 
                     {/* Partner Preferences */}
                     <div className="col-md-2 mb-1">
@@ -847,63 +972,156 @@ const AddClient = () => {
                         placeholder="Describe your preferences"
                       />
                     </div>
+                    {/* ////////////aaman//////////////// */}
 
-                    {/* Open for Other Caste */}
                     <div className="col-md-2 mb-1">
-                      <label
-                        htmlFor="open-other-caste"
-                        className="form-label"
-                      >
-                        Open for Other Caste
-                      </label>
-                      <select
-                        id="open-other-caste"
-                        name="OpenforOtherCaste"
-                        className="form-select"
-                        onChange={handleChange}
-                      >
-                        <option value="Select Other Caste">
-                          --Select Other Caste--
-                        </option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      </select>
-                    </div>
+  <label htmlFor="otherInput" className="form-label required">
+    open for other cast:
+  </label>
 
+  <div className="position-relative">
+  <input
+    list="otherOptions"
+    id="otherInput"
+    className="form-control"
+    name="Religion"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="Type or select..."
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="otherOptions">
+    <option value="yes" />
+    <option value="no" />
+    
+  </datalist>
+</div>
+{/* ///////////aman/////////////// */}
                     {/* Open for Divorce */}
                     <div className="col-md-2 mb-1">
-                      <label htmlFor="open-divorce" className="form-label">
-                        Open for Divorce
-                      </label>
-                      <select
-                        id="open-divorce"
-                        name="OpenforDivorce"
-                        onChange={handleChange}
-                        className="form-select"
-                      >
-                        <option value="">--Select Open For Divorce--</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      </select>
-                    </div>
+  <label htmlFor="DivorceInput" className="form-label required">
+    open for Divorce:
+  </label>
+
+  <div className="position-relative">
+  <input
+    list="DivorceOptions"
+    id="DivorceInput"
+    className="form-control"
+    name="Religion"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="Type or select..."
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="DivorceOptions">
+    <option value="yes" />
+    <option value="no" />
+    
+  </datalist>
+</div>
+{/* ////////////////////////////////aman/////////////////// */}
 
                     {/* Eye sight */}
                     <div className="col-md-2 mb-1">
-                      <label htmlFor="open-divorce" className="form-label">
-                        Eye Sight :
-                      </label>
-                      <select
-                        id="open-divorce"
-                        onChange={handleChange}
-                        name="EyeSight"
-                        className="form-select"
-                      >
-                        <option value="">--Select Eye Sight--</option>
-                        <option value="Normal">Normal</option>
-                        <option value="Use Spectales">Use Spectales</option>
-                        <option value="Lenses">Lenses</option>
-                      </select>
-                    </div>
+  <label htmlFor="EyeInput" className="form-label required">
+  Eye Sight:
+  </label>
+
+  <div className="position-relative">
+  <input
+    list="EyeOptions"
+    id="DivorceInput"
+    className="form-control"
+    name="Religion"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="--Select Eye Sight--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="EyeOptions">
+    <option value="Normal" />
+    <option value="Use Spectales" />
+    <option value="Lenses" />
+    
+  </datalist>
+</div>
+{/* //////////////////////aman////////////////////////// */}
 
                     {/* upload profile image  */}
                     <div className="col-md-2 mb-1">
@@ -921,20 +1139,54 @@ const AddClient = () => {
 
                     {/* Believes in Patri */}
                     <div className="col-md-2 mb-1">
-                      <label htmlFor="believes-patri" className="form-label">
-                        Believes in Patri
-                      </label>
-                      <select
-                        id="believes-patri"
-                        name="BelievesinPatri"
-                        onChange={handleChange}
-                        className="form-select"
-                      >
-                        <option value="">--Select Believes Patri--</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      </select>
-                    </div>
+  <label htmlFor="PatriInput" className="form-label required">
+  Believes in Patri:
+  </label>
+
+  <div className="position-relative">
+  <input
+    list="PatriOptions"
+    id="PatriInput"
+    className="form-control"
+    name="Religion"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="--Select patri--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="PatriOptions">
+    <option value="yes" />
+    <option value="no" />
+    {/* <option value="Lenses" /> */}
+    
+  </datalist>
+</div>
+{/* /////////////////////////////aman////////////// */}
 
                     {/* Native Town */}
                     <div className="col-md-2 mb-1">
@@ -950,24 +1202,56 @@ const AddClient = () => {
                         id=""
                       />
                     </div>
-
-                    {/* Native State */}
+                    {/* /////////////////////////aman//////// */}
                     <div className="col-md-2 mb-1">
-                      <label htmlFor="native-state" className="form-label">
-                        Native State
-                      </label>
-                      <select
-                        id="native-state"
-                        name="NativeState"
-                        onChange={handleChange}
-                        className="form-select"
-                      >
-                        <option value="">--Select Native State--</option>
-                        <option value="state1">State 1</option>
-                        <option value="state2">State 2</option>
-                      </select>
-                    </div>
+  <label htmlFor="StateInput" className="form-label required">
+  Native State:
+  </label>
 
+  <div className="position-relative">
+  <input
+    list="StateOptions"
+    id="StateInput"
+    className="form-control"
+    name="Religion"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="--Select state--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="StateOptions">
+    <option value="up" />
+    <option value="bihar" />
+    {/* <option value="Lenses" /> */}
+    
+  </datalist>
+</div>
+                  {/* //////////////////////aman///////////// /*/}
                     {/* Upload Biodata */}
                     <div className="col-md-2 mb-1">
                       <label htmlFor="biodata" className="form-label">
@@ -981,58 +1265,155 @@ const AddClient = () => {
                       // name="UploadBiodata"
                       />
                     </div>
-
-                    {/* Send Biodata */}
+                    {/* //////////////////////////aman//////////// */}
                     <div className="col-md-2 mb-1">
-                      <label htmlFor="send-biodata" className="form-label">
-                        Send Biodata
-                      </label>
-                      <select
-                        id="send-biodata"
-                        name="SendBiodata"
-                        onChange={handleChange}
-                        className="form-select"
-                      >
-                        <option value="">--Select Send Bio--</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      </select>
-                    </div>
+  <label htmlFor="BiodataInput" className="form-label required">
+  Send Biodata:
+  </label>
 
-                    {/* Is Premium */}
-                    <div className="col-md-2 mb-1">
-                      <label htmlFor="is-premium" className="form-label">
-                        Is Premium
-                      </label>
-                      <select
-                        id="is-premium"
-                        name="IsPremium"
-                        onChange={handleChange}
-                        className="form-select"
-                      >
-                        <option value="">--Select Is Premium--</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      </select>
-                    </div>
+  <div className="position-relative">
+  <input
+    list="BiodataOptions"
+    id="BiodataInput"
+    className="form-control"
+    name="Religion"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="--Select option--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
 
-                    {/* Willing to Go Abroad */}
-                    <div className="col-md-2 mb-1">
-                      <label htmlFor="willing-abroad" className="form-label">
-                        Willing to Go Abroad
-                      </label>
-                      <select
-                        id="willing-abroad"
-                        onChange={handleChange}
-                        name="WillingtoGoAbroad"
-                        className="form-select"
-                      >
-                        <option value="">--Select Willing Abroad--</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      </select>
-                    </div>
+  <datalist id="BiodataOptions">
+    <option value="yes" />
+    <option value="no" />
+    {/* <option value="Lenses" /> */}
+    
+  </datalist>
+</div>
+{/* /////////////////////////aman//////////////// */}
+<div className="col-md-2 mb-1">
+  <label htmlFor="PremiumInput" className="form-label required">
+  Is Premium:
+  </label>
 
+  <div className="position-relative">
+  <input
+    list="PremiumOptions"
+    id="PremiumInput"
+    className="form-control"
+    name="Religion"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="--Select option--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="PremiumOptions">
+    <option value="yes" />
+    <option value="no" />
+    {/* <option value="Lenses" /> */}
+    
+  </datalist>
+</div>
+{/* ///////////////aman/////////////// */}
+<div className="col-md-2 mb-1">
+  <label htmlFor="AbroadInput" className="form-label required">
+  Willing to Go Abroad:
+  </label>
+
+  <div className="position-relative">
+  <input
+    list="AbroadOptions"
+    id="AbroadInput"
+    className="form-control"
+    name="Religion"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="--Select option--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="AbroadOptions">
+    <option value="yes" />
+    <option value="no" />
+    {/* <option value="Lenses" /> */}
+    
+  </datalist>
+</div>
+
+{/* //////////////////////aman//////////////// */}
 
                     {/* Hobbies */}
                     <div className="col-md-2 mb-1">
@@ -1068,43 +1449,106 @@ const AddClient = () => {
                         <option value="no">No</option>
                       </select>
                     </div>
+{/* /////////////////////////aman/////////////////// */}
+<div className="col-md-2 mb-1">
+  <label htmlFor="StatusInput" className="form-label required">
+  NRI Status:
+  </label>
 
-                    {/* NRI Status */}
-                    <div className="col-md-2 mb-1">
-                      <label htmlFor="nri-status" className="form-label">
-                        NRI Status
-                      </label>
-                      <select
-                        onChange={handleChange}
-                        id="nri-status"
-                        name="NRIStatus"
-                        className="form-select"
-                      >
-                        <option value="">--Select NRI Status--</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      </select>
-                    </div>
+  <div className="position-relative">
+  <input
+    list="StatusOptions"
+    id="StatusInput"
+    className="form-control"
+    name="Religion"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="--Select NRI Status--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
 
-                    {/* Disability */}
-                    <div className="col-md-2 mb-1">
-                      <label
-                        htmlFor="disability"
-                        className="form-label required"
-                      >
-                        Disability<span>*</span>
-                      </label>
-                      <select
-                        id="disability"
-                        onChange={handleChange}
-                        name="Disability"
-                        className="form-select"
-                      >
-                        <option value="">--Select Disability--</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      </select>
-                    </div>
+  <datalist id="StatusOptions">
+    <option value="yes" />
+    <option value="no" />
+    {/* <option value="Lenses" /> */}
+    
+  </datalist>
+</div>
+{/* /////////////////////aman////////////// */}
+<div className="col-md-2 mb-1">
+  <label htmlFor="DisabilityInput" className="form-label required">
+  Disability:
+  </label>
+
+  <div className="position-relative">
+  <input
+    list="DisabilityOptions"
+    id="DisabilityInput"
+    className="form-control"
+    name="Religion"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="--Select Disability Status--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+    {/* Chevron down icon */}
+    <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="DisabilityOptions">
+    <option value="yes" />
+    <option value="no" />
+    {/* <option value="Lenses" /> */}
+    
+  </datalist>
+</div>
+
+{/*/////////////////////aman/////////  */}
 
                     {/* member status change comment  */}
                      <div className="col-md-2 mb-1">
@@ -1269,6 +1713,21 @@ const AddClient = () => {
                         name="occupationaddress"
                       />
                     </div>
+
+                    <div className="col-md-2 mb-1">
+                      <label htmlFor="personal income" className="form-label">
+                        Income Tenure<span>*</span>
+                      </label>
+                      <select className="form-control" name="PersonalIncome" id="" onChange={handleEducationChange}>
+                        <option value="--personal income--">
+                       select Income Tenure
+                        </option>
+                        <option value="1">Monthly</option>
+                        <option value="1">Yearly</option>
+                       
+                      </select>
+                    </div>
+
                     <div className="col-12 mt-3 text-center">
                       <button type="submit" className="add-client-btn">
                         Submit
@@ -1570,6 +2029,18 @@ const AddClient = () => {
                         <option value="Joint Family">Joint Family</option>
                       </select>
                     </div>
+                    
+                    <div className="col-md-2 mb-1">
+                      <label htmlFor="familyType" className="form-label">
+                        Family status
+                      </label>
+                      <select className="form-control" name="FamilyType" id="" onChange={handleFamilyDetailsChange}>
+                        <option value="">--Select Family status--</option>
+                        <option value="Nuclear Family">Middleclass</option>
+                        <option value="Joint Family">UpperClass</option>
+                        <option value="Joint Family">Affluent</option>
+                      </select>
+                    </div>
                     <div className="col-md-2 mb-1">
                       <label htmlFor="vehicleDetails" className="form-label">
                         Vehicle Details
@@ -1597,6 +2068,18 @@ const AddClient = () => {
                         onChange={handleFamilyDetailsChange}
                       />
                     </div>
+
+                    <div className="col-md-2 mb-1">
+                      <label htmlFor="familyType" className="form-label">
+                        Income Tenure
+                      </label>
+                      <select className="form-control" name="FamilyType" id="" onChange={handleFamilyDetailsChange}>
+                        <option value="">--Select Income Tenure--</option>
+                        <option value="Nuclear Family">Yearly</option>
+                        <option value="Joint Family">Monthly</option>
+                      </select>
+                    </div>
+
                     <div className="col-md-2 mb-1">
                       <label htmlFor="marriageBudget" className="form-label">
                         To Marriage Budget
@@ -1870,6 +2353,20 @@ const AddClient = () => {
                         className="form-control"
                         placeholder="Enter Father's Number"
                         name="FatherNumber"
+                        onChange={handleContactDetailsChange}
+                      />
+                    </div>
+
+                    <div className="col-md-2 mb-1">
+                      <label className="form-label" htmlFor="fathersNumber">
+                        CP Email
+                      </label>
+                      <input
+                        type="email"
+                        id="cp email id"
+                        className="form-control"
+                        placeholder="Enter CP email id"
+                        name="cp email id"
                         onChange={handleContactDetailsChange}
                       />
                     </div>
