@@ -708,7 +708,7 @@ const AddClient = () => {
                     </div>
 
 {/* //////////////////////aman////////////////////// */}
-                     {/* Marital Status */}
+                     {/* Astrology Status */}
                      <div className="col-md-2 mb-1">
                     <label htmlFor="astrologyInput" className="form-label required">
     Astrology:
@@ -1657,46 +1657,103 @@ const AddClient = () => {
                         name="CompleteResidenceAddress"
                       />
                     </div>
+{/* ///////////////////////////////aman//////////////// */}
                     <div className="col-md-2 mb-1">
-                      <label htmlFor="personal income" className="form-label">
-                        Personal Income<span>*</span>
-                      </label>
-                      <select className="form-control" name="PersonalIncome" id="" onChange={handleEducationChange}>
-                        <option value="--personal income--">
-                          Personal Income
-                        </option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                      </select>
-                    </div>
+                    <label htmlFor="IncomeInput" className="form-label required">
+                    Personal Income:
+  </label>
+  <div className="position-relative">
+  <input
+    list="IncomeOptions"
+    id="IncomeInput"
+    className="form-control"
+    name="astrology"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="Type personal income--..."
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
 
+  {/* Chevron down icon */}
+  <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="IncomeOptions">
+    <option value="yes" />
+    <option value="no" />
+  </datalist>
+</div>
+                    {/* /////////////////////aman////////////// */}
                     <div className="col-md-2 mb-1">
-                      <label
-                        htmlFor="occupation details"
-                        className="form-label required"
-                      >
-                        Occupation Details<span>*</span>
-                      </label>
-                      <select className="form-control" name="OccupationDetails" id="" onChange={handleEducationChange}>
-                        <option value="--select occupation--">
-                          --Select Occupation--
-                        </option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                      </select>
-                    </div>
+                    <label htmlFor="OccupationInput" className="form-label required">
+                    Occupation Details:
+  </label>
+  <div className="position-relative">
+  <input
+    list="OccupationOptions"
+    id="IncomeInput"
+    className="form-control"
+    name="astrology"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="  --Select Occupation--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
 
+  {/* Chevron down icon */}
+  <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="OccupationOptions">
+    <option value="yes" />
+    <option value="no" />
+  </datalist>
+</div>
+                    {/* ////////////////////AMAN////////////// */}
+
+                   
                     <div className="col-md-2 mb-1">
                       <label
                         htmlFor="occupation address"
@@ -1713,20 +1770,54 @@ const AddClient = () => {
                         name="occupationaddress"
                       />
                     </div>
-
+    {/* /////////////////////aman///////////////// */}
                     <div className="col-md-2 mb-1">
-                      <label htmlFor="personal income" className="form-label">
-                        Income Tenure<span>*</span>
-                      </label>
-                      <select className="form-control" name="PersonalIncome" id="" onChange={handleEducationChange}>
-                        <option value="--personal income--">
-                       select Income Tenure
-                        </option>
-                        <option value="1">Monthly</option>
-                        <option value="1">Yearly</option>
-                       
-                      </select>
-                    </div>
+                    <label htmlFor="OIncomeInput" className="form-label required">
+                    Income Tenure:
+  </label>
+  <div className="position-relative">
+  <input
+    list="OIncomeOptions"
+    id="OIncomeInput"
+    className="form-control"
+    name="astrology"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="  --select Income Tenure--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+
+  {/* Chevron down icon */}
+  <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="OIncomeOptions">
+    <option value="Monthly" />
+    <option value="yearly" />
+  </datalist>
+</div>
+                    {/* ///////////////aman////////// */}
 
                     <div className="col-12 mt-3 text-center">
                       <button type="submit" className="add-client-btn">
@@ -1968,26 +2059,56 @@ const AddClient = () => {
                       ></textarea>
                     </div>
 
-                    <div className="col-md-3 mb-1">
-                      <label
-                        className="form-label required"
-                        htmlFor="Mother's Qualification"
-                      >
-                        Mother's Qualification <span>*</span>
-                      </label>
-                      <select className="form-control" name="" id="">
-                        <option value="Select Mother Qualification">
-                          --Select Mother Qualification--
-                        </option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                        <option value="1">1</option>
-                      </select>
-                    </div>
+                    {/* ///////////////////////aman/////////////// */}
+                    <div className="col-md-2 mb-1">
+                    <label htmlFor="MotherInput" className="form-label required">
+                    Mother's Qualification:
+  </label>
+  <div className="position-relative">
+  <input
+    list="MotherOptions"
+    id="MotherInput"
+    className="form-control"
+    name="astrology"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="   --Select Mother Qualification--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+
+  {/* Chevron down icon */}
+  <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="MotherOptions">
+    <option value="1" />
+    <option value="1" />
+  </datalist>
+</div>
+                    {/* ////////////////////////////aman////////////// */}
+
+                    
 
                     <div className="col-md-3 mb-1">
                       <label
@@ -2019,28 +2140,103 @@ const AddClient = () => {
                     </div>
 
                     <h4 className="mt-3">Family Details</h4>
+
+                     {/* ///////////////////////aman/////////////// */}
                     <div className="col-md-2 mb-1">
-                      <label htmlFor="familyType" className="form-label">
-                        Family Type
-                      </label>
-                      <select className="form-control" name="FamilyType" id="" onChange={handleFamilyDetailsChange}>
-                        <option value="">--Select Family Type--</option>
-                        <option value="Nuclear Family">Nuclear Family</option>
-                        <option value="Joint Family">Joint Family</option>
-                      </select>
-                    </div>
+                    <label htmlFor="familyInput" className="form-label required">
+                    Family Type:
+  </label>
+  <div className="position-relative">
+  <input
+    list="familyOptions"
+    id="familyInput"
+    className="form-control"
+    name="astrology"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="   --Select a family type--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+
+  {/* Chevron down icon */}
+  <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="familyOptions">
+    <option value="greate" />
+    <option value="good" />
+  </datalist>
+</div>
+         {/* /////////////////////////aman//////////////////// */}
                     
-                    <div className="col-md-2 mb-1">
-                      <label htmlFor="familyType" className="form-label">
-                        Family status
-                      </label>
-                      <select className="form-control" name="FamilyType" id="" onChange={handleFamilyDetailsChange}>
-                        <option value="">--Select Family status--</option>
-                        <option value="Nuclear Family">Middleclass</option>
-                        <option value="Joint Family">UpperClass</option>
-                        <option value="Joint Family">Affluent</option>
-                      </select>
-                    </div>
+                      <div className="col-md-2 mb-1">
+                    <label htmlFor="stInput" className="form-label required">
+                    Family Status:
+  </label>
+  <div className="position-relative">
+  <input
+    list="stOptions"
+    id="stInput"
+    className="form-control"
+    name="astrology"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="   --Select a family status--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+
+  {/* Chevron down icon */}
+  <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="stOptions">
+    <option value="middleclass" />
+    <option value="rich" />
+  </datalist>
+</div>
+{/* /////////////////////aman////////////////// */}
                     <div className="col-md-2 mb-1">
                       <label htmlFor="vehicleDetails" className="form-label">
                         Vehicle Details
@@ -2079,18 +2275,55 @@ const AddClient = () => {
                         <option value="Joint Family">Monthly</option>
                       </select>
                     </div>
+                    {/* ////////////////////aman///////// */}
 
                     <div className="col-md-2 mb-1">
-                      <label htmlFor="marriageBudget" className="form-label">
-                        To Marriage Budget
-                      </label>
-                      <select className="form-select" id="marriageBudget" name="MarriageBudget" onChange={handleFamilyDetailsChange}>
-                        <option value="">Select</option>
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                      </select>
-                    </div>
+                    <label htmlFor="budInput" className="form-label required">
+                      To Marriage Budget:
+  </label>
+  <div className="position-relative">
+  <input
+    list="budOptions"
+    id="budInput"
+    className="form-control"
+    name="astrology"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="   --Select a marriage budget--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+
+  {/* Chevron down icon */}
+  <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="budOptions">
+    <option value="low" />
+    <option value="high" />
+  </datalist>
+</div>
+{/* //////////////////////aman/////////// */}
                     <div className="col-md-2 mb-1">
                       <label
                         htmlFor="familyBusinessDetail"
@@ -2231,28 +2464,197 @@ const AddClient = () => {
               >
                 <div className="add-client-form">
                   <div className="row">
+                    {/* ///////////////aman////////////// */}
                     <div className="col-md-2 mb-1">
-                      <label className="form-label" htmlFor="houseStatus">
-                        House Status
-                      </label>
-                      <select name="HouseStatus" id="" className="form-control" onChange={handleContactDetailsChange}>
-                        <option value="">--Select House Status--</option>
-                        <option value="apartment">Apartment</option>
-                        <option value="floot/floors">Floot / Floors</option>
-                        <option value="banglow">Banglow</option>
-                        <option value="kothi">Kothi</option>
-                        <option value="rented">Rented</option>
-                      </select>
-                    </div>
+                    <label htmlFor="usInput" className="form-label required">
+                      House status:
+  </label>
+  <div className="position-relative">
+  <input
+    list="usOptions"
+    id="usInput"
+    className="form-control"
+    name="astrology"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="   --Select a house status--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+
+  {/* Chevron down icon */}
+  <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="usOptions">
+    <option value="rented" />
+    <option value="bangla" />
+  </datalist>
+</div>
+                    {/* /////////////////aman/////////////// */}
                     <div className="col-md-2 mb-1">
-                      <label className="form-label" htmlFor="residingCountry">
-                        Residing Country
-                      </label>
-                      <select id="residingCountry" className="form-control" name="ResidingCountry" onChange={handleContactDetailsChange}>
-                        <option value="">Select Country</option>
-                        <option value="India">India</option>
-                      </select>
-                    </div>
+                    <label htmlFor="resiInput" className="form-label required">
+                    Residing Country:
+  </label>
+  <div className="position-relative">
+  <input
+    list="resiOptions"
+    id="resiInput"
+    className="form-control"
+    name="astrology"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="   --Select a country--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+
+  {/* Chevron down icon */}
+  <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="resiOptions">
+    <option value="india" />
+    <option value="pakistan" />
+  </datalist>
+</div>
+                    {/* ////////////////////aman//////////// */}
+                    <div className="col-md-2 mb-1">
+                    <label htmlFor="budInput" className="form-label required">
+                      To Marriage Budget:
+  </label>
+  <div className="position-relative">
+  <input
+    list="budOptions"
+    id="budInput"
+    className="form-control"
+    name="astrology"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="   --Select a marriage budget--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+
+  {/* Chevron down icon */}
+  <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="budOptions">
+    <option value="low" />
+    <option value="high" />
+  </datalist>
+</div>
+                    {/* //////////////////aman///////////// */}
+                    <div className="col-md-2 mb-1">
+                    <label htmlFor="budInput" className="form-label required">
+                      To Marriage Budget:
+  </label>
+  <div className="position-relative">
+  <input
+    list="budOptions"
+    id="budInput"
+    className="form-control"
+    name="astrology"  // Changed to match your state key
+    onChange={(e) => {
+      handleChange(e);
+    }}
+    placeholder="   --Select a marriage budget--"
+    required
+    style={{
+      paddingRight: '30px', // Make space for the icon
+      backgroundImage: 'none' // Remove default datalist arrow if any
+    }}
+  />
+
+  {/* Chevron down icon */}
+  <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 6L8 10L12 6"
+          stroke="#6c757d"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <datalist id="budOptions">
+    <option value="low" />
+    <option value="high" />
+  </datalist>
+</div>
+                    {/* ///////////////aman/////// */}
+                   
+                    
                     <div className="col-md-2 mb-1">
                       <label className="form-label" htmlFor="residentialState">
                         Residential State
