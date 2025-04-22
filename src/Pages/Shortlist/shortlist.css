@@ -1,0 +1,50 @@
+.shortlist-profiles {
+    padding: 20px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    color: #8b0000; /* Dark red */
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .table-header {
+    background-color: #d9278c;
+    color: white;
+  }
+  
+  .table-header th {
+    text-align: center;
+    padding: 12px;
+  }
+  
+  .table-bordered tr td,
+  .table-bordered tr th {
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .action-icon {
+    font-size: 20px;
+    color: #d9278c;
+    cursor: pointer;
+  }
+  
+  .action-icon:hover {
+    color: #8b0000; /* Dark red on hover */
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+  }
+  

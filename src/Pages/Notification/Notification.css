@@ -1,0 +1,82 @@
+.notification-page {
+  padding: 3rem 1rem;
+  background-color: #f4f6f9;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.notification-list {
+  margin-top: 1.5rem;
+}
+
+.notification-item {
+  background-color: #fff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.notification-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.notification-item.read {
+  background-color: #e9ecef;
+}
+
+.notification-item.unread {
+  background-color: #fff;
+}
+
+.notification-header h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.timestamp {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.notification-message {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.notification-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-footer .btn {
+  font-size: 0.9rem;
+  border-radius: 20px;
+}
+
+.notification-footer .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.notification-footer .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.notification-footer .btn:hover {
+  opacity: 0.9;
+}

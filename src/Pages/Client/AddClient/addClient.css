@@ -1,0 +1,267 @@
+.add-client {
+  background-image: url("../../../Images/add-client-bg.jpg");
+  background-size: cover;
+  background-position: top;
+  width: 100%;
+}
+.add-client-overlay {
+  background-color: rgba(255, 255, 255, 0.366);
+  height: 100%;
+  width: 100%;
+  padding: 0 0 1rem;
+  background-size: cover;
+}
+
+.breadcrumb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0;
+}
+
+.breadURL a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.breadURL a:nth-child(2) {
+  color: var(--pink);
+}
+
+.add-client-information p {
+  color: var(--pink);
+}
+
+.nav-tabs {
+  border: none;
+}
+.nav-tabs .nav-item .nav-link {
+  color: black;
+}
+
+.nav-tabs .nav-item .clip-button1 {
+  clip-path: polygon(91% 0%, 100% 50%, 91% 100%, 0% 100%, 0% 50%, 0% 0%);
+  background-color: var(--light-pink);
+  border: none;
+  border-radius: 0;
+}
+
+.nav-tabs .nav-item .clip-button2 {
+  clip-path: polygon(93% 0%, 100% 50%, 93% 100%, 0% 100%, 6% 50%, 0% 0%);
+  background-color: var(--light-pink);
+  border: none;
+  margin-left: -4%;
+  border-radius: 0;
+}
+.nav-tabs .nav-item .clip-button3 {
+  clip-path: polygon(90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%, 0% 0%);
+  background-color: var(--light-pink);
+  border: none;
+  margin-left: -13%;
+  border-radius: 0;
+}
+.nav-tabs .nav-item .clip-button4 {
+  clip-path: polygon(90% 0%, 100% 50%, 90% 100%, 0% 100%, 8% 50%, 0% 0%);
+  background-color: var(--light-pink);
+  border: none;
+  margin-left: -17%;
+  border-radius: 0;
+}
+.nav-tabs .nav-item .clip-button5 {
+  clip-path: polygon(92% 0%, 100% 50%, 92% 100%, 0% 100%, 7% 50%, 0% 0%);
+  background-color: var(--light-pink);
+  border: none;
+  margin-left: -18%;
+  border-radius: 0;
+}
+.nav-tabs .nav-item .clip-button6 {
+  clip-path: polygon(90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%, 0% 0%);
+  background-color: var(--light-pink);
+  border: none;
+  margin-left: -35%;
+  border-radius: 0;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: var(--pink);
+  color: #fff;
+  border: none;
+  font-size: 12px;
+  border-radius: 5px;
+}
+.nav-tabs .nav-link {
+  color: white;
+  font-size: 12px;
+  background-color: #f8f9fa;
+  margin-right: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.nav-tabs .nav-link:hover {
+  background-color: var(--pink);
+  color: #fff;
+}
+
+.tab-content {
+  margin-top: 2rem;
+  background-color: rgba(255, 255, 255, 0.535);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.form-label {
+  margin: 0;
+  font-size: 12px;
+}
+
+.form-control , .form-select{
+  font-size: 12px;
+}
+
+.add-client-form .row .col-md-3 {
+  margin-bottom: 1rem;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-select:focus {
+  box-shadow: none;
+}
+
+.required span {
+  color: red;
+}
+
+.add-client-btn {
+  padding: 5px 10px;
+  background-color: var(--pink);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.add-btn {
+  border-radius: 8px;
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  background-color: var(--pink);
+  max-width: fit-content;
+}
+
+.bi-instagram {
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fdcb82, #f9d342);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.bi-facebook {
+  color: #1877f2; /* Facebook's blue color */
+}
+
+.bi-twitter {
+  color: #1da1f2; /* Twitter's blue color */
+}
+
+.profile-picture {
+  padding: 5px 10px;
+  background-color: var(--pink);
+  color: white;
+  border-radius: 8px;
+  max-width: fit-content;
+}
+
+.profile-picture p {
+  margin: 0;
+}
+
+.profileImage {
+  margin-top: 1rem;
+  width: 120px;
+  height: fit-content;
+  padding: 5px;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+.profileImage img {
+  object-fit: cover;
+  border-radius: 8px;
+  width: 100%;
+  height: 120px;
+}
+
+.profile-edit-delete {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 5px;
+  color: var(--pink);
+}
+
+.profile-edit-delete i {
+  cursor: pointer;
+}
+
+.other-profile-title{
+  background-color: var(--pink);
+  color: white;
+  width: max-content;
+  padding: 5px 10px;
+  margin: 1rem auto;
+  border-radius: 8px;
+}
+
+.other-profile-title p {
+  margin: 0;
+}
+
+.profile-bulk-image{
+  background-color: var(--light-pink);
+  padding: 5px 5px 0;
+  border-radius: 8px;
+}
+
+.profile-bulk-image img{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.other-picture .row .col-md-3 {
+  margin-bottom: 1rem;
+}
+.otherimages{
+  width: 100%;
+  height: 120px;
+}
+
+.other-picture img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.clientProfileImaage{
+  width: fit-content;
+  height: 160px;
+  background-color: lightgray;
+  border-radius: 8px;
+}
+
+.add-client-form .row .col-md-2 , .row .col-md-3 , .row .col-md-4 {
+  padding: 0px 3px;
+}
+
+/* .clientProfileImaage  img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */

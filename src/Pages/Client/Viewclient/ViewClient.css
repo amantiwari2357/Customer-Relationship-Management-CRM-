@@ -1,0 +1,272 @@
+.view-client {
+  padding: 2rem 0;
+}
+.view-client-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+}
+.client-card {
+  background-color: white;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  /* padding: 5px 10px; */
+  border-radius: 8px;
+}
+.heart {
+  position: relative;
+  cursor: pointer;
+}
+.heart span {
+  position: absolute;
+  left: 5px;
+  top: 25%;
+  font-size: 8px;
+  color: white;
+  font-weight: 600;
+}
+.heart i {
+  font-size: 20px;
+  color: red;
+}
+
+.view-client-topbar p {
+  margin: 0;
+  background-color: var(--yellow);
+  border-radius: 5px;
+  padding: 0px 10px;
+  font-size: 12px;
+}
+
+.client-image {
+  max-width: 40%;
+  margin: auto;
+}
+
+.client-image img {
+  border-radius: 50%;
+}
+
+.view-client-topbar input {
+  height: 20px;
+  width: 20px;
+}
+/* .client-buttons {
+  display: flex;
+} */
+
+.client-profile {
+  display: flex;
+  justify-content: space-between;
+}
+
+.client-profile-buttons {
+  background-color: var(--pink);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 0px;
+  font-size: 12px;
+  width: 100%;
+  color: white;
+}
+
+/* .client-buttons :nth-child(1) {
+  border-right: 1px solid white;
+} */
+
+/* .client-buttons button {
+  border: none;
+  background-color: var(--pink);
+  width: 100%;
+  padding: 3px 0;
+  color: white;
+} */
+
+.client-table-main {
+  margin-top: 1rem;
+}
+
+.client-detail-table {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.client-detail-data {
+  width: 100%;
+  border: 1px solid lightgray;
+  /* text-align: center; */
+}
+
+sup {
+  top: -0.9rem !important;
+  background: white;
+  padding: 0px 5px;
+  left: 0.4rem;
+  font-size: 9px !important;
+  font-weight: bold;
+}
+
+.client-detail-data p {
+  text-align: center;
+  margin: -15px 0px 2px 0px;
+  font-size: 12px;
+}
+.client-status {
+  text-align: center;
+  margin-top: 0rem;
+  margin-bottom: 0.3rem;
+  font-size: 12px;
+}
+
+.update-profile-client-image img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.update-profile-social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.update-profile-social-icons img {
+  height: 15px;
+  width: 15px;
+}
+
+.update-profile-modal-dialog {
+  max-width: 80%;
+  position: absolute;
+  left: 17%;
+}
+
+.update-profile-personal-information ul li {
+  list-style-type: none;
+  font-size: 14px;
+}
+.update-profile-personal-information ul {
+  padding: 0;
+  letter-spacing: 0.6px;
+}
+.update-profile-personal-information ul li b {
+  font-weight: 600;
+}
+
+.update-profile {
+  display: flex;
+}
+
+.update-profile-personal-information {
+  border-right: 1px solid lightgray;
+  width: 30%;
+  padding: 5px 0;
+}
+
+.update-profile-schedule-metting {
+  width: 70%;
+  background-color: #f5f5f5;
+}
+
+.modal-body {
+  padding: 0rem 1rem;
+}
+
+.all-buttons {
+  background-color: var(--pink);
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  max-width: fit-content;
+}
+
+.profile-activity-status {
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: scroll;
+  padding: 5px;
+  border: 1px solid lightgray;
+}
+
+.personal-information-social-media {
+  margin-top: 9rem;
+}
+
+.filter-labels label {
+  font-size: 12px;
+}
+
+.client-profile-share-table tr th {
+  font-size: 12px;
+  width: 30%;
+}
+
+td {
+  font-size: 12px;
+}
+
+.view-client-filter {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border: 1px solid lightgray;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: #f4e0eb;
+  cursor: pointer;
+}
+
+.view-client-filter p {
+  margin: 0;
+}
+
+.shedule-meting-tab {
+  background-color: white;
+  padding: 1rem;
+  max-width: 100%;
+  margin-top: 0.2rem;
+}
+
+.shedule-meting-tab h2 {
+  color: var(--pink);
+}
+
+.view-client-position {
+  position: relative;
+}
+.heart-position {
+  position: absolute;
+}
+
+.heart-profile-image {
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.heart-profile-client-buttons {
+  display: flex;
+}
+
+.heart-profile-client-buttons button {
+  background-color: #473d85;
+  border: none;
+  padding: 5px;
+  color: white;
+  width: 100%;
+}
+
+.proposal-item {
+  display: flex;
+  gap: 20px;
+  border: 1px solid lightgray;
+  border-radius: 1rem;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+}
+
+.proposal-item span {
+  font-size: 12px;
+}

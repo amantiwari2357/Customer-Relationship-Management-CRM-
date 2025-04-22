@@ -1,0 +1,37 @@
+.topbar {
+  height: 60px;
+  background-color: var(--dul-light-pink);
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: fixed;
+  top: 0;
+  justify-content: space-between;
+  left: 200px;
+  right: 0;
+  z-index: 1000;
+}
+
+.topbar-search input {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.topbarIcon1{
+  background-color: var(--light-pink);
+  color: black;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.topbarIcon2{
+  background-color: var(--pink);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}

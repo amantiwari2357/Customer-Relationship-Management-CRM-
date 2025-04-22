@@ -1,0 +1,58 @@
+.task-calendar-container {
+    margin: 20px auto;
+    max-width: 1200px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    padding: 20px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calendar-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2d3436;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .rbc-calendar {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .rbc-event {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .rbc-toolbar {
+    background: var(--pink);
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .rbc-toolbar button {
+    color: black;
+    background: var(--light-pink);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .rbc-toolbar button:hover {
+    background: #81ecec;
+    color: #2d3436;
+  }
+  
+
+  .rbc-event{
+    background-color: transparent !important;
+    color: var(--pink) !important;
+  }

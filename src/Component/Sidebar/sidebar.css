@@ -1,0 +1,68 @@
+/* Sidebar Styling */
+.sidebar {
+  width: 200px;
+  background-color: var(--light-pink);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 12px 12px 12px 0px;
+  z-index: 9999;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li{
+  background-color: white;
+  margin-bottom: 0.5rem;
+  padding: 0px 5px;
+  clip-path: polygon(91% 0%, 100% 50%, 91% 100%, 0% 100%, 0% 50%, 0% 0%);
+}
+
+.sidebar h5 {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: var(--pink);
+  font-size: 18px;
+  display: block;
+  padding: 10px 10px;
+}
+
+.sidebar .dropdown {
+  padding-left: 20px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar .dropdown li {
+  padding: 5px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sidebar .dropdown a {
+  display: block;
+  padding: 0px 0;
+  font-size: 14px;
+}
+
+.sidebar .dropdown.open {
+  max-height: 500px; 
+  opacity: 1;
+}
+
+.sidebar img{
+  margin-bottom: 2rem;
+}
+.logo{
+  height: 100%;
+  width: 140px;
+}

@@ -1,0 +1,69 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+:root {
+    --pink : #CC2B85;
+    --light-pink : #F0DDE2;
+    --dul-light-pink : #FFEBF6;
+    --yellow : #FFD700;
+}
+
+/* Main App Container */
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Main Content Wrapper */
+.main-container {
+  margin-left: 200px; /* Sidebar width */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Content Area */
+.content-area {
+  margin-top: 60px; /* Topbar height */
+  overflow-y: auto;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+/* For login page, remove margin-left and margin-top */
+.login-page .main-container {
+  margin-left: 0; /* Remove left margin */
+}
+
+.login-page .content-area {
+  margin-top: 0; /* Remove top margin */
+}
+
+.modal-header-costom {
+  background-color: var(--pink);
+  color: white;
+}
+
+.modal-content{
+  border: none;
+}
+
+.modal-body{
+  height: 50vh;
+  overflow-y: scroll;
+}
+
+.pagination-buttons{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}

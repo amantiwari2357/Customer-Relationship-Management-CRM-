@@ -1,0 +1,41 @@
+.proposal {
+  padding: 1rem;
+}
+.proposal-price {
+  color: goldenrod;
+  font-family: fantasy;
+  text-align: center;
+  font-size: 40px;
+}
+
+.proposal-add-btn {
+  width: fit-content;
+  padding: 5px 10px;
+  background-color: rgb(130, 38, 49);
+  border: none;
+  color: white;
+}
+
+.Proposalcard {
+  background-color: #231f4e;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+.eliteCart {
+  background-color: #822631;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+
+.btn-download , .btn-send{
+    background-color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
