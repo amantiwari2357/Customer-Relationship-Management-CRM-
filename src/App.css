@@ -1,17 +1,22 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", serif;
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffff !important;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 :root {
-    --pink : #CC2B85;
-    --light-pink : #F0DDE2;
-    --dul-light-pink : #FFEBF6;
-    --yellow : #FFD700;
+  --pink: #cc2b85;
+  --light-pink: #f0dde2;
+  --dul-light-pink: #ffebf6;
+  --yellow: #ffd700;
 }
 
 /* Main App Container */
@@ -22,7 +27,7 @@
 
 /* Main Content Wrapper */
 .main-container {
-  margin-left: 200px; /* Sidebar width */
+  margin-left: 230px; /* Sidebar width */
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -43,6 +48,27 @@
   margin-left: 0; /* Remove left margin */
 }
 
+.form-control:focus {
+  box-shadow: none;
+  border: 1px solid var(--pink);
+}
+
+.form-select:focus {
+  box-shadow: none;
+  border: 1px solid var(--pink);
+
+}
+
+.form-control,
+.form-select {
+  font-size: 15px;
+}
+
+.form-label {
+  margin: 0;
+  font-size: 12px;
+}
+
 .login-page .content-area {
   margin-top: 0; /* Remove top margin */
 }
@@ -52,18 +78,30 @@
   color: white;
 }
 
-.modal-content{
+.modal-content {
   border: none;
 }
 
-.modal-body{
+.modal-body {
   height: 50vh;
   overflow-y: scroll;
 }
 
-.pagination-buttons{
+.pagination-buttons {
   width: 100%;
   display: flex;
   justify-content: end;
   align-items: center;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.shortlist-profiles {
+  padding: 1.5rem;
 }

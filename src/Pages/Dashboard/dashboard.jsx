@@ -337,7 +337,7 @@ const Dashboard = () => {
 
               {/* Leads By Stage */}
               <div className="col-md-6 dashboard-table-container">
-                <div>
+                <div className="position-relative">
                   <h3>Leads By Stage</h3>
                   <PieChart width={400} height={400}>
                     <Pie
@@ -361,10 +361,10 @@ const Dashboard = () => {
                   </PieChart>
                   <div
                     style={{
-                      textAlign: "center",
-                      marginTop: "-270px",
-                      fontSize: "16px",
-                      marginLeft: "-220px",
+                      position: "absolute",
+                      top: "45%",
+                      left: "26%",
+                      transform: "translate(-50%, -50%)",
                     }}
                   >
                     Total Value
