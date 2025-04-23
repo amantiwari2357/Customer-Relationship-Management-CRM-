@@ -397,8 +397,6 @@ const AddClient = () => {
                         required
                       />
                     </div>
-
-                    {/* Profile Comment */}
                     {/* <div className="col-md-2 mb-1">
                       <label htmlFor="profile-comment" className="form-label">
                         Profile Comment
@@ -411,6 +409,7 @@ const AddClient = () => {
                         placeholder="Enter your comment"
                         rows="1"
                       ></textarea>
+                      
                     </div> */}
 {/* ////////////////////AMAN///////////////////////// */}
                     {/* Gender */}
