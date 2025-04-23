@@ -30,75 +30,167 @@ const Sidebar = () => {
               <i className="bi bi-people-fill"></i> Clients
             </Link>
           </div>
-
           <ul className={`dropdown ${dropdown === "clients" ? "open" : ""}`}>
             <li>
-              <Link to={"/view-client"}>
-                <i class="bi bi-eye"></i> View Clients
+              <Link to="/view-client">
+                <i className="bi bi-eye-fill"></i> View Clients
               </Link>
             </li>
             <li>
-              <Link to={"/add-client"}>
-                <i class="bi bi-person-plus"></i> Add Client
+              <Link to="/add-client">
+                <i className="bi bi-person-plus-fill"></i> Add Client
               </Link>
             </li>
             <li>
-              <Link to={"/client-report"}>
-                <i class="bi bi-file-earmark-text"></i> Client Report
+              <Link to="/client-report">
+                <i className="bi bi-bar-chart-fill"></i> Client Report
               </Link>
             </li>
             <li>
-              <Link to={"/client-response"}>
-                <i class="bi bi-chat-left-text"></i> Client Response
+              <Link to="/client-response">
+                <i className="bi bi-chat-dots-fill"></i> Client Response
               </Link>
             </li>
           </ul>
         </li>
+
         <li>
           <div onClick={() => toggleDropdown("shortlist")}>
             <Link to="#">
-              <i className="bi bi-person-lines-fill"></i> Shortlist
+              <i className="bi bi-check2-square"></i> Shortlist
             </Link>
           </div>
-
           <ul className={`dropdown ${dropdown === "shortlist" ? "open" : ""}`}>
             <li>
-              <Link to={"/shortlisted-profile"}>
-                <i class="bi bi-person-check"></i> Shortlisted Profiles
+              <Link to="/shortlisted-profile">
+                <i className="bi bi-person-check-fill"></i> Shortlisted Profiles
               </Link>
             </li>
             <li>
-              <Link to={"/approved-profile"}>
-                <i class="bi bi-check-circle"></i> Approved Profiles
+              <Link to="/approved-profile">
+                <i className="bi bi-patch-check-fill"></i> Approved Profiles
               </Link>
             </li>
             <li>
-              <Link to={"/reject-profile"}>
-                <i class="bi bi-x-circle"></i> Rejected Profiles
+              <Link to="/reject-profile">
+                <i className="bi bi-x-circle-fill"></i> Rejected Profiles
               </Link>
             </li>
           </ul>
         </li>
+
         <li>
-        <div>
-            <Link to="/proposal">
-              <i className="bi bi-file-earmark-text"></i> Proposal
-            </Link>
-          </div>
-        </li>
-        <li>
-          <div onClick={() => toggleDropdown("tasks")}>
+          <div onClick={() => toggleDropdown("Leads")}>
             <Link to="#">
-              <i className="bi bi-calendar4-event"></i> Tasks
+              <i className="bi bi-person-square"></i> Leads
             </Link>
           </div>
-          <ul className={`dropdown ${dropdown === "tasks" ? "open" : ""}`}>
+          <ul className={`dropdown ${dropdown === "Leads" ? "open" : ""}`}>
             <li>
-              <Link to={"/add-task-event"}>
-                <i class="bi bi-list-check"></i> To Do List
+              <Link to="/allLeads">
+                <i className="bi bi-list-ul"></i> All Leads
+              </Link>
+            </li>
+            <li>
+              <Link to="/addLeads">
+                <i className="bi bi-plus-square-fill"></i> Add Leads
               </Link>
             </li>
           </ul>
+        </li>
+
+        <li>
+          <div onClick={() => toggleDropdown("Tasks")}>
+            <Link to="#">
+              <i className="bi bi-list-task"></i> Tasks
+            </Link>
+          </div>
+          <ul className={`dropdown ${dropdown === "Tasks" ? "open" : ""}`}>
+            <li>
+              <Link to="/shortlisted-profile">
+                <i className="bi bi-card-checklist"></i> View Tasks
+              </Link>
+            </li>
+            <li>
+              <Link to="/addTask">
+                <i className="bi bi-plus-circle-fill"></i> Add Tasks
+              </Link>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <div onClick={() => toggleDropdown("Settings")}>
+            <Link to="#">
+              <i className="bi bi-gear-fill"></i> Settings
+            </Link>
+          </div>
+          <ul className={`dropdown ${dropdown === "Settings" ? "open" : ""}`}>
+            <li>
+              <Link to="/shortlisted-profile">
+                <i className="bi bi-clock-history"></i> Manage Activity Log
+              </Link>
+            </li>
+            <li>
+              <Link to="/approved-profile">
+                <i className="bi bi-person-plus-fill"></i> Add Reference
+              </Link>
+            </li>
+            <li>
+              <Link to="/approved-profile">
+                <i className="bi bi-person-lines-fill"></i> View Reference
+              </Link>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <div onClick={() => toggleDropdown("Management")}>
+            <Link to="#">
+              <i className="bi bi-person-gear"></i> User Management
+            </Link>
+          </div>
+          <ul className={`dropdown ${dropdown === "Management" ? "open" : ""}`}>
+            <li>
+              <Link to="/shortlisted-profile">
+                <i className="bi bi-clipboard-data-fill"></i> Staff Report
+              </Link>
+            </li>
+            <li>
+              <Link to="/approved-profile">
+                <i className="bi bi-person-badge-fill"></i> User Manager
+              </Link>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <div onClick={() => toggleDropdown("Proposal")}>
+            <Link to="#">
+              <i className="bi bi-envelope-paper-fill"></i> Proposal
+            </Link>
+          </div>
+          <ul className={`dropdown ${dropdown === "Proposal" ? "open" : ""}`}>
+            <li>
+              <Link to="/shortlisted-profile">
+                <i className="bi bi-arrow-right-circle-fill"></i> Assign
+                Proposal
+              </Link>
+            </li>
+            <li>
+              <Link to="/approved-profile">
+                <i className="bi bi-archive-fill"></i> Proposal Manager
+              </Link>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <div onClick={() => toggleDropdown("logout")}>
+            <Link to="#">
+              <i className="bi bi-box-arrow-right"></i> Logout
+            </Link>
+          </div>
         </li>
       </ul>
     </div>

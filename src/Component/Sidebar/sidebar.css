@@ -1,6 +1,6 @@
 /* Sidebar Styling */
 .sidebar {
-  width: 200px;
+  width: 230px;
   background-color: var(--light-pink);
   height: 100vh;
   position: fixed;
@@ -29,9 +29,9 @@
 .sidebar a {
   text-decoration: none;
   color: var(--pink);
-  font-size: 18px;
+  font-size: 16px;
   display: block;
-  padding: 10px 10px;
+  padding: 8px 8px;
 }
 
 .sidebar .dropdown {
@@ -60,7 +60,7 @@
 }
 
 .sidebar img{
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .logo{
   height: 100%;

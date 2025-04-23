@@ -112,26 +112,11 @@
   border-radius: 1rem;
 }
 
-.form-label {
-  margin: 0;
-  font-size: 12px;
-}
-
-.form-control , .form-select{
-  font-size: 12px;
-}
-
 .add-client-form .row .col-md-3 {
   margin-bottom: 1rem;
 }
 
-.form-control:focus {
-  box-shadow: none;
-}
 
-.form-select:focus {
-  box-shadow: none;
-}
 
 .required span {
   color: red;
