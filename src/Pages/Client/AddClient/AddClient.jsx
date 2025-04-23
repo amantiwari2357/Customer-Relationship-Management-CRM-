@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./addClient.css";
 import { Link } from "react-router-dom";
-import otherPicture from "../../../Images/profile-other-images.png";
+// import otherPicture from "../../../Images/profile-other-images.png";
 import axios from "axios";
 
 const AddClient = () => {
@@ -293,7 +293,9 @@ const AddClient = () => {
                 {/* personal detail tab  */}
                 <div className="add-client-form">
                   <div className="row">
+
 {/* //////////////////aman/////////////// */}
+
 {/* Profile Sourced From */}
 <div className="col-md-2 mb-1">
   <label htmlFor="profileSource" className="form-label required">
@@ -395,8 +397,6 @@ const AddClient = () => {
                         required
                       />
                     </div>
-
-                    {/* Profile Comment */}
                     {/* <div className="col-md-2 mb-1">
                       <label htmlFor="profile-comment" className="form-label">
                         Profile Comment
@@ -409,6 +409,7 @@ const AddClient = () => {
                         placeholder="Enter your comment"
                         rows="1"
                       ></textarea>
+                      
                     </div> */}
 {/* ////////////////////AMAN///////////////////////// */}
                     {/* Gender */}
@@ -2279,7 +2280,7 @@ const AddClient = () => {
 
                     <div className="col-md-2 mb-1">
                     <label htmlFor="budInput" className="form-label required">
-                      To Marriage Budget:
+                To Marriage Budget:
   </label>
   <div className="position-relative">
   <input
@@ -2558,21 +2559,22 @@ const AddClient = () => {
     <option value="pakistan" />
   </datalist>
 </div>
-                    {/* ////////////////////aman//////////// */}
-                    <div className="col-md-2 mb-1">
-                    <label htmlFor="budInput" className="form-label required">
-                      To Marriage Budget:
+
+     {/* ////////////////////aman//////////// */}
+        <div className="col-md-2 mb-1">
+          <label htmlFor="resiInput" className="form-label required">
+          Residential State:
   </label>
   <div className="position-relative">
   <input
-    list="budOptions"
+    list="resiOptions"
     id="budInput"
     className="form-control"
     name="astrology"  // Changed to match your state key
     onChange={(e) => {
       handleChange(e);
     }}
-    placeholder="   --Select a marriage budget--"
+    placeholder="   --Select a Residential State--"
     required
     style={{
       paddingRight: '30px', // Make space for the icon
@@ -2600,83 +2602,16 @@ const AddClient = () => {
     </div>
   </div>
 
-  <datalist id="budOptions">
-    <option value="low" />
-    <option value="high" />
-  </datalist>
-</div>
-                    {/* //////////////////aman///////////// */}
-                    <div className="col-md-2 mb-1">
-                    <label htmlFor="budInput" className="form-label required">
-                      To Marriage Budget:
-  </label>
-  <div className="position-relative">
-  <input
-    list="budOptions"
-    id="budInput"
-    className="form-control"
-    name="astrology"  // Changed to match your state key
-    onChange={(e) => {
-      handleChange(e);
-    }}
-    placeholder="   --Select a marriage budget--"
-    required
-    style={{
-      paddingRight: '30px', // Make space for the icon
-      backgroundImage: 'none' // Remove default datalist arrow if any
-    }}
-  />
-
-  {/* Chevron down icon */}
-  <div className="position-absolute end-0 top-50 translate-middle-y pe-2">
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 16 16"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M4 6L8 10L12 6"
-          stroke="#6c757d"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </div>
-  </div>
-
-  <datalist id="budOptions">
+  <datalist id="resiOptions">
     <option value="low" />
     <option value="high" />
   </datalist>
 </div>
                     {/* ///////////////aman/////// */}
                    
-                    
-                    <div className="col-md-2 mb-1">
-                      <label className="form-label" htmlFor="residentialState">
-                        Residential State
-                      </label>
-                      <select id="residentialState" className="form-control" name="ResidentialState" onChange={handleContactDetailsChange}>
-                        <option value="">Select State</option>
-                        <option value="UP">UP</option>
-                      </select>
-                    </div>
-                    <div className="col-md-2 mb-1">
-                      <label className="form-label" htmlFor="residentialCity">
-                        Residential City
-                      </label>
-                      <select id="residentialCity" className="form-control" name="ResidentialCity" onChange={handleContactDetailsChange}>
-                        <option value="">Select City</option>
-                        <option value="Manjhanpur">Manjhanpur</option>
-
-                      </select>
-                    </div>
                     <div className="col-md-2 mb-1">
                       <label className="form-label" htmlFor="contactPerson">
-                        Name of the Contact Person
+                        Name of Contact Person
                       </label>
                       <input
                         type="text"
