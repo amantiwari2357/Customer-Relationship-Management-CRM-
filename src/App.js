@@ -18,7 +18,7 @@ import UserListed from "./Pages/Shortlist/UserListed";
 import { BrowserRouter } from "react-router-dom"; // Import BrowserRouter
 import Notification from "./Pages/Notification/Notification";
 import PDF from "./Pages/ClientPDF/PDF";
-import Proposal from "./Pages/Proposal/Proposal";
+// import Proposal from "./Pages/Proposal/Proposal";
 import ElitePdf from "./Pages/ClientPDF/ElitePdf";
 import PersonalizePdf from "./Pages/ClientPDF/PersonalizePdf";
 import AddLeads from "./Pages/Leads/AddLeads";
@@ -27,7 +27,11 @@ import AddTask from "./Pages/Task/AddTask";
 import ActivityLog from "./Pages/Settings/activity-log";
 import AddReference from "./Pages/Settings/Add-Reference";
 import ViewReferences from "./Pages/Settings/View-preference";
-import NotFound from "./Pages/NotFound/NotFound";
+import PackageManager from "./Pages/Proposal/PackageManager";
+import AddPackage from "./Pages/Proposal/AddPackage";
+import AssignPackage from "./Pages/Proposal/AssignPackage";
+import AssignPackageDetails from "./Pages/Proposal/AssignPackageDetails";
+
 
 const App = () => {
   const location = useLocation();
@@ -57,7 +61,7 @@ const App = () => {
             <Route path="/approved-profile" element={<ApprovedProfile />} />
             <Route path="/reject-profile" element={<RejectProfile />} />
             <Route path="/user-listed" element={<UserListed />} />
-            <Route path="/proposal" element={<Proposal />} />
+            {/* <Route path="/proposal" element={<Proposal />} /> */}
 
             <Route path="/pdf" element={<PDF />} />
             <Route path="/elitepdf" element={<ElitePdf />} />
@@ -68,7 +72,11 @@ const App = () => {
             <Route path="/activity-log" element={<ActivityLog />} />
             <Route path="/add-Reference" element={<AddReference />} />
             <Route path="/view-preference" element={<ViewReferences />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/package-manager" element={<PackageManager />} />
+            <Route path="/addPackage" element={<AddPackage />} />
+            <Route path="/assignPackage" element={<AssignPackage />} />
+            <Route path="/assignPackageDetails" element={<AssignPackageDetails />} />
+            
           </Routes>
         </div>
       </div>

@@ -1,0 +1,92 @@
+/* src/AssignPackageDetails.css */
+
+.assign-details-container {
+    padding: 30px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 24px;
+    font-weight: 600;
+  }
+  
+  .client-details h3,
+  .purchase-history h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #1e1e1e;
+  }
+  
+  .client-details p {
+    margin: 4px 0;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  hr {
+    margin: 25px 0;
+    border: 0.5px solid #ddd;
+  }
+  
+  .purchase-history table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .purchase-history th,
+  .purchase-history td {
+    padding: 12px 15px;
+    border: 1px solid #eee;
+    text-align: left;
+    color: #1e1e1e;
+  }
+  
+  .purchase-history th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+  }
+  
+  .assign-form {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+  
+  .form-group {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .form-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+    color: #1f1f1f;
+  }
+  
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+  
+  .assign-btn {
+    background-color: #00c851;
+    color: white;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .assign-btn:hover {
+    background-color: #00b44b;
+  }
+  

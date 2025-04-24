@@ -1,0 +1,131 @@
+.package-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: "Poppins", sans-serif;
+    font-weight: 24px;
+    font-weight: 600;
+  }
+  
+  .package-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cc2b85;
+    padding: 20px;
+    border-radius: 6px 6px 0 0;
+  }
+  
+  .package-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #2c3e50;
+  }
+  
+  .add-package-btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .add-package-btn:hover {
+    background-color: black;
+  }
+  
+  .package-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+  }
+  
+  .package-table th,
+  .package-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+  }
+  
+  .package-table th {
+    background-color: #f2f3f5;
+    font-weight: 600;
+  }
+  
+  .special-badge.no {
+    background-color: #6c757d;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .status-badge.active {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .edit-btn {
+    background-color: #f39c12;
+    color: white;
+    padding: 6px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .edit-btn i {
+    font-size: 14px;
+  }
+ 
+  
+  .add-package-btn:hover {
+    background-color: #cc2b85;
+  }
+  
+  .edit-form {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.edit-form input,
+.edit-form select {
+  display: block;
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.save-btn {
+  background-color: #cc2b85;
+  color: white;
+  border: none;
+}
+
+.cancel-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}

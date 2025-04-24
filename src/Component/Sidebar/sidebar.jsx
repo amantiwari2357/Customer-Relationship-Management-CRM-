@@ -172,13 +172,13 @@ const Sidebar = () => {
           </div>
           <ul className={`dropdown ${dropdown === "Proposal" ? "open" : ""}`}>
             <li>
-              <Link to="/shortlisted-profile">
+              <Link to="/AssignPackage">
                 <i className="bi bi-arrow-right-circle-fill"></i> Assign
                 Proposal
               </Link>
             </li>
             <li>
-              <Link to="/approved-profile">
+              <Link to="/package-manager">
                 <i className="bi bi-archive-fill"></i> Proposal Manager
               </Link>
             </li>
