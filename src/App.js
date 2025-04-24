@@ -24,6 +24,10 @@ import PersonalizePdf from "./Pages/ClientPDF/PersonalizePdf";
 import AddLeads from "./Pages/Leads/AddLeads";
 import AllLeads from "./Pages/Leads/AllLeads";
 import AddTask from "./Pages/Task/AddTask";
+import ActivityLog from "./Pages/Settings/activity-log";
+import AddReference from "./Pages/Settings/Add-Reference";
+import ViewReferences from "./Pages/Settings/View-preference";
+import NotFound from "./Pages/NotFound/NotFound";
 
 const App = () => {
   const location = useLocation();
@@ -61,6 +65,10 @@ const App = () => {
             <Route path="/addLeads" element={<AddLeads />} />
             <Route path="/allLeads" element={<AllLeads />} />
             <Route path="/addTask" element={<AddTask />} />
+            <Route path="/activity-log" element={<ActivityLog />} />
+            <Route path="/add-Reference" element={<AddReference />} />
+            <Route path="/view-preference" element={<ViewReferences />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </div>

@@ -127,17 +127,17 @@ const Sidebar = () => {
           </div>
           <ul className={`dropdown ${dropdown === "Settings" ? "open" : ""}`}>
             <li>
-              <Link to="/shortlisted-profile">
+              <Link to="/activity-log">
                 <i className="bi bi-clock-history"></i> Manage Activity Log
               </Link>
             </li>
             <li>
-              <Link to="/approved-profile">
+              <Link to="/Add-Reference">
                 <i className="bi bi-person-plus-fill"></i> Add Reference
               </Link>
             </li>
             <li>
-              <Link to="/approved-profile">
+              <Link to="/View-preference">
                 <i className="bi bi-person-lines-fill"></i> View Reference
               </Link>
             </li>
