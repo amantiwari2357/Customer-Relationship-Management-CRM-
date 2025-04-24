@@ -107,7 +107,7 @@ const Sidebar = () => {
           </div>
           <ul className={`dropdown ${dropdown === "Tasks" ? "open" : ""}`}>
             <li>
-              <Link to="/shortlisted-profile">
+              <Link to="/viewTask">
                 <i className="bi bi-card-checklist"></i> View Tasks
               </Link>
             </li>
