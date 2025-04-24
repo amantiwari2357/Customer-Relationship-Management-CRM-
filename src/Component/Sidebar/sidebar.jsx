@@ -107,7 +107,9 @@ const Sidebar = () => {
           </div>
           <ul className={`dropdown ${dropdown === "Tasks" ? "open" : ""}`}>
             <li>
-              <Link to="/shortlisted-profile">
+
+              <Link to="/viewTask">
+
                 <i className="bi bi-card-checklist"></i> View Tasks
               </Link>
             </li>
@@ -127,17 +129,24 @@ const Sidebar = () => {
           </div>
           <ul className={`dropdown ${dropdown === "Settings" ? "open" : ""}`}>
             <li>
+
               <Link to="/activity-log">
+
                 <i className="bi bi-clock-history"></i> Manage Activity Log
               </Link>
             </li>
             <li>
+
+
               <Link to="/Add-Reference">
+
                 <i className="bi bi-person-plus-fill"></i> Add Reference
               </Link>
             </li>
             <li>
+
               <Link to="/View-preference">
+
                 <i className="bi bi-person-lines-fill"></i> View Reference
               </Link>
             </li>
@@ -172,13 +181,17 @@ const Sidebar = () => {
           </div>
           <ul className={`dropdown ${dropdown === "Proposal" ? "open" : ""}`}>
             <li>
+
               <Link to="/AssignPackage">
+
                 <i className="bi bi-arrow-right-circle-fill"></i> Assign
                 Proposal
               </Link>
             </li>
             <li>
+
               <Link to="/package-manager">
+
                 <i className="bi bi-archive-fill"></i> Proposal Manager
               </Link>
             </li>

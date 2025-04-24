@@ -24,6 +24,8 @@ import PersonalizePdf from "./Pages/ClientPDF/PersonalizePdf";
 import AddLeads from "./Pages/Leads/AddLeads";
 import AllLeads from "./Pages/Leads/AllLeads";
 import AddTask from "./Pages/Task/AddTask";
+import ViewTask from "./Pages/Task/ViewTask";
+
 import ActivityLog from "./Pages/Settings/activity-log";
 import AddReference from "./Pages/Settings/Add-Reference";
 import ViewReferences from "./Pages/Settings/View-preference";
@@ -61,7 +63,9 @@ const App = () => {
             <Route path="/approved-profile" element={<ApprovedProfile />} />
             <Route path="/reject-profile" element={<RejectProfile />} />
             <Route path="/user-listed" element={<UserListed />} />
-            {/* <Route path="/proposal" element={<Proposal />} /> */}
+
+            <Route path="/proposal" element={<Proposal />} />
+
 
             <Route path="/pdf" element={<PDF />} />
             <Route path="/elitepdf" element={<ElitePdf />} />
@@ -69,7 +73,9 @@ const App = () => {
             <Route path="/addLeads" element={<AddLeads />} />
             <Route path="/allLeads" element={<AllLeads />} />
             <Route path="/addTask" element={<AddTask />} />
-            <Route path="/activity-log" element={<ActivityLog />} />
+  
+          <Route path="/viewTask" element={<ViewTask />} />
+           <Route path="/activity-log" element={<ActivityLog />} />
             <Route path="/add-Reference" element={<AddReference />} />
             <Route path="/view-preference" element={<ViewReferences />} />
             <Route path="/package-manager" element={<PackageManager />} />
@@ -77,6 +83,7 @@ const App = () => {
             <Route path="/assignPackage" element={<AssignPackage />} />
             <Route path="/assignPackageDetails" element={<AssignPackageDetails />} />
             
+
           </Routes>
         </div>
       </div>
