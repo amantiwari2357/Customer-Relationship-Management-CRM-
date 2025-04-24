@@ -24,6 +24,7 @@ import PersonalizePdf from "./Pages/ClientPDF/PersonalizePdf";
 import AddLeads from "./Pages/Leads/AddLeads";
 import AllLeads from "./Pages/Leads/AllLeads";
 import AddTask from "./Pages/Task/AddTask";
+import ViewTask from "./Pages/Task/ViewTask";
 
 const App = () => {
   const location = useLocation();
@@ -61,6 +62,7 @@ const App = () => {
             <Route path="/addLeads" element={<AddLeads />} />
             <Route path="/allLeads" element={<AllLeads />} />
             <Route path="/addTask" element={<AddTask />} />
+            <Route path="/viewTask" element={<ViewTask />} />
           </Routes>
         </div>
       </div>
