@@ -24,7 +24,8 @@ const PackageManager = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setEditForm({ ...editForm, [name]: value });
+    const parsedValue = name === "profileLimit" ? parseInt(value, 10) : value;
+    setEditForm({ ...editForm, [name]: parsedValue });
   };
 
   const handleSave = () => {
@@ -34,9 +35,9 @@ const PackageManager = () => {
     setEditIndex(null);
   };
 
-  // const handleCancel = () => {
-  //   setEditIndex(null);
-  // };
+  const handleCancel = () => {
+    setEditIndex(null);
+  };
 
   return (
     <div className="package-container">
@@ -60,49 +61,92 @@ const PackageManager = () => {
         <tbody>
           {packages.map((pkg, index) => (
             <tr key={index}>
-              <td>{pkg.name}</td>
-              <td>{pkg.validity}</td>
-              <td>{pkg.profileLimit}</td>
-              <td>{pkg.price}</td>
-              <td>
-                <span className={`special-badge ${pkg.special ? 'yes' : 'no'}`}>
-                  {pkg.special ? 'Yes' : 'No'}
-                </span>
-              </td>
-              <td>
-                <span className="status-badge active">{pkg.status}</span>
-              </td>
-              <td>
-                <button className="edit-btn" onClick={() => handleEditClick(index)}>
-                  <i className="fas fa-edit"></i> EDIT
-                </button>
-              </td>
+              {editIndex === index ? (
+                <>
+                  <td>
+                    <input
+                      type="text"
+                      name="name"
+                      value={editForm.name}
+                      onChange={handleInputChange}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="validity"
+                      value={editForm.validity}
+                      onChange={handleInputChange}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      name="profileLimit"
+                      value={editForm.profileLimit}
+                      onChange={handleInputChange}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="price"
+                      value={editForm.price}
+                      onChange={handleInputChange}
+                    />
+                  </td>
+                  <td>
+                    <select
+                      name="special"
+                      value={editForm.special}
+                      onChange={handleInputChange}
+                    >
+                      <option value={false}>No</option>
+                      <option value={true}>Yes</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select
+                      name="status"
+                      value={editForm.status}
+                      onChange={handleInputChange}
+                    >
+                      <option value="Active">Active</option>
+                      <option value="Inactive">Inactive</option>
+                    </select>
+                  </td>
+                  <td>
+                    <button className="save-btn" onClick={handleSave}>Save</button>
+                    <button className="cancel-btn" onClick={handleCancel}>Cancel</button>
+                  </td>
+                </>
+              ) : (
+                <>
+                  <td>{pkg.name}</td>
+                  <td>{pkg.validity}</td>
+                  <td>{pkg.profileLimit}</td>
+                  <td>{pkg.price}</td>
+                  <td>
+                    <span className={`special-badge ${pkg.special ? 'yes' : 'no'}`}>
+                      {pkg.special ? 'Yes' : 'No'}
+                    </span>
+                  </td>
+                  <td>
+                    <span className={`status-badge ${pkg.status === 'Active' ? 'active' : 'inactive'}`}>
+                      {pkg.status}
+                    </span>
+                  </td>
+                  <td>
+                    <button className="edit-btn" onClick={() => handleEditClick(index)}>
+                      <i className="fas fa-edit"></i> EDIT
+                    </button>
+                  </td>
+                </>
+              )}
             </tr>
           ))}
         </tbody>
       </table>
-
-      {/* {editIndex !== null && (
-        <div className="edit-form">
-          <h3>Edit Package</h3>
-          <input type="text" name="name" value={editForm.name} onChange={handleInputChange} placeholder="Package Name" />
-          <input type="text" name="validity" value={editForm.validity} onChange={handleInputChange} placeholder="Validity" />
-          <input type="number" name="profileLimit" value={editForm.profileLimit} onChange={handleInputChange} placeholder="Profile Share Limit" />
-          <input type="text" name="price" value={editForm.price} onChange={handleInputChange} placeholder="Price" />
-          <select name="special" value={editForm.special} onChange={handleInputChange}>
-            <option value={false}>No</option>
-            <option value={true}>Yes</option>
-          </select>
-          <select name="status" value={editForm.status} onChange={handleInputChange}>
-            <option value="Active">Active</option>
-            <option value="Inactive">Inactive</option>
-          </select>
-          <div className="edit-actions">
-            <button onClick={handleSave} className="save-btn">Save</button>
-            <button onClick={handleCancel} className="cancel-btn">Cancel</button>
-          </div>
-        </div> */}
-      {/* )} */}
     </div>
   );
 };

@@ -11,7 +11,7 @@ import AdminProfile from "./Pages/AdminProfile/AdminProfile";
 import ShortlistProfile from "./Pages/Shortlist/ShortlistProfile";
 import ApprovedProfile from "./Pages/Shortlist/ApprovedProfile";
 import RejectProfile from "./Pages/Shortlist/RejectProfile";
-import ViewClient from "./Pages/Client/Viewclient/ViewClient";
+// import ViewClient from "./Pages/Client/Viewclient/ViewClient";
 import ClientReport from "./Pages/Client/ClientReport/ClientReport";
 import ClientResponse from "./Pages/Client/ClientResponse/ClientResponse";
 import UserListed from "./Pages/Shortlist/UserListed";
@@ -33,6 +33,9 @@ import PackageManager from "./Pages/Proposal/PackageManager";
 import AddPackage from "./Pages/Proposal/AddPackage";
 import AssignPackage from "./Pages/Proposal/AssignPackage";
 import AssignPackageDetails from "./Pages/Proposal/AssignPackageDetails";
+import Testing from "./Pages/Client/Viewclient/Testing";
+import EditClient from "./Pages/Client/Viewclient/EditClient";
+import ShareClient from "./Pages/Client/Viewclient/ShareClient";
 
 
 const App = () => {
@@ -53,7 +56,7 @@ const App = () => {
             <Route path="/admin-profile" element={<AdminProfile />} />
             <Route path="/notification" element={<Notification />} />
             {/* client section */}
-            <Route path="/view-client" element={<ViewClient />} />
+            {/* <Route path="/view-client" element={<ViewClient />} /> */}
             <Route path="/add-client" element={<AddClient />} />
             <Route path="/client-report" element={<ClientReport />} />
             <Route path="/client-response" element={<ClientResponse />} />
@@ -64,7 +67,7 @@ const App = () => {
             <Route path="/reject-profile" element={<RejectProfile />} />
             <Route path="/user-listed" element={<UserListed />} />
 
-            <Route path="/proposal" element={<Proposal />} />
+            {/* <Route path="/proposal" element={<Proposal />} /> */}
 
 
             <Route path="/pdf" element={<PDF />} />
@@ -82,6 +85,9 @@ const App = () => {
             <Route path="/addPackage" element={<AddPackage />} />
             <Route path="/assignPackage" element={<AssignPackage />} />
             <Route path="/assignPackageDetails" element={<AssignPackageDetails />} />
+            <Route path="/testing" element={<Testing />} />
+            <Route path="/EditClient" element={<EditClient />} />
+            <Route path="/ShareClient" element={<ShareClient />} />
             
 
           </Routes>

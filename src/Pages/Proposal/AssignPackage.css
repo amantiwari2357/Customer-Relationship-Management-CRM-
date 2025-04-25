@@ -12,12 +12,13 @@
   .assign-package-header {
     background-color: #cc2b85;
     padding: 20px;
-    color: #222;
+    color: white;
     font-size: 24px;
     font-weight: bold;
     font-family: "Poppins", sans-serif;
     font-weight: 24px;
     font-weight: 600;
+    text-align: center;
   }
   
   .assign-package-form {

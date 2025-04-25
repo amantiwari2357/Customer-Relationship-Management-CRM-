@@ -13,26 +13,39 @@
     background-color: #cc2b85;
     padding: 20px;
     border-radius: 6px 6px 0 0;
+    
   }
   
   .package-header h2 {
     margin: 0;
     font-size: 24px;
-    color: #2c3e50;
+    color: white;
+    margin-left: 30%;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    
   }
   
   .add-package-btn {
+    padding: 8px 16px;
     background-color: black;
     color: white;
-    padding: 10px 20px;
-    border: none;
+    text-decoration: none;
     border-radius: 4px;
-    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    border: none;
     cursor: pointer;
   }
   
   .add-package-btn:hover {
     background-color: black;
+  }
+  
+  /* If there's a border or line below the button, remove it */
+  .package-header .add-package-btn {
+    border-bottom: none;
   }
   
   .package-table {
@@ -90,42 +103,25 @@
     background-color: #cc2b85;
   }
   
-  .edit-form {
-  margin-top: 20px;
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 8px;
-}
-
-.edit-form input,
-.edit-form select {
-  display: block;
-  margin-bottom: 10px;
-  padding: 8px;
-  width: 100%;
-  max-width: 400px;
-}
-
-.edit-actions {
-  display: flex;
-  gap: 10px;
-}
-
-.save-btn,
-.cancel-btn {
-  padding: 8px 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.save-btn {
-  background-color: #cc2b85;
-  color: white;
-  border: none;
-}
-
-.cancel-btn {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-}
+  .edit-btn, .save-btn, .cancel-btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .edit-btn {
+    background-color: #facc15;
+  }
+  
+  .save-btn {
+    background-color: #22c55e;
+    color: white;
+  }
+  
+  .cancel-btn {
+    background-color: #ef4444;
+    color: white;
+  }
+  

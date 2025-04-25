@@ -32,7 +32,7 @@ const Sidebar = () => {
           </div>
           <ul className={`dropdown ${dropdown === "clients" ? "open" : ""}`}>
             <li>
-              <Link to="/view-client">
+              <Link to="/Testing">
                 <i className="bi bi-eye-fill"></i> View Clients
               </Link>
             </li>
@@ -133,7 +133,9 @@ const Sidebar = () => {
               <Link to="/activity-log">
 
                 <i className="bi bi-clock-history"></i> Manage Activity Log
+                
               </Link>
+              
             </li>
             <li>
 
@@ -152,6 +154,7 @@ const Sidebar = () => {
             </li>
           </ul>
         </li>
+        
 
         <li>
           <div onClick={() => toggleDropdown("Management")}>

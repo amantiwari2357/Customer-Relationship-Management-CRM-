@@ -1,0 +1,209 @@
+.share-profile-modal {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    max-height: 200vh;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .share-profile-modal .modal-header {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .share-profile-modal .modal-title {
+    color: #6c63ff;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
+  .share-profile-modal .btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #6c63ff;
+    cursor: pointer;
+  }
+  
+  .profile-checkbox {
+    transform: scale(1.2);
+    margin-right: 5px;
+  }
+  
+  .profile-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .profile-name {
+    font-weight: 500;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .profile-detail {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .action-button {
+    background: #6c63ff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .action-button:hover {
+    background: #5a52d6;
+  }
+  
+  /* Filter form styles */
+  .filter-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .filter-form-group {
+    margin-bottom: 0;
+  }
+  
+  .filter-form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+  }
+  
+  .filter-form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+  }
+  
+  .table-responsive {
+    margin-top: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .table th {
+    background-color: #f8f8f8;
+    color: #333;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .selected-counter {
+    background: #6c63ff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  
+  .bulk-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: center;
+  }
+  
+  .bulk-select {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+  }
+  
+  /* Buttons */
+  .all-buttons {
+    background-color: #cc2b85;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .all-buttons:hover {
+    background-color: #a3276d;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+  }
+  
+  /* Responsive table */
+  @media (max-width: 768px) {
+    .table-responsive {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  
+    .share-profile-modal {
+      padding: 20px;
+    }
+  
+    .filter-form {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+
+  /* Form layout for fields */
+#filter-options .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between form fields */
+  }
+  
+  #filter-options .col-md-3 {
+    flex: 1 1 calc(25% - 15px); /* 4 columns in a row, with gap adjustment */
+    max-width: calc(25% - 15px); /* Ensure that each column takes 25% of the row width */
+  }
+  
+  #filter-options .col-12 {
+    flex: 1 1 100%; /* Full width on smaller screens */
+  }
+  
+  @media (max-width: 768px) {
+    #filter-options .col-md-3 {
+      flex: 1 1 100%; /* Stack form fields on smaller screens */
+      max-width: 100%;
+    }
+  }
+  
