@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import './testing.css';
-
 const ClientReport = () => {
   const [filterData, setFilterData] = useState({
     clientName: '',
@@ -71,7 +70,7 @@ const ClientReport = () => {
 
         {showFilterForm && (
             
-          <form onSubmit={handleSearch} className="filter-form">
+<form onSubmit={handleSearch} className={`client-filter-form ${showFilterForm ? '' : 'hide'}`}>
             
             <div className="form-row">
               {/* Input fields */}

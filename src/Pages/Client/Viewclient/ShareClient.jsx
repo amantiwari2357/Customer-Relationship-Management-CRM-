@@ -247,14 +247,15 @@ const ShareClient = () => {
         </div>
 
         {isOpen && (
-          <div id="filter-options">
-            <form onSubmit={handleSubmit} className="container mt-4">
-              <div className="row">
-                {fields.map((field, index) => (
-                  <div className="col-md-3 col-12" key={index}>
-                    <label htmlFor={field.name} className="form-label">
-                      {field.label}
-                    </label>
+  <div id="filter-options">
+    <form onSubmit={handleSubmit} className="container mt-4">
+      <div className="row">
+        {fields.map((field, index) => (
+          <div className="col-md-3 col-12 mb-3" key={index}>
+            <label htmlFor={field.name} className="form-label">
+              {field.label}
+            </label>
+            
                     <select
                       id={field.name}
                       name={field.name}
@@ -269,6 +270,7 @@ const ShareClient = () => {
                         </option>
                       ))}
                     </select>
+                    
                   </div>
                 ))}
               </div>
