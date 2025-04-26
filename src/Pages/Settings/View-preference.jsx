@@ -63,7 +63,7 @@ const ViewReferences = () => {
           </select>
         </div>
 
-        <button className="search-btn">Search</button>
+        <button className="search-naman">Search</button>
       </div>
 
       <table className="reference-table">
@@ -96,41 +96,45 @@ const ViewReferences = () => {
                   </button>
                 </td>
               </tr>
-              {editRowId === ref.id && (
-                <tr className="edit-row">
-                  <td colSpan="7">
-                    <div className="edit-form">
-                      <input
-                        type="text"
-                        name="value"
-                        value={editData.value}
-                        onChange={handleEditChange}
-                        placeholder="Value"
-                      />
-                      <input
-                        type="text"
-                        name="description"
-                        value={editData.description}
-                        onChange={handleEditChange}
-                        placeholder="Description"
-                      />
-                      <input
-                        type="number"
-                        name="priority"
-                        value={editData.priority}
-                        onChange={handleEditChange}
-                        placeholder="Priority"
-                      />
-                      <select name="status" value={editData.status} onChange={handleEditChange}>
-                        <option>Active</option>
-                        <option>Inactive</option>
-                      </select>
-                      <button onClick={handleSave}>Save</button>
-                      <button onClick={() => setEditRowId(null)}>Cancel</button>
-                    </div>
-                  </td>
-                </tr>
-              )}
+
+
+               <tr className={`edit-row ${editRowId === ref.id ? "show" : ""}`}>
+                <td colSpan="7">
+                  <div className="edit-form-wrapper">
+                    {editRowId === ref.id && (
+                      <div className="edit-form">
+                        <input
+                          type="text"
+                          name="value"
+                          value={editData.value}
+                          onChange={handleEditChange}
+                          placeholder="Value"
+                        />
+                        <input
+                          type="text"
+                          name="description"
+                          value={editData.description}
+                          onChange={handleEditChange}
+                          placeholder="Description"
+                        />
+                        <input
+                          type="number"
+                          name="priority"
+                          value={editData.priority}
+                          onChange={handleEditChange}
+                          placeholder="Priority"
+                        />
+                        <select name="status" value={editData.status} onChange={handleEditChange}>
+                          <option>Active</option>
+                          <option>Inactive</option>
+                        </select>
+                        <button onClick={handleSave}>Save</button>
+                        <button onClick={() => setEditRowId(null)}>Cancel</button>
+                      </div>
+                    )}
+                  </div>
+                </td>
+              </tr>
             </React.Fragment>
           ))}
         </tbody>

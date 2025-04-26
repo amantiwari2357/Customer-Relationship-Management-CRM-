@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import bootstrap from "bootstrap"; // Import Bootstrap's JavaScript module
 import "./ViewClient.css"; // Make sure to keep your custom CSS file
 import client1 from "../../../Images/client1.png";
 import call from "../../../Images/call-icon.png";
@@ -7,12 +6,15 @@ import gmail from "../../../Images/Gmail-icon.png";
 import whatsapp from "../../../Images/WhatsApp-icon.png";
 import { Link, useNavigate } from "react-router-dom";
 import audio from "../../../Images/testing-audio.mp3";
-// Removed duplicate import of bootstrap
+// import { Modal } from 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const ViewClient = () => {
+
   const navigate = useNavigate();
   const [callDate, setCallDate] = useState("2023-11-11");
+  
   const [activityDate, setActivityDate] = useState("2023-11-11");
   const [note, setNote] = useState("");
   const [selectedProduct, setSelectedProduct] = useState("Proposals");
@@ -26,27 +28,7 @@ const ViewClient = () => {
   });
   const [submittedData, setSubmittedData] = useState([]);
 
-  const profiles = [
-    {
-      id: 1,
-      name: "Anil Sharma",
-      age: 27,
-      gender: "Male",
-      height: "5'7\"",
-      religion: "Hindu",
-      caste: "Baniya",
-      dob: "04/07/1996",
-      education: "MBA",
-      occupation: "Business",
-      income: "60,000",
-      budget: "25 Lacs",
-      manglik: "No",
-      status: "Ringing",
-      isPremium: true,
-      likes: 35,
-      clientImage: client1,
-    },
-  ];
+ 
 
   const [conversations, setConversations] = useState([
     {
@@ -66,23 +48,7 @@ const ViewClient = () => {
       participant: "P",
       audio: audio,
     },
-    {
-      type: "Outgoing",
-      icon: "bi-telephone-outbound",
-      label: "Outgoing Call",
-      time: "7:30 PM",
-      date: "11/12/2024",
-      participant: "P",
-    },
-    {
-      type: "Incoming",
-      icon: "bi-telephone-inbound",
-      label: "Incoming Call",
-      time: "8:00 PM",
-      date: "11/12/2024",
-      participant: "N",
-      audio: audio,
-    },
+   
   ]);
 
   const [tasks, setTasks] = useState([
@@ -95,15 +61,7 @@ const ViewClient = () => {
       date: "08/10/1996",
       isCompleted: false,
     },
-    {
-      id: 2,
-      title: "Meeting with name123 family",
-      priority: "High",
-      priorityColor: "red",
-      backgroundColor: "#C92A2A29",
-      date: "Today",
-      isCompleted: false,
-    },
+  
   ]);
 
   // Audio player state and handlers
@@ -191,57 +149,55 @@ const ViewClient = () => {
     setFormData({ date: "", time: "", note: "" });
   };
 
-//   const myModalEl = document.getElementById('exampleModal');
-// const myModal = new bootstrap.Modal(myModalEl, {
-//   backdrop: 'static' // or true/false
-// });
-// myModal.show();  
-
 
   return (
-    <div className="">
-      <div className="">
-        
+    <div className="aman">
+      <div className="relative bg-white rounded-lg shadow-lg w-full max-w-2xl mx-4 tiwari">
        
         </div>
         <div>
-          <div className="modal-dialog update-profile-modal-dialog">
-            <div className="modal-content">
-              <div className="d-flex justify-content-end px-2 py-2">
-                <button
-                  type="button"
-                  className="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div className="modal-header">
-                <div className="update-profile-header">
-                  <div className="row align-items-center">
-                    <div className="col-md-2">
-                      <div className="update-profile-client-image">
-                        <img src={client1} className="w-100" alt="" />
-                      </div>
-                    </div>
-                    <div className="col-md-7">
-                      <div className="updat-profile-user-detail">
-                        <div className="d-flex gap-3 align-items-center">
-                          <p className="m-0">
-                            <b>Gourav Panchal 0001</b>
-                          </p>
-                          <div className="update-profile-social-icons">
-                            <img src={call} alt="call-icon" />
-                            <img src={gmail} alt="gmail-icon" />
-                            <img src={whatsapp} alt="whatsapp-icon" />
-                          </div>
-                        </div>
-                        <p className="m-0">test@gmail.com</p>
-                        <p>+91 9319846114</p>
-                      </div>
-                    </div>
-                  </div>
+          {/* /////// */}
+
+          {/* ///////////////// */}
+        <div className="flex justify-end p-2">
+  <div className="button">
+    <div className="xt-gray-500 hover:text-gray-700 text-2xl font-bold">
+      <button
+        type="button"
+        className="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div className="modal-header">
+      <div className="update-profile-header">
+        <div className="row align-items-center">
+          <div className="col-md-2">
+            <div className="update-profile-client-image">
+              <img src={client1} className="img-fluid" alt="client" />
+            </div>
+          </div>
+          <div className="col-md-7">
+            <div className="updat-profile-user-detail">
+              <div className="d-flex gap-3 align-items-center">
+                <p className="m-0 fw-bold">Aman Tiwari 0001</p>
+                <div className="update-profile-social-icons d-flex gap-2">
+                  <img src={call} alt="call-icon" />
+                  <img src={gmail} alt="gmail-icon" />
+                  <img src={whatsapp} alt="whatsapp-icon" />
                 </div>
               </div>
+              <p className="m-0">amankumartiwari5255gmail.com</p>
+              <p>+91 9319846114</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{/* ///////////////// */}
+
+
+              {/* ///////////////// */}
               <div className="modal-body">
                 <section className="update-profile">
                   <div className="update-profile-personal-information">
@@ -249,16 +205,16 @@ const ViewClient = () => {
                       <h6>Personal Information</h6>
                       <ul>
                         <li>
-                          <b>Religion : </b>Sikh
+                          <b>Religion : </b>Hindu
                         </li>
                         <li>
-                          <b>Caste : </b>Sikh
+                          <b>Caste : </b>Pandit
                         </li>
                         <li>
                           <b>Time of Birth : </b>1343
                         </li>
                         <li>
-                          <b>Height : </b>5'7
+                          <b>Height : </b>5'10
                         </li>
                       </ul>
                     </div>
@@ -582,9 +538,6 @@ const ViewClient = () => {
                                     </label>
                                     <select className="form-control">
                                       <option value="Task 1">Task 1</option>
-                                      <option value="Task 2">Task 2</option>
-                                      <option value="Task 3">Task 3</option>
-                                      <option value="Task 4">Task 4</option>
                                     </select>
                                   </div>
                                   <div className="col-md-6 mb-2">
@@ -593,9 +546,6 @@ const ViewClient = () => {
                                     </label>
                                     <select className="form-control">
                                       <option value="Task 1">Task 1</option>
-                                      <option value="Task 2">Task 2</option>
-                                      <option value="Task 3">Task 3</option>
-                                      <option value="Task 4">Task 4</option>
                                     </select>
                                   </div>
                                   <div className="col-md-12 text-center">
@@ -695,9 +645,7 @@ const ViewClient = () => {
                             <h3 className="mt-3">Product details</h3>
                             <p style={{ fontSize: "14px" }}>
                               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                              nisi ut aliquip ex ea commodo consequat.
+                              eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                             <p>Duration: 6 months</p>
                             <p className="fs-2">₹ 40,000</p>
@@ -799,45 +747,7 @@ const ViewClient = () => {
             </div>
           </div>
         </div>
-
-        {/* Share Profile Modal */}
-        <div
-          className="modal fade"
-          id="shareProfile"
-          tabIndex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div className="modal-dialog update-profile-modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h1 className="modal-title fs-5" id="exampleModalLabel">
-                  Share Profile
-                </h1>
-                <button
-                  type="button"
-                  className="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div className="modal-body">
-                <p>Share profile functionality would go here</p>
-              </div>
-              <div className="modal-footer">
-                <button
-                  type="button"
-                  className="all-buttons"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    // </div>
   );
 };
 

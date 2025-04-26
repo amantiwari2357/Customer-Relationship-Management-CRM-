@@ -1,0 +1,25 @@
+.approved-profiles-section {
+    background-color: #f8f9fa;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #343a40;
+  }
+  
+  .table th, .table td {
+    vertical-align: middle;
+  }
+  
+  .action-icon {
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .action-icon:hover {
+    transform: scale(1.1);
+    color: #0d6efd;
+  }
+  

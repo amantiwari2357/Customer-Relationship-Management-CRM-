@@ -17,40 +17,62 @@
   
   .filters {
     display: flex;
-    gap: 16px;
-    align-items: flex-end;
-    margin-bottom: 24px;
+    gap: 20px;
     flex-wrap: wrap;
+    margin-bottom: 20px;
+    align-items: flex-end;
   }
   
   .filter-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    min-width: 180px;
   }
   
   .filter-group label {
     font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
   }
   
   .filter-group select {
-    padding: 8px 12px;
+    padding: 8px 10px;
     font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s;
   }
   
-  .search-btn {
-    padding: 10px 20px;
-    background-color: #cc2b85;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 5px 15px;
+  .filter-group select:focus {
+    border-color: #3b5bdb; 
   }
+  
+  
+  .search-naman {
+    background-color: rgb(204, 43, 133);
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .search-naman:hover {
+    background-color: #2f4ab8;
+    transform: translateY(-1px);
+  }
+  
+  .search-naman:active {
+    transform: translateY(1px);
+    background-color: #263a91;
+  }
+  
   
   .reference-table {
     width: 100%;
@@ -147,3 +169,138 @@
     background-color: #dc3545;
     color: white;
   }
+
+  /* ///////////////// */
+  .view-references {
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .view-references h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+  }
+  
+  .filters {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    margin-bottom: 25px;
+  }
+  
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .filter-group label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .filter-group select {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .search-aman {
+    background-color: #3b5bdb;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-aman:hover {
+    background-color: #2f4ab8;
+  }
+  
+  .reference-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .reference-table th,
+  .reference-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .reference-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+  }
+  
+  .status-badge.active {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 5px 10px;
+    border-radius: 12px;
+  }
+  
+  .status-badge.inactive {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 5px 10px;
+    border-radius: 12px;
+  }
+  
+  .edit-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .edit-row .edit-form-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 10px;
+  }
+  
+  .edit-row.show .edit-form-wrapper {
+    max-height: 300px;
+    padding: 10px;
+  }
+  
+  .edit-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .edit-form input,
+  .edit-form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    flex: 1 1 150px;
+  }
+  
+  .edit-form button {
+    background-color: #3b5bdb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .edit-form button:hover {
+    background-color: #2f4ab8;
+  }
+  

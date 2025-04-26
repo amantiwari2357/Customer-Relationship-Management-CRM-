@@ -14,11 +14,54 @@
   z-index: 1000;
 }
 
+/* Align Search to the Left */
+.topbar-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1; /* Make search take available space */
+  justify-content: flex-start; /* Align to the left */
+  
+}
+
+/* Styling for Search Input */
 .topbar-search input {
-  width: 100%;
+  width: 300px; /* Adjust the width as per your preference */
+  padding: 5px 10px;
   border: none;
   border-radius: 10px;
-  padding: 8px 10px;
+  outline: none;
+margin-left: 260%;
+}
+
+/* 
+ */
+
+ /* Hamburger Icon Styling */
+.hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 40px;
+  color: var(--pink); /* Set the color for the hamburger icon */
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Media Query for Responsive View */
+@media (max-width: 768px) {
+  .topbar {
+    padding-left: 10px; /* Reduces padding for smaller screens */
+    padding-right: 10px;
+  }
+
+  .hamburger {
+    display: block; /* Ensures hamburger icon is visible */
+    position: absolute;
+    top: 15px; /* Adjust top distance for mobile */
+    left: 15px; /* Adjust left distance for mobile */
+  }
 }
 
 .topbarIcon1{
@@ -35,3 +78,5 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
+/* //////////////////aman//////////////// */

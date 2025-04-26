@@ -9,33 +9,35 @@ const ClientResponse = () => {
 
       {/* Response Form */}
       <div className="client-response-form">
-        <div className="form-group">
-          <label className="form-label">Response:</label>
-          <select className="form-select">
-            <option value="">Select Response</option>
-            <option value="accept">Accept</option>
-            <option value="reject">Reject</option>
-          </select>
+        <div className="form-row">
+          <div className="form-item">
+            <label className="form-label">Response:</label>
+            <select className="form-select">
+              <option value="">Select Response</option>
+              <option value="accept">Accept</option>
+              <option value="reject">Reject</option>
+            </select>
+          </div>
+
+          <div className="form-item">
+            <label className="form-label">Client remark:</label>
+            <select className="form-select">
+              <option value="">Select Remark</option>
+              <option value="others">Others</option>
+              <option value="not-suitable">Not Suitable</option>
+            </select>
+          </div>
+
+          <div className="form-item">
+            <label className="form-label">Proposal Details</label>
+            <textarea
+              className="form-textarea"
+              placeholder="Price"
+            ></textarea>
+          </div>
         </div>
 
-        <div className="form-group">
-          <label className="form-label">Client remark:</label>
-          <select className="form-select">
-            <option value="">Select Remark</option>
-            <option value="others">Others</option>
-            <option value="not-suitable">Not Suitable</option>
-          </select>
-        </div>
-
-        <div className="form-group">
-          <label className="form-label">Proposal Details</label>
-          <textarea
-            className="form-textarea"
-            placeholder="Price"
-          ></textarea>
-        </div>
-
-        <button className="all-buttons">
+        <button className="client-response-submit-btn">
           Submit response
         </button>
       </div>
