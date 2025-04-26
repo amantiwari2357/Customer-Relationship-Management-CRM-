@@ -33,52 +33,33 @@ const ActivityLog = () => {
       recordId: '67890',
       dateTime: '2025-02-01 01:45 PM',
     },
-    {
-      id: 3,
-      userName: 'Admin',
-      module: 'Delete',
-      clientName: 'Pooja Rani',
-      modifications: 'Deleted Profile',
-      recordId: '67890',
-      dateTime: '2025-02-01 01:45 PM',
-    },
-    {
-      id: 3,
-      userName: 'Admin',
-      module: 'Delete',
-      clientName: 'Pooja Rani',
-      modifications: 'Deleted Profile',
-      recordId: '67890',
-      dateTime: '2025-02-01 01:45 PM',
-    },
   ];
 
   return (
-    <div className="activity-log">
-      <h2>Activity Log</h2>
-      <div className="filters">
-        <div>
-          <label>Select User Type</label>
+    <div className="activity-log-container">
+      <h2 className="activity-log-title">Activity Log</h2>
+      <div className="activity-log-filters">
+        <div className="activity-log-filter-group">
+          <label>User Type</label>
           <select value={userType} onChange={(e) => setUserType(e.target.value)}>
             <option>All Users</option>
             <option>Staff</option>
             <option>Client</option>
           </select>
         </div>
-        <div>
-          <label>Select Module</label>
+        <div className="activity-log-filter-group">
+          <label>Module</label>
           <select value={module} onChange={(e) => setModule(e.target.value)}>
             <option>All Modules</option>
             <option>Login</option>
             <option>Update</option>
             <option>Delete</option>
-           
           </select>
         </div>
-        <button className="search-btn">SEARCH</button>
+        <button className="activity-log-search-btn">SEARCH</button>
       </div>
 
-      <table className="activity-table">
+      <table className="activity-log-table">
         <thead>
           <tr>
             <th>S.NO</th>
@@ -93,7 +74,7 @@ const ActivityLog = () => {
         </thead>
         <tbody>
           {activityData.map((item, index) => (
-            <tr key={item.id}>
+            <tr key={item.id + '-' + index}>
               <td>{index + 1}</td>
               <td>{item.userName}</td>
               <td>{item.module}</td>
@@ -102,7 +83,9 @@ const ActivityLog = () => {
               <td>{item.recordId}</td>
               <td>{item.dateTime}</td>
               <td>
-                <span className="eye-icon">👁️</span>
+                <span className="activity-log-eye-icon">
+                  <i className="bi bi-eye-fill"></i>
+                </span>
               </td>
             </tr>
           ))}

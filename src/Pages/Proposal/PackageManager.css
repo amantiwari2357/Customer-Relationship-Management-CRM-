@@ -105,23 +105,50 @@
   
   .edit-btn, .save-btn, .cancel-btn {
     padding: 5px 10px;
-    margin-right: 5px;
+    margin-right: 19px;
     border-radius: 4px;
     border: none;
     cursor: pointer;
   }
-  
-  .edit-btn {
-    background-color: #facc15;
-  }
-  
-  .save-btn {
-    background-color: #22c55e;
-    color: white;
-  }
-  
+
   .cancel-btn {
     background-color: #ef4444;
     color: white;
+    height: 45px;
+    margin-top: 10px;
+  }
+  
+  .table-input, .table-select {
+    width: 100%;
+    padding: 4px 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .save-btn, .cancel-btn, .edit-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .save-btn {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  
+  .edit-btn {
+    background-color: #2196F3;
+    color: white;
+    
   }
   

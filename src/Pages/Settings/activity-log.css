@@ -1,73 +1,115 @@
-.activity-log {
-    padding: 20px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 24px;
-    font-weight: 600;
-  }
-  
-  .activity-log h2 {
-    margin-bottom: 20px;
-    color: #2c3e50;
-    text-align: center;
-   font-family: "Poppins", sans-serif;
-   font-weight: 24px;
-   font-weight: 600;
-    
-  }
-  
-  .filters {
-    display: flex;
-    gap: 20px;
-    align-items: flex-end;
-    margin-bottom: 25px;
-  }
-  
-  .filters div {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .filters label {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .filters select {
-    padding: 8px;
-    font-size: 14px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  
-  .search-btn {
-    background-color: #3b5bdb;
-    color: white;
-    padding: 6px 10px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .activity-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .activity-table th {
-    background-color: #ffe4ec;
-    color: #333;
-    text-align: left;
-    padding: 10px;
-  }
-  
-  .activity-table td {
-    border: 2px solid #eee;
-    padding: 10px;
-  }
-  
-  .eye-icon {
-    cursor: pointer;
-    font-size: 20px;
-  }
-  
+.activity-log-container {
+  padding: 20px 30px;
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.activity-log-title {
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.activity-log-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+.activity-log-filter label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 8px;
+}
+
+
+.activity-log-filter-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 160px;
+}
+
+.activity-log-filter-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 8px;
+}
+
+.activity-log-filter-group select {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.activity-log-filter-group select:focus {
+  outline: none;
+  border-color: #3b5bdb;
+}
+
+.activity-log-search-btn {
+  background-color: #cc2b85;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.activity-log-search-btn:hover {
+  background-color: #2f4ab8;
+  transform: translateY(-1px);
+}
+
+.activity-log-search-btn:active {
+  transform: translateY(1px);
+  background-color: #263a91;
+}
+
+.activity-log-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.activity-log-table th {
+  background-color: #ffe4ec;
+  color: #333;
+  text-align: left;
+  padding: 12px 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.activity-log-table td {
+  border: 2px solid #f2f2f2;
+  padding: 12px 10px;
+  font-size: 14px;
+}
+
+.activity-log-eye-icon {
+  cursor: pointer;
+  font-size: 18px;
+  color: #3b5bdb;
+  transition: color 0.2s ease;
+}
+
+.activity-log-eye-icon:hover {
+  color: #1c319f;
+}

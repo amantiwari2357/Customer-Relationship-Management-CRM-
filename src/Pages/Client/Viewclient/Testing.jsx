@@ -169,7 +169,7 @@ const ClientReport = () => {
             <tbody>
               <tr>
                 <td><input type="checkbox" className="row-checkbox" /></td>
-                <td><img src="/placeholder.svg" alt="Profile" className="profile-img" /></td>
+                <td><img src="/images/user.jpg" alt="Profile" className="profile-img" /></td>
                 <td>
                   <div className="bold">Rohan Sharma</div>
                   <div className="gender male">Male</div>
@@ -200,7 +200,7 @@ const ClientReport = () => {
   <Link to={`/ShareClient`}>    
     <i className="fas fa-share-from-square" title="Share"></i>
     </Link>
-    <Link to={`/EditClient`}>
+    <Link to={`/EditClient`} target="_blank">
       <i className="fas fa-pen-to-square" title="Edit"></i>
     </Link>
   </div>
