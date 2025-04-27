@@ -1,35 +1,44 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import './topbar.css';
+  import React, { useState } from "react";
+  import { useNavigate } from "react-router-dom";
+  import './topbar.css';
 
-const Topbar = ({ toggleSidebar }) => {
-  const navigate = useNavigate();
+  const Topbar = ({ toggleSidebar }) => {
+    const navigate = useNavigate();
+    const [isSidebarOpen] = useState(false);
 
-  return (
-    <div className="topbar">
+    // const handleHamburgerClick = () => {
+    //   toggleSidebar();           // Call parent's sidebar toggle
+    //   setIsSidebarOpen(prev => !prev);  // Update local hamburger state
+    // };
+
+
+    return (
+      
+      <div className="topbar">
+        {/* <Topbar toggleSidebar={toggleSidebar} />   ✅ correctly passing */}
       <div className="d-flex gap-3 align-items-center">
         {/* Hamburger Menu */}
-        <div className="hamburger" onClick={toggleSidebar}>
+        <div className={`hamburger ${isSidebarOpen ? 'active' : ''}`} >
           <i className="bi bi-list"></i>
         </div>
 
-        {/* Search */}
-        <div className="topbar-search">
-          <input type="search" placeholder="Search..." name="search" />
+          {/* Search */}
+          <div className="topbar-search">
+            <input type="search" placeholder="Search..." name="search" />
+          </div>
+        </div>
+
+        {/* Icons */}
+        <div className="d-flex gap-2">
+          <div className="topbarIcon1">
+            <i onClick={() => navigate("/notification")} className="bi bi-bell"></i>
+          </div>
+          <div className="topbarIcon2">
+            <i onClick={() => navigate("/admin-profile")} className="bi bi-person-circle"></i>
+          </div>
         </div>
       </div>
+    );
+  };
 
-      {/* Icons */}
-      <div className="d-flex gap-2">
-        <div className="topbarIcon1">
-          <i onClick={() => navigate("/notification")} className="bi bi-bell"></i>
-        </div>
-        <div className="topbarIcon2">
-          <i onClick={() => navigate("/admin-profile")} className="bi bi-person-circle"></i>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Topbar;
+  export default Topbar;

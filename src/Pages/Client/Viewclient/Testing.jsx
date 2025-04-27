@@ -179,11 +179,15 @@ const ClientReport = () => {
              <div className="bold">DUL12345</div> {/* ✅ Client ID */}
              <div className="green">Premium</div>   {/* ✅ Membership Status */}
               </td>
+              {/* ////////////////////aman///////// */}
                 <td>
                   <div>Single</div>
-                  <div className="green">10sent</div>
-                </td>
+                  <a href="/Modal" className="green">
+                  10sent
+                  </a>
+                   </td>
                 <td>
+                  {/* ////////////////////aman.////////////// */}
                   <div>Geeta</div>
                   <div className="gray">Interested family</div>
                 </td>
