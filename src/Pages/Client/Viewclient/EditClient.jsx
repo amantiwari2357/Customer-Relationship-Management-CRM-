@@ -162,12 +162,12 @@ const ViewClient = () => {
         <div className="flex justify-end p-2">
   <div className="button">
     <div className="xt-gray-500 hover:text-gray-700 text-2xl font-bold">
-      <button
+      {/* <button
         type="button"
         className="btn-close"
         data-bs-dismiss="modal"
         aria-label="Close"
-      ></button>
+      ></button> */}
     </div>
     <div className="modal-header">
       <div className="update-profile-header">
@@ -736,13 +736,13 @@ const ViewClient = () => {
                 </section>
               </div>
               <div className="modal-footer">
-                <button
-                  type="button"
-                  className="all-buttons"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
+                {/* <button */}
+                  {/* type="button" */}
+                  {/* className="all-buttons" */}
+                  {/* data-bs-dismiss="modal" */}
+                {/* > */}
+                  {/* Close */}
+                {/* </button> */}
               </div>
             </div>
           </div>

@@ -1,47 +1,21 @@
-/* Variables (Optional but good practice for theming) */
-:root {
-  --light-pink: #f8f9fa; /* Define your light pink color here if needed */
-  --pink: #dc3545; /* Define your pink color here if needed */
-  --dark-background: #2c3e50;
-  --darker-background: #34495e;
-}
-
-/* Basic Sidebar Styles */
+/* Sidebar Styling */
 .sidebar {
-  width: 250px;
-  background-color: var(--light-pink); /* Using the variable for consistency */
+  width: 230px;
+  background-color: var(--light-pink);
   height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
-  padding: 12px 0; /* Adjusted padding for a cleaner look */
+  padding: 12px 12px 12px 0px;
   z-index: 9999;
-  transition: transform 0.3s ease; /* Smooth transition for collapsing */
 }
 
-.sidebar.collapsed {
-  transform: translateX(-100%);
-}
-
-/* Logo */
-.logo-container {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.logo {
-  height: auto;
-  width: 140px;
-}
-
-/* Sidebar Links */
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-.sidebar ul li {
+.sidebar ul li{
   background-color: white;
   margin-bottom: 0.5rem;
   padding: 0px 5px;
@@ -50,10 +24,9 @@
 
 .sidebar h5 {
   margin: 10px 0;
-  padding: 0 15px;
 }
 
-.sidebar h5 a {
+.sidebar a {
   text-decoration: none;
   color: var(--pink);
   font-size: 16px;
@@ -61,67 +34,35 @@
   padding: 8px 8px;
 }
 
-.sidebar ul li a {
-  text-decoration: none;
-  color: var(--pink);
-  font-size: 16px;
-  display: block;
-  padding: 10px 15px; /* Added padding for better click area */
-}
-
-.sidebar ul li a:hover {
-  background-color: #f0f0f0; /* Light hover effect */
-}
-
-.sidebar ul li i {
-  margin-right: 10px;
-}
-
-/* Dropdown Styles */
 .sidebar .dropdown {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background-color: #f0f0f0; /* Lighter background for dropdown */
+  padding-left: 20px;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 
-.sidebar .dropdown.open {
-  max-height: 500px; /* Adjust as needed */
-  opacity: 1;
-}
-
-.sidebar .dropdown li a {
-  padding: 8px 30px; /* Indent dropdown items */
+.sidebar .dropdown li {
+  padding: 5px 0;
   font-size: 14px;
-  color: var(--pink);
-}
-
-.sidebar .dropdown li a:hover {
-  background-color: #e9e9e9;
-}
-
-
-/* //////////////////aman/////////////// */
-
-
-
-.hamburger {
-  font-size: 24px;
   cursor: pointer;
 }
 
-.sidebar.collapsed {
-  width: 70px;
-}
-.sidebar .dropdown {
-  display: none;
-  padding-left: 20px;
-  margin-top: 10px;
-}
-.sidebar .dropdown.open {
+.sidebar .dropdown a {
   display: block;
+  padding: 0px 0;
+  font-size: 14px;
+}
+
+.sidebar .dropdown.open {
+  max-height: 500px; 
+  opacity: 1;
+}
+
+.sidebar img{
+  margin-bottom: 1rem;
+}
+.logo{
+  height: 100%;
+  width: 140px;
 }
