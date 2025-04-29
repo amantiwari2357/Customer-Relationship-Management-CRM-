@@ -1,0 +1,67 @@
+/* src/AssignPackage.css */
+
+.assign-package-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    font-weight: 24px;
+    font-weight: 600;
+  }
+  
+  .assign-package-header {
+    background-color: #cc2b85;
+    padding: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    font-weight: 24px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .assign-package-form {
+    background: #fff;
+    padding: 30px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .assign-package-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .form-row input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  .search-btn {
+    padding: 10px 20px;
+    background-color: #cc2b85;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .search-btn:hover {
+    background-color: #324fc7;
+  }
+  

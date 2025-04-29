@@ -1,0 +1,154 @@
+.package-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: "Poppins", sans-serif;
+    font-weight: 24px;
+    font-weight: 600;
+  }
+  
+  .package-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cc2b85;
+    padding: 20px;
+    border-radius: 6px 6px 0 0;
+    
+  }
+  
+  .package-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+    margin-left: 30%;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    
+  }
+  
+  .add-package-btn {
+    padding: 8px 16px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .add-package-btn:hover {
+    background-color: black;
+  }
+  
+  /* If there's a border or line below the button, remove it */
+  .package-header .add-package-btn {
+    border-bottom: none;
+  }
+  
+  .package-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+  }
+  
+  .package-table th,
+  .package-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+  }
+  
+  .package-table th {
+    background-color: #f2f3f5;
+    font-weight: 600;
+  }
+  
+  .special-badge.no {
+    background-color: #6c757d;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .status-badge.active {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .edit-btn {
+    background-color: #f39c12;
+    color: white;
+    padding: 6px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .edit-btn i {
+    font-size: 14px;
+  }
+ 
+  
+  .add-package-btn:hover {
+    background-color: #cc2b85;
+  }
+  
+  .edit-btn, .save-btn, .cancel-btn {
+    padding: 5px 10px;
+    margin-right: 19px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .cancel-btn {
+    background-color: #ef4444;
+    color: white;
+    height: 45px;
+    margin-top: 10px;
+  }
+  
+  .table-input, .table-select {
+    width: 100%;
+    padding: 4px 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .save-btn, .cancel-btn, .edit-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .save-btn {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  
+  .edit-btn {
+    background-color: #2196F3;
+    color: white;
+    
+  }
+  

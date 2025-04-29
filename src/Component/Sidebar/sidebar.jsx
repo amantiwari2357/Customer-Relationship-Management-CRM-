@@ -32,7 +32,7 @@ const Sidebar = () => {
           </div>
           <ul className={`dropdown ${dropdown === "clients" ? "open" : ""}`}>
             <li>
-              <Link to="/view-client">
+              <Link to="/Testing">
                 <i className="bi bi-eye-fill"></i> View Clients
               </Link>
             </li>
@@ -46,11 +46,11 @@ const Sidebar = () => {
                 <i className="bi bi-bar-chart-fill"></i> Client Report
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/client-response">
                 <i className="bi bi-chat-dots-fill"></i> Client Response
               </Link>
-            </li>
+            </li> */}
           </ul>
         </li>
 
@@ -107,7 +107,9 @@ const Sidebar = () => {
           </div>
           <ul className={`dropdown ${dropdown === "Tasks" ? "open" : ""}`}>
             <li>
+
               <Link to="/viewTask">
+
                 <i className="bi bi-card-checklist"></i> View Tasks
               </Link>
             </li>
@@ -127,22 +129,32 @@ const Sidebar = () => {
           </div>
           <ul className={`dropdown ${dropdown === "Settings" ? "open" : ""}`}>
             <li>
-              <Link to="/shortlisted-profile">
+
+              <Link to="/activity-log">
+
                 <i className="bi bi-clock-history"></i> Manage Activity Log
+                
               </Link>
+              
             </li>
             <li>
-              <Link to="/approved-profile">
+
+
+              <Link to="/Add-Reference">
+
                 <i className="bi bi-person-plus-fill"></i> Add Reference
               </Link>
             </li>
             <li>
-              <Link to="/approved-profile">
+
+              <Link to="/View-preference">
+
                 <i className="bi bi-person-lines-fill"></i> View Reference
               </Link>
             </li>
           </ul>
         </li>
+        
 
         <li>
           <div onClick={() => toggleDropdown("Management")}>
@@ -172,13 +184,17 @@ const Sidebar = () => {
           </div>
           <ul className={`dropdown ${dropdown === "Proposal" ? "open" : ""}`}>
             <li>
-              <Link to="/shortlisted-profile">
+
+              <Link to="/AssignPackage">
+
                 <i className="bi bi-arrow-right-circle-fill"></i> Assign
                 Proposal
               </Link>
             </li>
             <li>
-              <Link to="/approved-profile">
+
+              <Link to="/package-manager">
+
                 <i className="bi bi-archive-fill"></i> Proposal Manager
               </Link>
             </li>

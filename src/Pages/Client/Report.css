@@ -1,0 +1,178 @@
+
+.client-report-container {
+    padding: 20px;
+    background: linear-gradient(135deg, #ffe6e6 0%, #ffcccc 100%);
+    min-height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .logo {
+    height: 60px;
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+  }
+  
+  .notification-badge {
+    background-color: #ff4444;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 12px;
+  }
+  
+  .profile-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #4747ff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .main-content {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter-form {
+    margin-bottom: 30px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    flex: 1;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .search-button,
+  .reset-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .search-button {
+    background: linear-gradient(45deg, #4747ff, #6b6bff);
+  }
+  
+  .reset-button {
+    background: linear-gradient(45deg, #666666, #888888);
+  }
+  
+  .report-table {
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+  
+  .profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .name-gender {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .gender-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: white;
+  }
+  
+  .gender-tag.male {
+    background-color: #4747ff;
+  }
+  
+  .gender-tag.female {
+    background-color: #ff4747;
+  }
+  
+  .premium-tag {
+    background-color: #ffd700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  
+  .nri-tag {
+    background-color: #47ff47;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  
+  .action-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .action-icons span {
+    cursor: pointer;
+  }
+  
+  .status {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
