@@ -25,6 +25,9 @@ import AddLeads from "./Pages/Leads/AddLeads";
 import AllLeads from "./Pages/Leads/AllLeads";
 import AddTask from "./Pages/Task/AddTask";
 import ViewTask from "./Pages/Task/ViewTask";
+import StaffReport from "./Pages/UserManagement/StaffReport";
+import UserManager from "./Pages/UserManagement/UserManager";
+import EditUser from "./Pages/UserManagement/EditUser";
 
 const App = () => {
   const location = useLocation();
@@ -63,6 +66,9 @@ const App = () => {
             <Route path="/allLeads" element={<AllLeads />} />
             <Route path="/addTask" element={<AddTask />} />
             <Route path="/viewTask" element={<ViewTask />} />
+            <Route path="/staffReport" element={<StaffReport />} />
+            <Route path="/userManager" element={<UserManager />} />
+            <Route path="/editUser" element={<EditUser />} />
           </Routes>
         </div>
       </div>
