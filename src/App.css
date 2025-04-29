@@ -56,7 +56,6 @@ body {
 .form-select:focus {
   box-shadow: none;
   border: 1px solid var(--pink);
-
 }
 
 .form-control,

@@ -13,9 +13,9 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div>
-        <a href="/" className="text-center">
+        <Link to="/" className="text-center">
           <img src={logo} className="logo" alt="dashboard logo" />
-        </a>
+        </Link>
       </div>
       <h5>
         <Link to="/login">
@@ -164,12 +164,12 @@ const Sidebar = () => {
           </div>
           <ul className={`dropdown ${dropdown === "Management" ? "open" : ""}`}>
             <li>
-              <Link to="/shortlisted-profile">
+              <Link to="/staffReport">
                 <i className="bi bi-clipboard-data-fill"></i> Staff Report
               </Link>
             </li>
             <li>
-              <Link to="/approved-profile">
+              <Link to="/userManager">
                 <i className="bi bi-person-badge-fill"></i> User Manager
               </Link>
             </li>

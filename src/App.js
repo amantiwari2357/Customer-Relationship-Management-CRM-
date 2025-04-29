@@ -1,3 +1,35 @@
+
+import React from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import Sidebar from "./Component/Sidebar/sidebar";
+import Topbar from "./Component/Topbar/topbar";
+import Dashboard from "./Pages/Dashboard/dashboard";
+import Login from "./Pages/Login/login";
+import "./App.css";
+// import ViewClient from "./Pages/Viewclient/ViewClient";
+import AddClient from "./Pages/Client/AddClient/AddClient";
+import AdminProfile from "./Pages/AdminProfile/AdminProfile";
+import ShortlistProfile from "./Pages/Shortlist/ShortlistProfile";
+import ApprovedProfile from "./Pages/Shortlist/ApprovedProfile";
+import RejectProfile from "./Pages/Shortlist/RejectProfile";
+import ViewClient from "./Pages/Client/Viewclient/ViewClient";
+import ClientReport from "./Pages/Client/ClientReport/ClientReport";
+import ClientResponse from "./Pages/Client/ClientResponse/ClientResponse";
+import UserListed from "./Pages/Shortlist/UserListed";
+import { BrowserRouter } from "react-router-dom"; // Import BrowserRouter
+import Notification from "./Pages/Notification/Notification";
+import PDF from "./Pages/ClientPDF/PDF";
+import Proposal from "./Pages/Proposal/Proposal";
+import ElitePdf from "./Pages/ClientPDF/ElitePdf";
+import PersonalizePdf from "./Pages/ClientPDF/PersonalizePdf";
+import AddLeads from "./Pages/Leads/AddLeads";
+import AllLeads from "./Pages/Leads/AllLeads";
+import AddTask from "./Pages/Task/AddTask";
+import ViewTask from "./Pages/Task/ViewTask";
+import StaffReport from "./Pages/UserManagement/StaffReport";
+import UserManager from "./Pages/UserManagement/UserManager";
+import EditUser from "./Pages/UserManagement/EditUser";
+
   import React, { useState } from "react";
   import { Routes, Route, useLocation } from "react-router-dom";
   import Sidebar from "./Component/Sidebar/sidebar";
@@ -25,6 +57,7 @@
   import AllLeads from "./Pages/Leads/AllLeads";
   import AddTask from "./Pages/Task/AddTask";
   import ViewTask from "./Pages/Task/ViewTask";
+
 
   import ActivityLog from "./Pages/Settings/activity-log";
   import AddReference from "./Pages/Settings/Add-Reference";
@@ -90,6 +123,12 @@
               <Route path="/addTask" element={<AddTask />} />
     
             <Route path="/viewTask" element={<ViewTask />} />
+
+            <Route path="/staffReport" element={<StaffReport />} />
+            <Route path="/userManager" element={<UserManager />} />
+            <Route path="/editUser" element={<EditUser />} />
+          </Routes>
+
             <Route path="/activity-log" element={<ActivityLog />} />
               <Route path="/add-Reference" element={<AddReference />} />
               <Route path="/view-preference" element={<ViewReferences />} />
@@ -106,6 +145,7 @@
 
             </Routes>
           </div>
+
         </div>
       </div>
     );
