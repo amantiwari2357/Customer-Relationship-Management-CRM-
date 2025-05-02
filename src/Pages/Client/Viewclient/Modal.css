@@ -1,100 +1,176 @@
 .modal-container {
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 1100px;
+  width: 100%;
+  padding: 24px;
+  margin-left: 110px;
+  box-sizing: border-box;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d32d86;
+  color: white;
+  padding: 16px 24px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.close-button:hover {
+  transform: scale(1.2);
+}
+
+.modal-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 0;
+  justify-content: center;
+}
+
+.card {
+  flex: 1 1 calc(25% - 20px); /* Ensure 4 cards per row, minus the gap */
+  border: 1px solid #e0e0e0;
+  width: 230px; /* Adjust width to fit more content */
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #fafafa;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.card-info {
+  margin: 12px 0;
+  text-align: left;
+  padding: 0 8px;
+}
+
+.card-info p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.card-info span.label {
+  font-weight: 600;
+  color: #222;
+  margin-right: 4px;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  justify-content: space-between;
+}
+
+.response-btn,
+.resend-btn {
+  flex: 1;
+  padding: 10px;
+  background-color: #d32d86;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.response-btn:hover,
+.resend-btn:hover {
+  background-color: #5a189a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 20px;
+}
+
+.close-footer-btn,
+.save-footer-btn {
+  background-color: #d32d86;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.close-footer-btn:hover,
+.save-footer-btn:hover {
+  background-color: #c2185b;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
   }
-  
-  .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #d32d86;
-    color: white;
-    padding: 15px;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .modal-header h2 {
-    margin: 0;
-  }
-  
-  .close-button {
-    background: transparent;
-    border: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .modal-body {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px 0;
-  }
-  
-  .card {
-    border: 1px solid #ccc;
-    width: 200px;
-    text-align: center;
-    padding: 10px;
-    border-radius: 6px;
-  }
-  
-  .card img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-  }
-  
-  .card-info {
-    margin: 10px 0;
-  }
-  
-  .card-info p {
-    margin: 5px 0;
-  }
-  
-  .card-buttons {
-    display: flex;
-    gap: 5px;
-    margin-top: 10px;
-  }
-  
-  .response-btn, .resend-btn {
-    flex: 1;
-    padding: 5px 0;
-    background-color: #d32d86;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none; /* Remove underline */
-  }
-  
-  .response-btn:hover, .resend-btn:hover {
-    background-color: #5a189a;
-  }
-  
-  .modal-footer {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    padding-top: 20px;
-  }
-  
-  .close-footer-btn, .save-footer-btn {
-    background-color: #d32d86;
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .close-footer-btn:hover, .save-footer-btn:hover {
-    background-color: #c2185b;
-  }
-  
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+

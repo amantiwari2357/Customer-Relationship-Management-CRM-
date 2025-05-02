@@ -181,7 +181,9 @@ const ClientReport = () => {
               </td>
                 <td>
                   <div>Single</div>
-                  <div className="green">10sent</div>
+                  <a href="/Modal" className="green">
+                  10 sent
+                  </a>
                 </td>
                 <td>
                   <div>Geeta</div>
