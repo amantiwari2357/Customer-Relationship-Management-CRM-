@@ -3,16 +3,17 @@ import { useParams, useNavigate } from "react-router-dom";
 import "./ShareClient.css";
 
 const ShareClient = () => {
-  const { id } = useParams();
+  useParams();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({});
+  const [customInput, setCustomInput] = useState({});
 
   // Sample data - in a real app, you'd fetch this based on the ID
   const shareProfile = [
     {
       id: 1,
-      photo: "https://via.placeholder.com/50",
+      photo: "/images/user.jpg",
       name: "Name123",
       maritalStatus: "Single",
       dob: "08/10/1996",
@@ -38,185 +39,198 @@ const ShareClient = () => {
   ];
 
   const fields = [
-  {
-    label: "Client Name",
-    name: "clientName",
-    options: ["Madhuri Ajmani", "Name123"],
-  },
-  {
-    label: "Select Gender",
-    name: "gender",
-    options: ["Male", "Female", "Other"],
-  },
-  {
-    label: "Select Religion",
-    name: "religion",
-    options: ["Hindu", "Muslim", "Christian"],
-  },
-  {
-    label: "Select Caste",
-    name: "caste",
-    options: ["General", "OBC", "SC/ST"],
-  },
-  { label: "Budget From", name: "budgetFrom", options: ["1L", "5L", "10L"] },
-  { label: "Budget End", name: "budgetEnd", options: ["10L", "20L", "50L"] },
-  { label: "Age From", name: "ageFrom", options: ["18", "25", "30"] },
-  { label: "Age To", name: "ageTo", options: ["25", "30", "40"] },
-  { label: "Year From", name: "yearFrom", options: ["2020", "2021", "2022"] },
-  {
-    label: "Marriage Status",
-    name: "marriageStatus",
-    options: ["Single", "Divorced"],
-  },
-  { label: "Astrologically", name: "astrologically", options: ["Yes", "No"] },
-  { label: "NRI Status", name: "nriStatus", options: ["Yes", "No"] },
-  {
-    label: "Nationality",
-    name: "nationality",
-    options: ["Indian", "American"],
-  },
-  {
-    label: "Height From",
-    name: "heightFrom",
-    options: ["4'5", "5'0", "5'5"],
-  },
-  { label: "Height To", name: "heightTo", options: ["5'5", "6'0", "6'5"] },
-  { label: "Select Country", name: "country", options: ["India", "USA"] },
-  {
-    label: "Residential State",
-    name: "residentialState",
-    options: ["Delhi", "Mumbai"],
-  },
+    {
+      label: "Client Name",
+      name: "clientName",
+      options: ["Madhuri Ajmani", "Name123"],
+      allowCustom: true,
+    },
+    {
+      label: "Select Gender",
+      name: "gender",
+      options: ["Male", "Female", "Other"],
+    },
+    {
+      label: "Select Religion",
+      name: "religion",
+      options: ["Hindu", "Muslim", "Christian"],
+      allowCustom: true,
+    },
+    {
+      label: "Select Caste",
+      name: "caste",
+      options: ["General", "OBC", "SC/ST"],
+      allowCustom: true,
+    },
+    { label: "Budget From", name: "budgetFrom", options: ["1L", "5L", "10L"], allowCustom: true },
+    { label: "Budget End", name: "budgetEnd", options: ["10L", "20L", "50L"], allowCustom: true },
+    { label: "Age From", name: "ageFrom", options: ["18", "25", "30"], allowCustom: true },
+    { label: "Age To", name: "ageTo", options: ["25", "30", "40"], allowCustom: true },
+    { label: "Year From", name: "yearFrom", options: ["2020", "2021", "2022"], allowCustom: true },
+    {
+      label: "Marriage Status",
+      name: "marriageStatus",
+      options: ["Single", "Divorced"],
+    },
+    { label: "Astrologically", name: "astrologically", options: ["Yes", "No"] },
+    { label: "NRI Status", name: "nriStatus", options: ["Yes", "No"] },
+    {
+      label: "Nationality",
+      name: "nationality",
+      options: ["Indian", "American"],
+      allowCustom: true,
+    },
+    {
+      label: "Height From",
+      name: "heightFrom",
+      options: ["4'5", "5'0", "5'5"],
+      allowCustom: true,
+    },
+    { label: "Height To", name: "heightTo", options: ["5'5", "6'0", "6'5"], allowCustom: true },
+    { label: "Select Country", name: "country", options: ["India", "USA"], allowCustom: true },
+    {
+      label: "Residential State",
+      name: "residentialState",
+      options: ["Delhi", "Mumbai"],
+      allowCustom: true,
+    },
 
-  // Newly Added Fields
-  {
-    label: "Residential City",
-    name: "residentialCity",
-    options: ["Delhi", "Mumbai"],
-  },
-  {
-    label: "Qualification",
-    name: "qualification",
-    options: ["Graduate", "Post-Graduate", "PhD"],
-  },
-  {
-    label: "Occupation",
-    name: "occupation",
-    options: ["Engineer", "Doctor", "Business"],
-  },
-  {
-    label: "Eating Habits",
-    name: "eatingHabits",
-    options: ["Veg", "Non-Veg", "Vegan"],
-  },
-  {
-    label: "Member Status",
-    name: "memberStatus",
-    options: ["Active", "Inactive"],
-  },
-  {
-    label: "Mobile No.",
-    name: "mobileNo",
-    options: ["Verified", "Not Verified"],
-  },
-  {
-    label: "Drinking Habits",
-    name: "drinkingHabits",
-    options: ["Yes", "No"],
-  },
-  {
-    label: "Personality",
-    name: "personality",
-    options: ["Introvert", "Extrovert"],
-  },
-  {
-    label: "Willing to Go Abroad",
-    name: "willingToGoAbroad",
-    options: ["Yes", "No"],
-  },
-  {
-    label: "Profile Handled By",
-    name: "profileHandledBy",
-    options: ["Self", "Parents", "Relatives"],
-  },
-  {
-    label: "Father Occupation",
-    name: "fatherOccupation",
-    options: ["Business", "Retired", "Other"],
-  },
-  {
-    label: "House Status",
-    name: "houseStatus",
-    options: ["Owned", "Rented"],
-  },
-  {
-    label: "Open for Other Castes",
-    name: "openForOtherCastes",
-    options: ["Yes", "No"],
-  },
-  {
-    label: "Annual Family Income From",
-    name: "annualFamilyIncomeFrom",
-    options: ["10L", "20L"],
-  },
-  {
-    label: "Annual Family Income To",
-    name: "annualFamilyIncomeTo",
-    options: ["50L", "1Cr"],
-  },
-  {
-    label: "Personal Income From",
-    name: "personalIncomeFrom",
-    options: ["5L", "10L"],
-  },
-  {
-    label: "Personal Income To",
-    name: "personalIncomeTo",
-    options: ["15L", "50L"],
-  },
-  {
-    label: "Membership Status",
-    name: "membershipStatus",
-    options: ["Active", "Inactive"],
-  },
-  {
-    label: "Open for Other Status",
-    name: "openForOtherStatus",
-    options: ["Yes", "No"],
-  },
-  {
-    label: "Profile ID",
-    name: "profileId",
-    options: ["Verified", "Not Verified"],
-  },
-  {
-    label: "Profile Sourced From",
-    name: "profileSourcedFrom",
-    options: ["Online", "Referral"],
-  },
-  {
-    label: "Open for Divorcee",
-    name: "openForDivorcee",
-    options: ["Yes", "No"],
-  },
-  {
-    label: "Premium Colleges",
-    name: "premiumColleges",
-    options: ["Yes", "No"],
-  },
-  {
-    label: "Premium Clients",
-    name: "premiumClients",
-    options: ["Yes", "No"],
-  },
-  {
-    label: "Verified / Visited",
-    name: "verifiedVisited",
-    options: ["Yes", "No"],
-  },
-  { label: "Disability", name: "disability", options: ["Yes", "No"] },
-];
-
+    // Newly Added Fields
+    {
+      label: "Residential City",
+      name: "residentialCity",
+      options: ["Delhi", "Mumbai"],
+      allowCustom: true,
+    },
+    {
+      label: "Qualification",
+      name: "qualification",
+      options: ["Graduate", "Post-Graduate", "PhD"],
+      allowCustom: true,
+    },
+    {
+      label: "Occupation",
+      name: "occupation",
+      options: ["Engineer", "Doctor", "Business"],
+      allowCustom: true,
+    },
+    {
+      label: "Eating Habits",
+      name: "eatingHabits",
+      options: ["Veg", "Non-Veg", "Vegan"],
+    },
+    {
+      label: "Member Status",
+      name: "memberStatus",
+      options: ["Active", "Inactive"],
+    },
+    {
+      label: "Mobile No.",
+      name: "mobileNo",
+      options: ["Verified", "Not Verified"],
+    },
+    {
+      label: "Drinking Habits",
+      name: "drinkingHabits",
+      options: ["Yes", "No"],
+    },
+    {
+      label: "Personality",
+      name: "personality",
+      options: ["Introvert", "Extrovert"],
+    },
+    {
+      label: "Willing to Go Abroad",
+      name: "willingToGoAbroad",
+      options: ["Yes", "No"],
+    },
+    {
+      label: "Profile Handled By",
+      name: "profileHandledBy",
+      options: ["Self", "Parents", "Relatives"],
+      allowCustom: true,
+    },
+    {
+      label: "Father Occupation",
+      name: "fatherOccupation",
+      options: ["Business", "Retired", "Other"],
+      allowCustom: true,
+    },
+    {
+      label: "House Status",
+      name: "houseStatus",
+      options: ["Owned", "Rented"],
+    },
+    {
+      label: "Open for Other Castes",
+      name: "openForOtherCastes",
+      options: ["Yes", "No"],
+    },
+    {
+      label: "Annual Family Income From",
+      name: "annualFamilyIncomeFrom",
+      options: ["10L", "20L"],
+      allowCustom: true,
+    },
+    {
+      label: "Annual Family Income To",
+      name: "annualFamilyIncomeTo",
+      options: ["50L", "1Cr"],
+      allowCustom: true,
+    },
+    {
+      label: "Personal Income From",
+      name: "personalIncomeFrom",
+      options: ["5L", "10L"],
+      allowCustom: true,
+    },
+    {
+      label: "Personal Income To",
+      name: "personalIncomeTo",
+      options: ["15L", "50L"],
+      allowCustom: true,
+    },
+    
+    {
+      label: "Open for Other Status",
+      name: "openForOtherStatus",
+      options: ["Yes", "No"],
+    },
+    {
+      label: "Profile ID",
+      name: "profileId",
+      options: ["Verified", "Not Verified"],
+      allowCustom: true,
+    },
+    {
+      label: "Profile Sourced From",
+      name: "profileSourcedFrom",
+      options: ["Online", "Referral"],
+      allowCustom: true,
+    },
+    {
+      label: "Open for Divorcee",
+      name: "openForDivorcee",
+      options: ["Yes", "No"],
+    },
+    {
+      label: "Premium Colleges",
+      name: "premiumColleges",
+      options: ["Yes", "No"],
+    },
+    {
+      label: "Premium Clients",
+      name: "premiumClients",
+      options: ["Yes", "No"],
+    },
+    
+    {
+      label: "Verified / Visited",
+      name: "verifiedVisited",
+      options: ["Yes", "No"],
+    },
+    { label: "Disability", name: "disability", options: ["Yes", "No"] },
+  ];
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -225,12 +239,73 @@ const ShareClient = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    // If the user selects an option, clear any custom input for this field
+    if (fields.find(field => field.name === name)?.options.includes(value)) {
+      setCustomInput(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const handleCustomInputChange = (e) => {
+    const { name, value } = e.target;
+    setCustomInput({ ...customInput, [name]: value });
+    // If the user types in a custom value, clear any selected option for this field
+    setFormData(prev => ({ ...prev, [name]: '' }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data Submitted:", formData);
+    // Combine formData with customInput, giving precedence to customInput if it exists
+    const finalFormData = {};
+    for (const field of fields) {
+      const name = field.name;
+      if (customInput[name]) {
+        finalFormData[name] = customInput[name];
+      } else if (formData[name]) {
+        finalFormData[name] = formData[name];
+      }
+    }
+    console.log("Form Data Submitted:", finalFormData);
     // Handle form submission logic here
+  };
+
+  const renderInputField = (field) => {
+    if (field.options && field.options.length > 0) {
+      return (
+        <select
+          id={field.name}
+          name={field.name}
+          value={formData[field.name] || ""}
+          onChange={handleChange}
+          className="form-control"
+        >
+          <option value="">Select {field.label}</option>
+          {field.options.map((option, idx) => (
+            <option key={idx} value={option}>
+              {option}
+            </option>
+          ))}
+          {field.allowCustom && <option value="custom">Other...</option>}
+        </select>
+      );
+    }
+    return null;
+  };
+
+  const renderCustomInput = (field) => {
+    if (field.allowCustom && formData[field.name] === 'custom') {
+      return (
+        <input
+          type="text"
+          id={`${field.name}-custom`}
+          name={field.name}
+          value={customInput[field.name] || ''}
+          onChange={handleCustomInputChange}
+          className="form-control mt-2"
+          placeholder={`Enter custom ${field.label}`}
+        />
+      );
+    }
+    return null;
   };
 
   return (
@@ -247,30 +322,16 @@ const ShareClient = () => {
         </div>
 
         {isOpen && (
-  <div id="filter-options">
-    <form onSubmit={handleSubmit} className="container mt-4">
-      <div className="row">
-        {fields.map((field, index) => (
-          <div className="col-md-3 col-12 mb-3" key={index}>
-            <label htmlFor={field.name} className="form-label">
-              {field.label}
-            </label>
-            
-                    <select
-                      id={field.name}
-                      name={field.name}
-                      value={formData[field.name] || ""}
-                      onChange={handleChange}
-                      className="form-control"
-                    >
-                      <option value="">Select {field.label}</option>
-                      {field.options.map((option, idx) => (
-                        <option key={idx} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
-                    
+          <div id="filter-options">
+            <form onSubmit={handleSubmit} className="container mt-4">
+              <div className="row">
+                {fields.map((field, index) => (
+                  <div className="col-md-3 col-12 mb-3" key={index}>
+                    <label htmlFor={field.name} className="form-label">
+                      {field.label}
+                    </label>
+                    {renderInputField(field)}
+                    {renderCustomInput(field)}
                   </div>
                 ))}
               </div>
@@ -310,10 +371,20 @@ const ShareClient = () => {
               <tbody>
                 {shareProfile.map((profile) => (
                   <tr key={profile.id}>
-                    <td><input type="checkbox" /></td>
                     <td>
-                      <img src={profile.photo} alt="Profile" width="50" />
+                      <input type="checkbox" />
                     </td>
+
+                  <td>
+             <div style={{ width: "80px", height: "80px", overflow: "hidden" }}>
+                <img
+                src={profile.photo}
+                 alt="Profile"
+                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                     />
+                    </div>
+                       </td>
+
                     <td>{profile.name}, Male, {profile.contact}</td>
                     <td>{profile.clientId}, {profile.membershipStatus}</td>
                     <td>{profile.maritalStatus}, {profile.profileSent}</td>
@@ -347,6 +418,6 @@ const ShareClient = () => {
       </div>
     </div>
   );
-};
+}; 
 
 export default ShareClient;
