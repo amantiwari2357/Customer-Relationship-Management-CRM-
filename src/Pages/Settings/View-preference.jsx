@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import "./View-preference.css";
 
 const referenceData = [
-  { id: 5, category: "Caste", value: "Brahmin", description: "Brahmin Caste", priority: 1, status: "Active" },
-  { id: 4, category: "Caste", value: "Rajput", description: "Rajput Community", priority: 2, status: "Active" },
-  { id: 3, category: "Caste", value: "Punjabi", description: "Punjabi Caste", priority: 3, status: "Active" },
-  { id: 2, category: "Caste", value: "Baniya", description: "Baniya Caste", priority: 4, status: "Active" },
-  { id: 1, category: "Caste", value: "Jaat", description: "Jaat Caste", priority: 5, status: "Active" },
+  { id: 10, category: "Caste", value: "Brahmin", description: "Brahmin Caste", priority: 1, status: "Active" },
+  { id: 9, category: "Caste", value: "Rajput", description: "Rajput Community", priority: 2, status: "Active" },
+  { id: 8, category: "Caste", value: "Punjabi", description: "Punjabi Caste", priority: 3, status: "Active" },
+  { id: 7, category: "Caste", value: "Baniya", description: "Baniya Caste", priority: 4, status: "Active" },
+  { id: 6, category: "Caste", value: "Jaat", description: "Jaat Caste", priority: 5, status: "Active" },
+  { id: 5, category: "Caste", value: "Brahmin", description: "Brahmin Caste", priority: 6, status: "Active" },
+  { id: 4, category: "Caste", value: "Rajput", description: "Rajput Community", priority: 7, status: "Active" },
+  { id: 3, category: "Caste", value: "Punjabi", description: "Punjabi Caste", priority: 8, status: "Active" },
+  { id: 2, category: "Caste", value: "Baniya", description: "Baniya Caste", priority: 9, status: "Active" },
+  { id: 1, category: "Caste", value: "Jaat", description: "Jaat Caste", priority: 10, status: "Active" },
 ];
 
 const ViewReferences = () => {
@@ -97,44 +102,43 @@ const ViewReferences = () => {
                 </td>
               </tr>
 
-
-               <tr className={`edit-row ${editRowId === ref.id ? "show" : ""}`}>
-                <td colSpan="7">
-                  <div className="edit-form-wrapper">
-                    {editRowId === ref.id && (
-                      <div className="edit-form">
-                        <input
-                          type="text"
-                          name="value"
-                          value={editData.value}
-                          onChange={handleEditChange}
-                          placeholder="Value"
-                        />
-                        <input
-                          type="text"
-                          name="description"
-                          value={editData.description}
-                          onChange={handleEditChange}
-                          placeholder="Description"
-                        />
-                        <input
-                          type="number"
-                          name="priority"
-                          value={editData.priority}
-                          onChange={handleEditChange}
-                          placeholder="Priority"
-                        />
-                        <select name="status" value={editData.status} onChange={handleEditChange}>
-                          <option>Active</option>
-                          <option>Inactive</option>
-                        </select>
-                        <button onClick={handleSave}>Save</button>
-                        <button onClick={() => setEditRowId(null)}>Cancel</button>
+              {editRowId === ref.id && (
+                <tr className="edit-row">
+                  <td colSpan="7">
+                    <div className="edit-form">
+                      <input
+                        type="text"
+                        name="value"
+                        value={editData.value}
+                        onChange={handleEditChange}
+                        placeholder="Value"
+                      />
+                      <input
+                        type="text"
+                        name="description"
+                        value={editData.description}
+                        onChange={handleEditChange}
+                        placeholder="Description"
+                      />
+                      <input
+                        type="number"
+                        name="priority"
+                        value={editData.priority}
+                        onChange={handleEditChange}
+                        placeholder="Priority"
+                      />
+                      <select name="status" value={editData.status} onChange={handleEditChange}>
+                        <option>Active</option>
+                        <option>Inactive</option>
+                      </select>
+                      <div className="edit-actions">
+                        <button className="save-btn" onClick={handleSave}>Save</button>
+                        <button className="cancel-btn" onClick={() => setEditRowId(null)}>Cancel</button>
                       </div>
-                    )}
-                  </div>
-                </td>
-              </tr>
+                    </div>
+                  </td>
+                </tr>
+              )}
             </React.Fragment>
           ))}
         </tbody>

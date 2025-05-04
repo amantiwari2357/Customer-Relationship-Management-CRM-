@@ -1,11 +1,14 @@
 import React, { useRef, useState } from "react";
-import "./ViewClient.css"; // Make sure to keep your custom CSS file
+import "./EditClient.css"; // Make sure to keep your custom CSS file
 import client1 from "../../../Images/client1.png";
 import call from "../../../Images/call-icon.png";
 import gmail from "../../../Images/Gmail-icon.png";
 import whatsapp from "../../../Images/WhatsApp-icon.png";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import audio from "../../../Images/testing-audio.mp3";
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaEdit, FaShareAlt } from 'react-icons/fa';
+
 // import { Modal } from 'bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -44,9 +47,72 @@ const ViewClient = () => {
       participant: "P",
       audio: audio,
     },
+    {
+      type: "Missed",
+      icon: "bi-telephone-x",
+      label: "Missed Call",
+      time: "7:00 PM",
+      date: "11/12/2024",
+      participant: "P",
+      audio: audio,
+    },
+    {
+      type: "Missed",
+      icon: "bi-telephone-x",
+      label: "Missed Call",
+      time: "7:00 PM",
+      date: "11/12/2024",
+      participant: "P",
+      audio: audio,
+    },
+    {
+      type: "Missed",
+      icon: "bi-telephone-x",
+      label: "Missed Call",
+      time: "7:00 PM",
+      date: "11/12/2024",
+      participant: "P",
+      audio: audio,
+    },
   ]);
 
   const [tasks, setTasks] = useState([
+    {
+      id: 1,
+      title: "Video conference with name123",
+      priority: "High",
+      priorityColor: "red",
+      backgroundColor: "#C92A2A29",
+      date: "08/10/1996",
+      isCompleted: false,
+    },
+    {
+      id: 1,
+      title: "Video conference with name123",
+      priority: "High",
+      priorityColor: "red",
+      backgroundColor: "#C92A2A29",
+      date: "08/10/1996",
+      isCompleted: false,
+    },
+    {
+      id: 1,
+      title: "Video conference with name123",
+      priority: "High",
+      priorityColor: "red",
+      backgroundColor: "#C92A2A29",
+      date: "08/10/1996",
+      isCompleted: false,
+    },
+    {
+      id: 1,
+      title: "Video conference with name123",
+      priority: "High",
+      priorityColor: "red",
+      backgroundColor: "#C92A2A29",
+      date: "08/10/1996",
+      isCompleted: false,
+    },
     {
       id: 1,
       title: "Video conference with name123",
@@ -144,15 +210,16 @@ const ViewClient = () => {
   };
 
   return (
+    <div className="content-area">
     <div className="aman">
-      <div className="relative bg-white rounded-lg shadow-lg w-full max-w-2xl mx-4 tiwari"></div>
+      <div className=""></div>
       <div>
         {/* /////// */}
 
         {/* ///////////////// */}
         <div className="flex justify-end p-2">
           <div className="button">
-            <div className="xt-gray-500 hover:text-gray-700 text-2xl font-bold">
+            <div className="">
               {/* <button
         type="button"
         className="btn-close"
@@ -160,72 +227,88 @@ const ViewClient = () => {
         aria-label="Close"
       ></button> */}
             </div>
-            <div className="unique-modal-header">
-              <div className="unique-profile-header">
-                <div className="row align-items-center">
-                  <div className="col-md-2">
-                    <div className="unique-client-image">
-                      <img src={client1} className="img-fluid" alt="client" />
-                    </div>
-                  </div>
-                  <div className="col-md-7">
-                    <div className="unique-user-detail">
-                      <div className="d-flex gap-3 align-items-center">
-                        <p className="m-0 fw-bold">Aman Tiwari 0001</p>
-                        <div className="unique-social-icons d-flex gap-2">
-                          <img src={call} alt="call-icon" />
-                          <img src={gmail} alt="gmail-icon" />
-                          <img src={whatsapp} alt="whatsapp-icon" />
-                        </div>
-                      </div>
-                      <p className="m-0">amankumartiwari5255gmail.com</p>
-                      <p>+91 9319846114</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+           <div className="unique-modal-header">
+  <div className="unique-profile-header">
+    <div className="profile-row">
+      <div className="profile-image-col">
+        <div className="unique-client-image">
+          <img src={client1} className="client-img" alt="client" />
+        </div>
+      </div>
+      <div className="profile-info-col">
+        <div className="unique-user-detail">
+          <div className="user-header">
+            <p className="user-name">Aman Tiwari 0001</p>
+            <div className="unique-social-icons">
+              <img src={call} alt="call-icon" className="social-icon" />
+              <img src={gmail} alt="gmail-icon" className="social-icon" />
+              <img src={whatsapp} alt="whatsapp-icon" className="social-icon" />
             </div>
+          </div>
+          <p className="user-email">amankumartiwari5255gmail.com</p>
+          <p className="user-phone">+91 9319846114</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr />
 
-            {/* ///////////////// */}
-            <div className="modal-body">
-              <section className="update-profile">
-                <div className="update-profile-personal-information">
-                  <div>
-                    <h6>Personal Information</h6>
-                    <ul>
-                      <li>
-                        <b>Religion : </b>Hindu
-                      </li>
-                      <li>
-                        <b>Caste : </b>Pandit
-                      </li>
-                      <li>
-                        <b>Time of Birth : </b>1343
-                      </li>
-                      <li>
-                        <b>Height : </b>5'10
-                      </li>
-                    </ul>
-                  </div>
-                  <hr />
-                  <div>
-                    <h6>More Info</h6>
-                    <ul>
-                      <li>
-                        <b>Status : </b>Actively seeking
-                      </li>
-                      <li>
-                        <b>Occupation : </b>Software
-                      </li>
-                      <li>
-                        <b>State : </b>Delhi
-                      </li>
-                      <li>
-                        <b>Manglik : </b>No
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+
+            {/* /////////////////2///////////// */}
+  <div className="modal-body">
+  <section className="update-profile">
+    <div className="update-profile-section">
+      <div>
+        <h6>Personal Information</h6>
+        <ul>
+          <li><b>Religion :</b> Hindu</li>
+          <li><b>Caste :</b> Pandit</li>
+          <li><b>Time of Birth :</b> 1343</li>
+          <li><b>Height :</b> 5'10</li>
+        </ul>
+      </div>
+      <hr />
+      <div>
+        <h6>More Info</h6>
+        <ul>
+          <li><b>Status :</b> Actively seeking</li>
+          <li><b>Occupation :</b> Software</li>
+          <li><b>State :</b> Delhi</li>
+          <li><b>Manglik :</b> No</li>
+        </ul>
+      </div>
+
+      <hr />
+
+      <div>
+  <h6>Action</h6>
+  <ul className="action-list">
+    <li>
+      <button className="action-button" onClick={() => console.log('Share clicked')}>
+        <FaShareAlt className="action-icon" /><a href="/ShareClient"><span>Share Profile</span></a> 
+      </button>
+    </li>
+    <li>
+      <button className="action-button" onClick={() => console.log('Edit clicked')}>
+        <FaEdit className="action-icon" /> <a href="/add-client"><span>Update Profile</span></a>
+      </button>
+    </li>
+  </ul>
+</div>
+
+      <hr />
+      <div className="social-icons">
+      <FaFacebook className="icon" />
+      <FaInstagram className="icon" />
+     <FaTwitter className="icon" />
+      </div>
+    </div>
+    <hr></hr>
+
+
+{/* /////////////////////3///////////////// */}
+                
                 <div className="update-profile-schedule-metting">
                   <div className="align-items-center p-1">
                     <ul
@@ -242,8 +325,7 @@ const ViewClient = () => {
                           type="button"
                           role="tab"
                           aria-controls="activity"
-                          aria-selected="true"
-                        >
+                          aria-selected="true">
                           Activity
                         </button>
                       </li>
@@ -768,6 +850,7 @@ const ViewClient = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 .profile-container {
   min-height: 100vh;
   background-color: #f3f4f6;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -11,16 +11,17 @@
 
 .profile-card {
   width: 100%;
-  max-width: 950px;
-  background-color: #ffffff;
+  max-width: 1000px;
+  background-color: white;
   border-radius: 16px;
   padding: 2.5rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   margin: 0 auto;
   height: auto;
+  padding: 20px;
 }
 
 .profile-header {

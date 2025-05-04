@@ -1,60 +1,99 @@
-.view-client {
-  padding: 2rem 0;
+:root {
+  --yellow: #facc15; /* Replace with your actual brand yellow if needed */
+  --gray-100: #f3f4f6;
+  --gray-700: #374151;
+  --red: #ef4444;
 }
+
+/* Container Padding */
+.view-client {
+  padding: 2rem 1rem;
+  background-color: var(--gray-100);
+}
+
+/* Topbar Flex Layout */
 .view-client-topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 10px;
-}
-.client-card {
-  background-color: white;
+  padding: 0 1rem;
   margin-bottom: 1rem;
-  overflow: hidden;
-  /* padding: 5px 10px; */
-  border-radius: 8px;
-}
-.heart {
-  position: relative;
-  cursor: pointer;
-}
-.heart span {
-  position: absolute;
-  left: 5px;
-  top: 25%;
-  font-size: 8px;
-  color: white;
-  font-weight: 600;
-}
-.heart i {
-  font-size: 20px;
-  color: red;
+  flex-wrap: wrap;
 }
 
+/* Topbar Label Styling */
 .view-client-topbar p {
   margin: 0;
   background-color: var(--yellow);
-  border-radius: 5px;
-  padding: 0px 10px;
-  font-size: 12px;
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #111827;
 }
 
+/* Heart Icon Wrapper */
+.heart {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.heart i {
+  font-size: 22px;
+  color: var(--red);
+  transition: transform 0.2s ease;
+}
+
+.heart:hover i {
+  transform: scale(1.1);
+}
+
+/* Badge on Heart */
+.heart span {
+  position: absolute;
+  left: 6px;
+  top: 25%;
+  font-size: 9px;
+  color: white;
+  font-weight: 600;
+  background: var(--red);
+  padding: 0 4px;
+  border-radius: 50%;
+}
+
+/* Card Design */
+.client-card {
+  background-color: white;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  padding: 10px 15px;
+}
+
+/* Client Image Centering */
 .client-image {
-  max-width: 40%;
-  margin: auto;
+  max-width: 160px;
+  margin: 1rem auto;
 }
 
 .client-image img {
   border-radius: 50%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 2px solid var(--yellow);
+  padding: 4px;
 }
 
-.view-client-topbar input {
-  height: 20px;
-  width: 20px;
+/* Checkbox Customization (optional) */
+.view-client-topbar input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--yellow);
 }
-/* .client-buttons {
-  display: flex;
-} */
 
 .client-profile {
   display: flex;
