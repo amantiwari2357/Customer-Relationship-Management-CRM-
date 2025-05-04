@@ -1,32 +1,28 @@
+/* Base container */
 .activity-log-container {
-  padding: 20px 30px;
+  padding: 30px 40px;
   font-family: "Poppins", sans-serif;
-  background-color: #f9fafb;
+  background-color: #f8f9fb;
   min-height: 100vh;
 }
 
+/* Page title */
 .activity-log-title {
-  margin-bottom: 25px;
-  font-size: 28px;
-  font-weight: 600;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 700;
   color: #2c3e50;
   text-align: center;
 }
 
+/* Filter section */
 .activity-log-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   align-items: flex-end;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
-.activity-log-filter label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #34495e;
-  margin-bottom: 8px;
-}
-
 
 .activity-log-filter-group {
   display: flex;
@@ -36,18 +32,19 @@
 }
 
 .activity-log-filter-group label {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: #34495e;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .activity-log-filter-group select {
-  padding: 10px;
+  padding: 12px;
   font-size: 15px;
   border-radius: 6px;
   border: 1px solid #ccc;
   background-color: #fff;
+  font-weight: 500;
   transition: border-color 0.3s ease;
 }
 
@@ -56,13 +53,14 @@
   border-color: #3b5bdb;
 }
 
+/* Search button */
 .activity-log-search-btn {
   background-color: #cc2b85;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   border-radius: 6px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
@@ -79,31 +77,38 @@
   background-color: #263a91;
 }
 
+/* Table styling */
 .activity-log-table {
   width: 100%;
   border-collapse: collapse;
   background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
   overflow: hidden;
+  font-size: 15px;
 }
 
 .activity-log-table th {
   background-color: #ffe4ec;
-  color: #333;
+  color: #2c3e50;
   text-align: left;
-  padding: 12px 10px;
-  font-size: 14px;
-  font-weight: 600;
+  padding: 14px 12px;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .activity-log-table td {
-  border: 2px solid #f2f2f2;
-  padding: 12px 10px;
+  border: 1px solid #f0f0f0;
+  padding: 13px 12px;
   font-size: 14px;
+  font-weight: 500;
+  color: #2c3e50;
 }
 
+/* Eye icon button */
 .activity-log-eye-icon {
+  background: none;
+  border: none;
   cursor: pointer;
   font-size: 18px;
   color: #3b5bdb;
@@ -112,4 +117,28 @@
 
 .activity-log-eye-icon:hover {
   color: #1c319f;
+}
+
+/* No records found */
+.no-records {
+  text-align: center;
+  padding: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #999;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .activity-log-filters {
+    flex-direction: column;
+  }
+
+  .activity-log-filter-group {
+    width: 100%;
+  }
+
+  .activity-log-search-btn {
+    width: 100%;
+  }
 }

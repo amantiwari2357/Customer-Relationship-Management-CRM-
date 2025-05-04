@@ -25,15 +25,37 @@ const UserProfilePage = () => {
 
   const downloadPDF = async () => {
     const input = profileRef.current;
-    const canvas = await html2canvas(input);
-    const imgData = canvas.toDataURL('image/png');
-    const pdf = new jsPDF('p', 'mm', 'a4');
-    const imgProps = pdf.getImageProperties(imgData);
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    const buttonContainer = input.querySelector('.button-container');
+
+    // Hide the export button before capturing
+  if (buttonContainer) {
+    buttonContainer.style.display = 'none';
+  }
+
+
+ const canvas = await html2canvas(input, {
+    scale: 2, // increase quality by scaling (default is 1)
+    useCORS: true, // allow cross-origin images if needed
+    // logging: false,
+    backgroundColor: null, // keep background transparent
+  });
+
+  // Show the export button again
+  if (buttonContainer) {
+    buttonContainer.style.display = 'block';
+  }
+
+
+  const imgData = canvas.toDataURL('image/png');
+  const pdf = new jsPDF('p', 'mm', 'a4');
+
+     const imgProps = pdf.getImageProperties(imgData);
+  const pdfWidth = pdf.internal.pageSize.getWidth();
+  const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
     pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save('user-profile.pdf');
-  };
+  pdf.save('user-profile.pdf');
+};
 
   return (
     <div className="hover-profile-wrapper">
@@ -46,7 +68,7 @@ const UserProfilePage = () => {
             <h2 className="profile-title">
               Profile Of : {userProfile.clientName}
             </h2>
-            <img src="/images/user2.jpg" alt="Profile" className="profile-image" />
+            <img src="/images/user4.jpg" alt="Profile" className="profile-image" />
           </div>
           <div className="profile-grid">
             {Object.entries(userProfile).map(([key, value]) => (
@@ -60,7 +82,7 @@ const UserProfilePage = () => {
           </div>
           <div className="button-container">
             <button className="download-btn" onClick={downloadPDF}>
-              Export To PDF
+              Export To PDF 
             </button>
           </div>
         </div>

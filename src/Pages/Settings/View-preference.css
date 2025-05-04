@@ -1,306 +1,212 @@
 .view-references {
-    padding: 24px;
-    background-color: #f9f9f9;
-    font-family: "Poppins", sans-serif;
-    font-weight: 24px;
-    font-weight: 600;
-  }
-  
-  .view-references h2 {
-    background: #cc2b85;
-    color: #ffff;
-    padding: 16px;
-    margin-bottom: 24px;
-    border-radius: 4px;
-    text-align: center;
-  }
-  
-  .filters {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    align-items: flex-end;
-  }
-  
-  .filter-group {
-    display: flex;
-    flex-direction: column;
-    min-width: 180px;
-  }
-  
-  .filter-group label {
-    font-weight: 600;
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .filter-group select {
-    padding: 8px 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    outline: none;
-    transition: border-color 0.3s;
-  }
-  
-  .filter-group select:focus {
-    border-color: #3b5bdb; 
-  }
-  
-  
-  .search-naman {
-    background-color: rgb(204, 43, 133);
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    font-size: 15px;
-    font-weight: 600;
-    font-family: "Poppins", sans-serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .search-naman:hover {
-    background-color: #2f4ab8;
-    transform: translateY(-1px);
-  }
-  
-  .search-naman:active {
-    transform: translateY(1px);
-    background-color: #263a91;
-  }
-  
-  
-  .reference-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border: 1px solid #eee;
-    padding: 10px;
-  }
-  
-  .reference-table th,
-  .reference-table td {
-    text-align: left;
-    padding: 12px 16px;
-    border-bottom: 1px solid #eee;
-    border: 2px solid #eee;
-    padding: 10px;
-  }
-  
-  .reference-table thead {
-    background-color: #f3f6f9;
-  }
-  
-  .status-badge {
-    padding: 6px 12px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 13px;
-    display: inline-block;
-  }
-  
-  .status-badge.active {
-    background-color: #28c76f;
-    color: white;
-  }
-  
-  .status-badge.inactive {
-    background-color: #ff4c4c;
-    color: white;
-  }
-  
-  .edit-btn {
-    background-color: #ff9f43;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 6px 10px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
+  padding: 24px;
+  background-color: #f9f9f9;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
 
-  /* css for edit sectuon */
+.view-references h2 {
+  background-color: #cc2b85;
+  color: #ffffff;
+  padding: 16px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+}
 
-  .edit-btn {
-    padding: 4px 8px;
-    cursor: pointer;
-    background-color: #ffc107;
-    border: none;
-    border-radius: 4px;
-    color: #000;
-  }
-  
-  .edit-form {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-radius: 6px;
-  }
-  
-  .edit-form input,
-  .edit-form select {
-    padding: 6px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    min-width: 120px;
-  }
-  
-  .edit-form button {
-    padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .edit-form button:first-of-type {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .edit-form button:last-of-type {
-    background-color: #dc3545;
-    color: white;
-  }
+.filters {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  align-items: flex-end;
+}
 
-  /* ///////////////// */
-  .view-references {
-    padding: 20px;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  .view-references h2 {
-    margin-bottom: 20px;
-    color: #2c3e50;
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-  }
-  
-  .filters {
-    display: flex;
-    gap: 20px;
-    align-items: flex-end;
-    margin-bottom: 25px;
-  }
-  
-  .filter-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .filter-group label {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .filter-group select {
-    padding: 8px;
-    font-size: 14px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  
-  .search-aman {
-    background-color: #3b5bdb;
-    color: white;
-    padding: 8px 20px;
-    border: none;
-    border-radius: 5px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .search-aman:hover {
-    background-color: #2f4ab8;
-  }
-  
-  .reference-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .reference-table th,
-  .reference-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: center;
-  }
-  
-  .reference-table th {
-    background-color: #f5f5f5;
-    font-weight: 600;
-  }
-  
-  .status-badge.active {
-    background-color: #d4edda;
-    color: #155724;
-    padding: 5px 10px;
-    border-radius: 12px;
-  }
-  
-  .status-badge.inactive {
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 5px 10px;
-    border-radius: 12px;
-  }
-  
-  .edit-btn {
-    background: none;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-  }
-  
-  .edit-row .edit-form-wrapper {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s ease;
-    padding: 0 10px;
-  }
-  
-  .edit-row.show .edit-form-wrapper {
-    max-height: 300px;
-    padding: 10px;
-  }
-  
-  .edit-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  .edit-form input,
-  .edit-form select {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-family: "Poppins", sans-serif;
-    flex: 1 1 150px;
-  }
-  
-  .edit-form button {
-    background-color: #3b5bdb;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .edit-form button:hover {
-    background-color: #2f4ab8;
-  }
-  
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.filter-group select {
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.filter-group select:focus {
+  border-color: #3b5bdb;
+}
+
+.search-naman,
+.search-aman {
+  background-color: #3b5bdb;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-naman:hover,
+.search-aman:hover {
+  background-color: #2f4ab8;
+  transform: translateY(-1px);
+}
+
+.search-naman:active,
+.search-aman:active {
+  transform: translateY(1px);
+  background-color: #263a91;
+}
+
+/* Table Styling */
+.reference-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #eee;
+}
+
+.reference-table thead {
+  background-color: #f3f6f9;
+}
+
+.reference-table th,
+.reference-table td {
+  padding: 12px 16px;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Status Badge */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-block;
+}
+
+.status-badge.active {
+  background-color: #28c76f;
+  color: white;
+}
+
+.status-badge.inactive {
+  background-color: #ff4c4c;
+  color: white;
+}
+
+/* Edit Button */
+.edit-btn {
+  padding: 6px 12px;
+  background-color: #ffc107;
+  color: #212529;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-btn:hover {
+  background-color: #e0a800;
+  transform: translateY(-1px);
+}
+
+.edit-btn:active {
+  transform: translateY(1px);
+}
+
+/* Edit Form Section */
+.edit-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 16px;
+  background-color: #f0f2f5;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.edit-form input,
+.edit-form select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 160px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.edit-form input:focus,
+.edit-form select:focus {
+  border-color: #3b5bdb;
+  outline: none;
+}
+
+/* Edit Form Buttons */
+.edit-form button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.edit-form button:first-of-type {
+  background-color: #28a745;
+  color: white;
+}
+
+.edit-form button:first-of-type:hover {
+  background-color: #218838;
+}
+
+.edit-form button:last-of-type {
+  background-color: #dc3545;
+  color: white;
+}
+
+.edit-form button:last-of-type:hover {
+  background-color: #c82333;
+}
+
+/* Editable row animation */
+.edit-row .edit-form-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 10px;
+}
+
+.edit-row.show .edit-form-wrapper {
+  max-height: 500px;
+  padding: 16px 10px;
+}

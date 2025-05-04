@@ -13,7 +13,127 @@ const ShareClient = () => {
   const shareProfile = [
     {
       id: 1,
-      photo: "/images/user.jpg",
+      photo: "/images/user4.jpg",
+      name: "Name123",
+      maritalStatus: "Single",
+      dob: "08/10/1996",
+      height: "5'3",
+      religion: "Religion",
+      caste: "Caste",
+      education: "Education",
+      occupation: "Occupation",
+      personalIncome: "Personal Income",
+      contact: "Contact No., Email",
+      state: "Delhi",
+      city: "New Delhi",
+      manglik: "Yes",
+      clientId: "CL123",
+      membershipStatus: "Active",
+      profileSent: "Yes",
+      handledBy: "Agent1",
+      lastRemark: "Pending",
+      budget: "50,000",
+      nriStatus: "No",
+    },
+    {
+      id: 1,
+      photo: "/images/user4.jpg",
+      name: "Name123",
+      maritalStatus: "Single",
+      dob: "08/10/1996",
+      height: "5'3",
+      religion: "Religion",
+      caste: "Caste",
+      education: "Education",
+      occupation: "Occupation",
+      personalIncome: "Personal Income",
+      contact: "Contact No., Email",
+      state: "Delhi",
+      city: "New Delhi",
+      manglik: "Yes",
+      clientId: "CL123",
+      membershipStatus: "Active",
+      profileSent: "Yes",
+      handledBy: "Agent1",
+      lastRemark: "Pending",
+      budget: "50,000",
+      nriStatus: "No",
+    },
+    {
+      id: 1,
+      photo: "/images/user4.jpg",
+      name: "Name123",
+      maritalStatus: "Single",
+      dob: "08/10/1996",
+      height: "5'3",
+      religion: "Religion",
+      caste: "Caste",
+      education: "Education",
+      occupation: "Occupation",
+      personalIncome: "Personal Income",
+      contact: "Contact No., Email",
+      state: "Delhi",
+      city: "New Delhi",
+      manglik: "Yes",
+      clientId: "CL123",
+      membershipStatus: "Active",
+      profileSent: "Yes",
+      handledBy: "Agent1",
+      lastRemark: "Pending",
+      budget: "50,000",
+      nriStatus: "No",
+    },
+    {
+      id: 1,
+      photo: "/images/user4.jpg",
+      name: "Name123",
+      maritalStatus: "Single",
+      dob: "08/10/1996",
+      height: "5'3",
+      religion: "Religion",
+      caste: "Caste",
+      education: "Education",
+      occupation: "Occupation",
+      personalIncome: "Personal Income",
+      contact: "Contact No., Email",
+      state: "Delhi",
+      city: "New Delhi",
+      manglik: "Yes",
+      clientId: "CL123",
+      membershipStatus: "Active",
+      profileSent: "Yes",
+      handledBy: "Agent1",
+      lastRemark: "Pending",
+      budget: "50,000",
+      nriStatus: "No",
+    },
+    {
+      id: 1,
+      photo: "/images/user4.jpg",
+      name: "Name123",
+      maritalStatus: "Single",
+      dob: "08/10/1996",
+      height: "5'3",
+      religion: "Religion",
+      caste: "Caste",
+      education: "Education",
+      occupation: "Occupation",
+      personalIncome: "Personal Income",
+      contact: "Contact No., Email",
+      state: "Delhi",
+      city: "New Delhi",
+      manglik: "Yes",
+      clientId: "CL123",
+      membershipStatus: "Active",
+      profileSent: "Yes",
+      handledBy: "Agent1",
+      lastRemark: "Pending",
+      budget: "50,000",
+      nriStatus: "No",
+    },
+    {
+      id: 1,
+      photo: "/images/user4.jpg",
       name: "Name123",
       maritalStatus: "Single",
       dob: "08/10/1996",
@@ -375,15 +495,18 @@ const ShareClient = () => {
                       <input type="checkbox" />
                     </td>
 
-                  <td>
-             <div style={{ width: "80px", height: "80px", overflow: "hidden" }}>
-                <img
-                src={profile.photo}
-                 alt="Profile"
-                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                     />
-                    </div>
-                       </td>
+                    <td>
+  <div style={{ width: "80px", height: "80px", overflow: "hidden" }}>
+    <a href="/UserProfilePage" target="_blank" rel="noopener noreferrer">
+      <img
+        src={profile.photo}
+        alt="Profile"
+        style={{ width: "100%", height: "100%", objectFit: "cover", cursor: "pointer" }}
+      />
+    </a>
+  </div>
+</td>
+
 
                     <td>{profile.name}, Male, {profile.contact}</td>
                     <td>{profile.clientId}, {profile.membershipStatus}</td>

@@ -1,123 +1,96 @@
 import React from "react";
+import "./AddLeads.css";
 
 const AddLeads = () => {
   return (
-    <>
-      <section className="shortlist-profiles">
-        <div className="container">
-          <div className="row">
-            <h2 className="section-title">Add Leads</h2>
+    <section className="add-leads-section">
+      <div className="add-leads-container">
+        <h2 className="add-leads-title">Add Leads</h2>
+        <form className="add-leads-form">
+          <div className="form-row">
+            <div className="form-group">
+              <label>Lead Source</label>
+              <select>
+                <option>Manual</option>
+              </select>
+            </div>
+            <div className="form-group">
+              <label>Lead Name</label>
+              <input type="text" placeholder="Enter lead name" />
+            </div>
+            <div className="form-group">
+              <label>Contact Person Name</label>
+              <input type="text" placeholder="Enter contact name" />
+            </div>
           </div>
-        </div>
-        <div className="container mt-2">
-          <form className="p-3 border border-1 rounded bg-white shadow-sm">
-            <div className="row mb-3">
-              <div className="col-md-4">
-                <label>Lead Source</label>
-                <select className="form-select">
-                  <option>Manual</option>
-                  {/* Add more options as needed */}
-                </select>
-              </div>
-              <div className="col-md-4">
-                <label>Lead Name </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter lead name"
-                />
-              </div>
-              <div className="col-md-4">
-                <label>Contact Person Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter contact name"
-                />
-              </div>
-            </div>
 
-            <div className="row mb-3">
-              <div className="col-md-4">
-                <label>Relation With Lead</label>
-                <input type="text" className="form-control" />
-              </div>
-              <div className="col-md-4">
-                <label>Country </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  defaultValue="India"
-                />
-              </div>
-              <div className="col-md-4">
-                <label>State </label>
-                <input type="text" className="form-control" />
-              </div>
+          <div className="form-row">
+            <div className="form-group">
+              <label>Relation With Lead</label>
+              <input type="text" />
             </div>
+            <div className="form-group">
+              <label>Country</label>
+              <input type="text" defaultValue="India" />
+            </div>
+            <div className="form-group">
+              <label>State</label>
+              <input type="text" />
+            </div>
+          </div>
 
-            <div className="row mb-3">
-              <div className="col-md-4">
-                <label>City</label>
-                <input type="text" className="form-control" />
-              </div>
-              <div className="col-md-4">
-                <label>Phone Number </label>
-                <input type="text" className="form-control" />
-              </div>
-              <div className="col-md-4">
-                <label>Email Address </label>
-                <input type="email" className="form-control" />
-              </div>
+          <div className="form-row">
+            <div className="form-group">
+              <label>City</label>
+              <input type="text" />
             </div>
+            <div className="form-group">
+              <label>Phone Number</label>
+              <input type="text" />
+            </div>
+            <div className="form-group">
+              <label>Email Address</label>
+              <input type="email" />
+            </div>
+          </div>
 
-            <div className="row mb-3">
-              <div className="col-md-4">
-                <label>Looking For </label>
-                <select className="form-select">
-                  <option>Bride</option>
-                  <option>Groom</option>
-                </select>
-              </div>
-              <div className="col-md-4">
-                <label>Assign To</label>
-                <select className="form-select">
-                  <option>Admin</option>
-                  {/* Add more users as needed */}
-                </select>
-              </div>
-              <div className="col-md-4">
-                <label>Budget</label>
-                <input type="text" className="form-control" />
-              </div>
+          <div className="form-row">
+            <div className="form-group">
+              <label>Looking For</label>
+              <select>
+                <option>Bride</option>
+                <option>Groom</option>
+              </select>
             </div>
+            <div className="form-group">
+              <label>Assign To</label>
+              <select>
+                <option>Admin</option>
+              </select>
+            </div>
+            <div className="form-group">
+              <label>Budget</label>
+              <input type="text" />
+            </div>
+          </div>
 
-            <div className="row mb-3">
-              <div className="col-md-6">
-                <label>Address</label>
-                <textarea className="form-control" rows="2" />
-              </div>
-              <div className="col-md-6">
-                <label>Other Details</label>
-                <textarea className="form-control" rows="2" />
-              </div>
+          <div className="form-row">
+            <div className="form-group full-width">
+              <label>Address</label>
+              <textarea rows="2"></textarea>
             </div>
+            <div className="form-group full-width">
+              <label>Other Details</label>
+              <textarea rows="2"></textarea>
+            </div>
+          </div>
 
-            <div className="row mb-3">
-              <div className="col-md-12">
-                <button
-                  className="btn"
-                  type="submit"
-                  style={{ background: "var(--pink)", color: "#fff" }}
-                >
-                  ADD LEAD
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </section>
-    </>
+          <div className="form-row">
+            <button className="submit-btn" type="submit">ADD LEAD</button>
+          </div>
+        </form>
+      </div>
+    </section>
   );
 };
 

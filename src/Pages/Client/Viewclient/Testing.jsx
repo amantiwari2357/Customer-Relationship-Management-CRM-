@@ -298,7 +298,7 @@ const ClientReport = () => {
                       <a href="/UserProfilePage" target="_blank" rel="noopener noreferrer">
                         <i className="fas fa-file-pdf" title="PDF Profile"></i>
                       </a>
-                      <a href="/EditClient" target="_blank" rel="noopener noreferrer">
+                      <a href="/EditClient  " target="_blank" rel="noopener noreferrer">
                         <i className="fas fa-pen-to-square" title="Edit"></i>
                       </a>
                     </div>

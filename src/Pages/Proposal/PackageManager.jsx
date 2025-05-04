@@ -11,7 +11,71 @@ const PackageManager = () => {
       price: '₹21000.00',
       special: false,
       status: 'Active'
-    }
+    },
+    {
+      name: 'Gold_2100',
+      validity: '1 Months',
+      profileLimit: 100,
+      price: '₹21000.00',
+      special: false,
+      status: 'Active'
+    },
+    {
+      name: 'Gold_2100',
+      validity: '1 Months',
+      profileLimit: 100,
+      price: '₹21000.00',
+      special: false,
+      status: 'Active'
+    },
+    {
+      name: 'Gold_2100',
+      validity: '1 Months',
+      profileLimit: 100,
+      price: '₹21000.00',
+      special: false,
+      status: 'Active'
+    },
+    {
+      name: 'Gold_2100',
+      validity: '1 Months',
+      profileLimit: 100,
+      price: '₹21000.00',
+      special: false,
+      status: 'Active'
+    },
+    {
+      name: 'Gold_2100',
+      validity: '1 Months',
+      profileLimit: 100,
+      price: '₹21000.00',
+      special: false,
+      status: 'Active'
+    },
+    {
+      name: 'Gold_2100',
+      validity: '1 Months',
+      profileLimit: 100,
+      price: '₹21000.00',
+      special: false,
+      status: 'Active'
+    },
+    {
+      name: 'Gold_2100',
+      validity: '1 Months',
+      profileLimit: 100,
+      price: '₹21000.00',
+      special: false,
+      status: 'Active'
+    },
+    {
+      name: 'Gold_2100',
+      validity: '1 Months',
+      profileLimit: 100,
+      price: '₹21000.00',
+      special: false,
+      status: 'Active'
+    },
   ]);
 
   const [editIndex, setEditIndex] = useState(null);

@@ -48,6 +48,7 @@ import AssignPackage from "./Pages/Proposal/AssignPackage";
 import AssignPackageDetails from "./Pages/Proposal/AssignPackageDetails";
 
 import UserProfilePage from "./Pages/Client/Viewclient/UserProfilePage";
+// import Practice from "./Pages/Practice";
 
 import "./App.css";
 
@@ -120,6 +121,9 @@ const App = () => {
             <Route path="/assignPackageDetails" element={<AssignPackageDetails />} />
 
             <Route path="/UserProfilePage" element={<UserProfilePage />} />
+            {/* <Route path="/practice" element={<Practice />} /> */}
+
+            {/* Fallback route */}
           </Routes>
         </div>
       </div>
