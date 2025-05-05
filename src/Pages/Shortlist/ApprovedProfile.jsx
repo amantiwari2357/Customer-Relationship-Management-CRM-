@@ -1,86 +1,109 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ApprovedProfile = () => {
+  const [actionIndex, setActionIndex] = useState(null);
+
+  const handleDecision = (index, decision) => {
+    console.log(`Row ${index} - changed to ${decision}`);
+    setActionIndex(null); // Hide dropdown after selection
+  };
+
+  const approvedData = [
+    {
+      id: "K3FG45",
+      name: "Madhuri Ajmani",
+      phone: "9922993344",
+      total: 1,
+      by: "Kajal",
+      date: "06/10/2024",
+    },
+    {
+      id: "K3FG45",
+      name: "Name123",
+      phone: "9922993344",
+      total: 2,
+      by: "Kajal",
+      date: "08/12/2025",
+    },
+    {
+      id: "K3FG45",
+      name: "Name123",
+      phone: "9922993344",
+      total: 1,
+      by: "Kajal",
+      date: "06/10/2024",
+    },
+    {
+      id: "K3FG45",
+      name: "Name123",
+      phone: "9922993344",
+      total: 4,
+      by: "Kajal",
+      date: "06/10/2024",
+    },
+    {
+      id: "K3FG45",
+      name: "Name123",
+      phone: "9922993344",
+      total: 1,
+      by: "Kajal",
+      date: "06/10/2024",
+    },
+  ];
+
   return (
-    <>
-      <section className="shortlist-profiles">
-        <div className="container">
-          <h2 className="section-title">Approved Profiles</h2>
-          <div className="table-responsive">
-            <table className="table table-bordered">
-              <thead className="admin-table">
-                <tr>
-                  <th>Client Id</th>
-                  <th>Client Name</th>
-                  <th>Phone</th>
-                  <th>Total Approved</th>
-                  <th>Approved Date</th>
-                  <th>Shortlisted By</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>K3FG45</td>
-                  <td>Madhuri Ajmani</td>
-                  <td>9922993344</td>
-                  <td>1</td>
-                  <td>Kajal</td>
-                  <td>06/10/2024</td>
-                  <td>
-                    <i className="bi bi-eye-fill action-icon"></i>
+    <section className="shortlist-profiles">
+      <div className="container">
+        <h2 className="section-title">Approved Profiles</h2>
+        <div className="table-responsive">
+          <table className="table table-bordered">
+            <thead className="admin-table">
+              <tr>
+                <th>Client Id</th>
+                <th>Client Name</th>
+                <th>Phone</th>
+                <th>Total Approved</th>
+                <th>Shortlisted By</th>
+                <th>Approved Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {approvedData.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.phone}</td>
+                  <td>{item.total}</td>
+                  <td>{item.by}</td>
+                  <td>{item.date}</td>
+                  <td className="d-flex gap-2 position-relative">
+                    <i className="bi bi-eye-fill action-icon" title="View"></i>
+                    <i
+                      onClick={() =>
+                        setActionIndex(index === actionIndex ? null : index)
+                      }
+                      className="bi bi-pencil-square action-icon"
+                      title="Change Approval"
+                    ></i>
+                    {actionIndex === index && (
+                      <div className="action-dropdown">
+                        <button onClick={() => handleDecision(index, "Approved")}>
+                          Approve
+                        </button>
+                        <button onClick={() => handleDecision(index, "Rejected")}>
+                          Reject
+                        </button>
+                      </div>
+                    )}
                   </td>
                 </tr>
-                <tr>
-                  <td>K3FG45</td>
-                  <td>Name123</td>
-                  <td>9922993344</td>
-                  <td>2</td>
-                  <td>Kajal</td>
-                  <td>08/12/2025</td>
-                  <td>
-                    <i className="bi bi-eye-fill action-icon"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>K3FG45</td>
-                  <td>Name123</td>
-                  <td>9922993344</td>
-                  <td>1</td>
-                  <td>Kajal</td>
-                  <td>06/10/2024</td>
-                  <td>
-                    <i className="bi bi-eye-fill action-icon"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>K3FG45</td>
-                  <td>Name123</td>
-                  <td>9922993344</td>
-                  <td>4</td>
-                  <td>Kajal</td>
-                  <td>06/10/2024</td>
-                  <td>
-                    <i className="bi bi-eye-fill action-icon"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>K3FG45</td>
-                  <td>Name123</td>
-                  <td>9922993344</td>
-                  <td>1</td>
-                  <td>Kajal</td>
-                  <td>06/10/2024</td>
-                  <td>
-                    <i className="bi bi-eye-fill action-icon"></i>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </table>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

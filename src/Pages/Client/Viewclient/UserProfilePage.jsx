@@ -1,94 +1,161 @@
-import React, { useRef } from 'react';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
-import './UserProfilePage.css';
+import React, { useRef } from "react";
+import html2pdf from "html2pdf.js";
+import "./UserProfilePage.css";
 
-const userProfile = {
-  clientName: 'Aman',
-  gender: 'Male',
-  caste: 'General',
-  occupation: 'Engineer',
-  mobileNumber: '1234567890',
-  profileId: 'JD123',
-  openForDivorce: 'No',
-  country: 'India',
-  state: 'DELHI',
-  isNRI: 'Yes',
-  city: 'Rithala',
-  membershipStatus: 'Active',
-  fromDate: '2024-01-01',
-  toDate: '2025-01-01',
-};
+const PdfProfile = () => {
+  const pdfRef = useRef();
 
-const UserProfilePage = () => {
-  const profileRef = useRef(null);
-
-  const downloadPDF = async () => {
-    const input = profileRef.current;
-    const buttonContainer = input.querySelector('.button-container');
-
-    // Hide the export button before capturing
-  if (buttonContainer) {
-    buttonContainer.style.display = 'none';
-  }
-
-
- const canvas = await html2canvas(input, {
-    scale: 2, // increase quality by scaling (default is 1)
-    useCORS: true, // allow cross-origin images if needed
-    // logging: false,
-    backgroundColor: null, // keep background transparent
-  });
-
-  // Show the export button again
-  if (buttonContainer) {
-    buttonContainer.style.display = 'block';
-  }
-
-
-  const imgData = canvas.toDataURL('image/png');
-  const pdf = new jsPDF('p', 'mm', 'a4');
-
-     const imgProps = pdf.getImageProperties(imgData);
-  const pdfWidth = pdf.internal.pageSize.getWidth();
-  const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-  pdf.save('user-profile.pdf');
-};
+  const handleDownload = () => {
+    const element = pdfRef.current;
+    const opt = {
+      margin: [0.5, 0.5, 0.5, 0.5],  // Setting margins (top, left, bottom, right)
+      filename: 'user_profile.pdf',
+      image: { type: 'jpeg', quality: 1 },
+      html2canvas: { 
+        scale: 4,  // Increase the scale for better quality
+        useCORS: true
+      },
+      jsPDF: { 
+        unit: 'in',
+        format: 'a4',  // A4 size
+        orientation: 'portrait'  // Portrait orientation
+      }
+    };
+    html2pdf().set(opt).from(element).save();
+  };
 
   return (
-    <div className="hover-profile-wrapper">
-      <div className="hover-trigger"></div>   
-      {/* view profile */}
-
-      <div className="hover-profile-popup">
-        <div className="profile-card" ref={profileRef}>
-          <div className="profile-header">
-            <h2 className="profile-title">
-              Profile Of : {userProfile.clientName}
-            </h2>
-            <img src="/images/user4.jpg" alt="Profile" className="profile-image" />
+    <section className="pdfmain">
+      <div className="client-pdf" ref={pdfRef}>
+        {/* Header */}
+        <div className="pdf-nav">
+          <div className="pdf-nav-logo">
+            <img src="/images/logo.png" alt="logo" />
           </div>
-          <div className="profile-grid">
-            {Object.entries(userProfile).map(([key, value]) => (
-              <div key={key} className="profile-item">
-                <label className="profile-label">
-                  {key.replace(/([A-Z])/g, ' $1')}
-                </label>
-                <span className="profile-value">{value || '—'}</span>
-              </div>
-            ))}
-          </div>
-          <div className="button-container">
-            <button className="download-btn" onClick={downloadPDF}>
-              Export To PDF 
-            </button>
+          <div className="pdf-nav-address">
+            <p><b>Address:</b> J 30, Sainik Farms, New Delhi - 110062</p>
+            <p><b>Phone:</b> <span>+91-9310353844</span>, <span>+91-8800719444</span></p>
+            <p><b>Email:</b> <span>vijay@7knots7steps.com</span>, <span>vani@7knots7steps.com</span></p>
+            <p>
+              <b>Website:</b>{" "}
+              <a
+                style={{ textDecoration: "none", color: "white" }}
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://7knots7steps.com/"
+              >
+                https://7knots7steps.com/
+              </a>
+            </p>
           </div>
         </div>
+
+        {/* Profile Header */}
+        <div className="pdf-header">
+          <div style={{ display: "flex", gap: "30px", alignItems: "center" }}>
+            <div className="pdf-header-profileImage">
+              <img src="/images/client1.png" alt="client profile" />
+            </div>
+            <div className="pdf-header-details">
+              {[
+                ["Name", "Gourav Panchal"],
+                ["Gender", "Male"],
+                ["DOB", "08-04-2000"],
+                ["Height", "5.6"],
+                ["Gotra", "Pitlera"],
+                ["Caste", "Baniya"],
+                ["Sub caste", "Baniya"],
+                ["Complexion", "Wheatish"],
+                ["Income", "5.6 LPA"],
+                ["Diet", "Vegetarian"],
+                ["Family Status", "Nuclear"],
+                ["Marital Status", "Single"],
+                ["Hobbies", "Travelling and Movies"],
+                ["Time of birth & Place", "03:35 AM Ghaziabad, Uttar Pradesh"]
+              ].map(([label, value]) => (
+                <div className="pdf-header-main" key={label}>
+                  <label>{label}</label>
+                  <p>{value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Profile Body */}
+        <div className="pdf-body">
+          <div className="inner-body-border">
+            <div className="pdfHeading"><p>Occupation Details</p></div>
+            <div className="pdf-body-bg">
+              <div className="pdf-details-main"><b>Occupation:</b> <span>Business</span></div>
+              <div className="pdf-details-main">
+                <b>Occupation Details:</b>{" "}
+                <span>
+                  Businessman & Entrepreneur in Textiles, Real Estate, Retail, Artificial Lab Planting, Trading, etc.
+                  Rental income from commercial properties in Turab Nagar & holding other properties including
+                  agricultural land, residential as well as commercial properties.
+                </span>
+              </div>
+              <div className="pdf-details-main">
+                <b>Educational Information:</b>
+                <ul>
+                  <li>Bachelors of Business Administration: From Sharda University, Greater Noida</li>
+                  <li>Strategical Management from University of Ljubljana, Slovenia, Europe</li>
+                  <li>Masters of Business Administration (Non-regular): Amity University, Noida</li>
+                  <li>Schooling Institution - Private School Passed Out</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="pdfHeading"><p>Family Details</p></div>
+            <div>
+              <div className="pdf-details-main"><b>Father:</b> <span>Mr. Lokesh Goel</span></div>
+              <div className="pdf-details-main"><b>Father Occupation Details:</b> <span>Business in Textiles, Biotech, and Trade</span></div>
+              <div className="pdf-details-main"><b>Mother:</b> <span>Mrs. Priti Goel</span></div>
+              <div className="pdf-details-main"><b>Siblings Details:</b> <span>---</span></div>
+              <div className="pdf-details-main"><b>Residence:</b> <span>Ghaziabad, Uttar Pradesh</span></div>
+            </div>
+          </div>
+
+          <div className="inner-body-border">
+            <div className="pdfHeading"><p>Other Details</p></div>
+            <div>
+              <div className="pdf-details-main"><b>House Status:</b> <span>Kothi</span></div>
+              <div className="pdf-details-main"><b>Other Details:</b> <span>Younger Sister (Married), Jija Ji (From a reputed family in Delhi)</span></div>
+            </div>
+
+            <div className="pdfHeading"><p>Partner Preferences</p></div>
+            <div className="pdf-details-main">
+              <span>
+                I am looking for an educated and understanding accommodative partner, who has a scientific bent of mind
+                and has an independent way of thinking.
+              </span>
+            </div>
+
+            <div className="pdfHeading"><p>Other Photos</p></div>
+            <div className="pdf-details-main other-photos-section mb-5">
+              {[...Array(4)].map((_, i) => (
+                <img src="/images/client1.png" alt="pictures" key={i} />
+              ))}
+            </div>
+          </div>
+
+          <div className="elephantImage"></div>
+        </div>
+
+        {/* Footer */}
+        <div className="pdf-footer">
+          <b>*Note</b>
+          <p className="m-0">WE ARE SENDING THIS BIODATA AS PER THE INFORMATION PROVIDED BY THE SAID PARTY.</p>
+        </div>
       </div>
-    </div>
+
+      {/* Download Button (Outside the PDF content) */}
+      <button className="pdf-download-btn" onClick={handleDownload}>
+        <i className="bi bi-download"></i> Download PDF
+      </button>
+    </section>
   );
 };
 
-export default UserProfilePage;
+export default PdfProfile;
