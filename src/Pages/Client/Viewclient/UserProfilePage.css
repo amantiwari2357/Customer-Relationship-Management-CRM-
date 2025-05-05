@@ -150,6 +150,21 @@ body {
   left: 43%;
 }
 
+.download-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.pdf-header-profileImage img {
+  width: 150px;             /* or adjust as needed */
+  height: 150px;            /* maintain square ratio */
+  object-fit: cover;        /* ensures the image is not stretched */
+  border-radius: 8px;       /* use 50% if you want a circular image */
+  border: 2px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* soft shadow */
+  transform: none !important; /* disable any 3D/tilt transforms */
+}
+
 .pdf-download-btn{
   background-color: #93213a;
   color: white;
