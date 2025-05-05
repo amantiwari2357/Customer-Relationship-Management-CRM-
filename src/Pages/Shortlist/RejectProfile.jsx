@@ -1,9 +1,59 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const RejectProfile = () => {
+  const [actionIndex, setActionIndex] = useState(null);
+
+  const handleDecision = (index, decision) => {
+    console.log(`Row ${index} changed to: ${decision}`);
+    setActionIndex(null);
+  };
+
+  const rejectedData = [
+    {
+      id: "K3FG45",
+      name: "Name123",
+      phone: "9922993344",
+      total: 2,
+      by: "Kajal",
+      date: "08/12/2025",
+    },
+    {
+      id: "K3FG45",
+      name: "Name123",
+      phone: "9922993344",
+      total: 2,
+      by: "Kajal",
+      date: "08/12/2025",
+    },
+    {
+      id: "K3FG45",
+      name: "Name123",
+      phone: "9922993344",
+      total: 1,
+      by: "Kajal",
+      date: "06/10/2024",
+    },
+    {
+      id: "K3FG45",
+      name: "Name123",
+      phone: "9922993344",
+      total: 4,
+      by: "Kajal",
+      date: "06/10/2024",
+    },
+    {
+      id: "K3FG45",
+      name: "Name123",
+      phone: "9922993344",
+      total: 1,
+      by: "Kajal",
+      date: "06/10/2024",
+    },
+  ];
+
   return (
     <>
-    <section className="shortlist-profiles">
+      <section className="shortlist-profiles">
         <div className="container">
           <h2 className="section-title">Rejected Profiles</h2>
           <div className="table-responsive">
@@ -20,68 +70,43 @@ const RejectProfile = () => {
                 </tr>
               </thead>
               <tbody>
-              <tr>
-                  <td>K3FG45</td>
-                  <td>Name123</td>
-                  <td>9922993344</td>
-                  <td>Kajal</td>
-                  <td>2</td>
-                  <td>08/12/2025</td>
-                  <td>
-                    <i className="bi bi-eye-fill action-icon"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>K3FG45</td>
-                  <td>Name123</td>
-                  <td>9922993344</td>
-                  <td>Kajal</td>
-                  <td>2</td>
-                  <td>08/12/2025</td>
-                  <td>
-                    <i className="bi bi-eye-fill action-icon"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>K3FG45</td>
-                  <td>Name123</td>
-                  <td>9922993344</td>
-                  <td>Kajal</td>
-                  <td>1</td>
-                  <td>06/10/2024</td>
-                  <td>
-                    <i className="bi bi-eye-fill action-icon"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>K3FG45</td>
-                  <td>Name123</td>
-                  <td>9922993344</td>
-                  <td>Kajal</td>
-                  <td>4</td>
-                  <td>06/10/2024</td>
-                  <td>
-                    <i className="bi bi-eye-fill action-icon"></i>
-                  </td>
-                </tr>
-                <tr>
-                  <td>K3FG45</td>
-                  <td>Name123</td>
-                  <td>9922993344</td>
-                  <td>Kajal</td>
-                  <td>1</td>
-                  <td>06/10/2024</td>
-                  <td>
-                    <i className="bi bi-eye-fill action-icon"></i>
-                  </td>
-                </tr>
+                {rejectedData.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.id}</td>
+                    <td>{item.name}</td>
+                    <td>{item.phone}</td>
+                    <td>{item.total}</td>
+                    <td>{item.date}</td>
+                    <td>{item.by}</td>
+                    <td className="d-flex gap-2 position-relative">
+                      <i className="bi bi-eye-fill action-icon" title="View"></i>
+                      <i
+                        onClick={() =>
+                          setActionIndex(index === actionIndex ? null : index)
+                        }
+                        className="bi bi-pencil-square action-icon"
+                        title="Change Status"
+                      ></i>
+                      {actionIndex === index && (
+                        <div className="action-dropdown">
+                          <button onClick={() => handleDecision(index, "Approved")}>
+                            Approve
+                          </button>
+                          <button onClick={() => handleDecision(index, "Rejected")}>
+                            Reject
+                          </button>
+                        </div>
+                      )}
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default RejectProfile
+export default RejectProfile;
