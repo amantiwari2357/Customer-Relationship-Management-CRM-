@@ -220,7 +220,7 @@ const ClientReport = () => {
 
             <div className="form-actions">
               <button type="submit" className="search-button">SEARCH</button>
-              <button type="button" onClick={handleReset} className="reset-button">RESET</button>
+              {/* <button type="button" onClick={handleReset} className="reset-button">RESET</button> */}
             </div>
           </form>
         )}
@@ -234,6 +234,7 @@ const ClientReport = () => {
               <option value="deepak">Deepak RM</option>
               <option value="geeta">Geeta</option>
             </select>
+            
             <button className="apply-btn">Assign By Selected</button>
           </div>
 

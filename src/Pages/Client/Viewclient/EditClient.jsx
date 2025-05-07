@@ -212,14 +212,13 @@ const ViewClient = () => {
   return (
     <div className="content-area">
     <div className="aman">
-      <div className=""></div>
+      {/* <div className="modal-header">  
+        <h5 className="modal-title">View Client</h5>
+      </div> */}
       <div>
-        {/* /////// */}
-
-        {/* ///////////////// */}
-        <div className="flex justify-end p-2">
-          <div className="button">
-            <div className="">
+        <div className="flex justify-end p-4">
+          {/* <div className="button"> */}
+            <div>
               {/* <button
         type="button"
         className="btn-close"
@@ -228,12 +227,13 @@ const ViewClient = () => {
       ></button> */}
             </div>
            <div className="unique-modal-header">
-  <div className="unique-profile-header">
-    <div className="profile-row">
-      <div className="profile-image-col">
+          <div className="unique-profile-header">
+          <div className="profile-row">
+         <div className="profile-image-col">
         <div className="unique-client-image">
           <img src={client1} className="client-img" alt="client" />
         </div>
+        
       </div>
       <div className="profile-info-col">
         <div className="unique-user-detail">
@@ -247,15 +247,25 @@ const ViewClient = () => {
           </div>
           <p className="user-email">amankumartiwari5255gmail.com</p>
           <p className="user-phone">+91 9319846114</p>
+          <div className="user-location-row">
+          <p className="user-location">
+            Delhi, India</p>
+          </div>
+
         </div>
       </div>
     </div>
-  </div>
 </div>
-<hr />
+{/* /////////////////////1.1//////////// */}
 
 
-            {/* /////////////////2///////////// */}
+{/* <div className="new-option">
+  <div className="new-option-item"></div>
+    <div className="new-option-icon">
+      <h1>h</h1>
+      </div> */}
+
+          {/* /////////////////2///////////// */}
   <div className="modal-body">
   <section className="update-profile">
     <div className="update-profile-section">

@@ -1,3 +1,8 @@
+.p-2{
+  padding: 0.5rem !important;
+}
+
+
 /* //////////////////////1//////////////////////// */
 .profile-row {
     display: flex;
@@ -254,3 +259,14 @@
   color: #000;
   min-width: 110px; 
 } */
+
+.user-location-row{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+.user-location{
+  text-align: right;
+
+}
