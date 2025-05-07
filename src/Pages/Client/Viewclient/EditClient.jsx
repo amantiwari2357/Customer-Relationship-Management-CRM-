@@ -4,7 +4,7 @@ import client1 from "../../../Images/client1.png";
 import call from "../../../Images/call-icon.png";
 import gmail from "../../../Images/Gmail-icon.png";
 import whatsapp from "../../../Images/WhatsApp-icon.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import audio from "../../../Images/testing-audio.mp3";
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { FaEdit, FaShareAlt } from 'react-icons/fa';
@@ -752,8 +752,11 @@ const ViewClient = () => {
                           </p>
                           <p>Duration: 6 months</p>
                           <p className="fs-2">₹ 40,000</p>
-                          <button className="all-buttons">Send proposal</button>
-                        </div>
+                          <Link to="/elitepdf">
+                                       <button className="all-buttons">
+                                       Send proposal
+                                     </button>
+                                     </Link>                        </div>
                       </div>
                     </div>
 

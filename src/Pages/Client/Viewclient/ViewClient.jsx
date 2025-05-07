@@ -1717,7 +1717,7 @@ const ViewClient = () => {
                                         </p>
                                         <p>Duration: 6 months</p>
                                         <p className="fs-2">₹ 40,000</p>
-
+                                        
                                         <Link to="/elitepdf">
                                        <button className="all-buttons">
                                        Send proposal
