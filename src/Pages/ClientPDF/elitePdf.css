@@ -80,3 +80,20 @@
     height: 100%;
     object-fit: cover;
 }
+
+/* ///////////////// */
+.elite-button {
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.elite-button:hover {
+  background-color: #3a0066;
+}
