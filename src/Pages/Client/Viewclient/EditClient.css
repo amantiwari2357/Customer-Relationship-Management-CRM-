@@ -52,52 +52,95 @@
  
 .modal-body {
     display: flex;
-    /* flex-direction: column; */
     padding: 1px;
-    /* gap: 0px; */
-    /* font-family: sans-serif; */
     justify-content: start;
-    /* background-color: #fff; */
   }
-  
-  /* Profile wrapper */
   .update-profile {
     width: 100%;
   }
   
-  /* Section box (holds all parts) */
-  .update-profile-section {
-    display: flex;
-    flex-direction: column;
-    gap: -8px;
-    border-radius: 0px;
-    margin-bottom: 1px;
-    border-right: 2px solid #d3d3d3;
-    margin-top: -1.9%;
+  /* Updated sidebar section */
+.update-profile-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border-right: 1px solid #ccc; 
+  border-radius: 8px 0 0 8px;
+  margin: 0; 
+  height: 100vh; 
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05); 
+  overflow-y: auto; 
+}
 
-  }
+/* Optional: fixed sidebar behavior */
+.sidebar-fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 260px;
+  height: 100vh;
+  z-index: 1000;
+}
+
+/* Sidebar list enhancements */
+.update-profile-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.update-profile-section li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #444;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.2s ease;
+}
+
+.update-profile-section li:hover {
+  background-color: #eaeaea;
+  border-radius: 6px;
+  padding-left: 8px;
+  cursor: pointer;
+}
+
+/* Heading inside sidebar */
+.update-profile-section h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
   
   /* Style the list item (li) */
-ul li {
-    margin-bottom: 8px;
+  ul li {
+    display: flex;
+    align-items: flex-start; 
+    gap: 6px;
     font-size: 15px;
     color: #333;
     font-family: Poppins, serif;
+    margin-bottom: 8px;
+    flex-wrap: wrap; 
+    word-break: break-word;
   }
   
-  /* Style the bold text (b) inside list item */
   ul li b {
-    color: #000;
     font-weight: 600;
-    margin-right: 5px;
+    color: #000;
+    display: inline-block;
   }
   
-  /* Information list */
   ul {
     list-style: none;
     padding-left: 0;
     margin: 0;
    font-family: Poppins,serif;
+   margin-bottom: 0;
   }
   
   li {
@@ -192,3 +235,22 @@ ul li {
     height: 100%;
     background-color: #f5f5f5;
 }
+
+/* .update-profile-section ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  flex-wrap: wrap;
+  font-size: 15px;
+  color: #333;
+  font-family: Poppins, serif;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+.update-profile-section ul li b {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: #000;
+  min-width: 110px; 
+} */

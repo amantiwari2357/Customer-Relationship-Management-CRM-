@@ -629,7 +629,7 @@ const ViewClient = () => {
           <hr />
           <div className="row">
             {profiles.map((profile) => (
-              <div className="col-md-3">
+              <div className="col-md-3" key={profile.id}>
                 <div className="client-card">
                   <div className="view-client-topbar">
                     <input type="radio" name="" id="" />
@@ -644,14 +644,14 @@ const ViewClient = () => {
                       <span>20</span>
                     </div>
                     <div
-                      class="modal fade"
+                      className="modal fade"
                       id="heart-btn"
-                      tabindex="-1"
+                      tabIndex="-1"
                       aria-labelledby="exampleModalLabel"
                       aria-hidden="true"
                     >
-                      <div class="modal-dialog update-profile-modal-dialog">
-                        <div class="modal-content">
+                      <div className="modal-dialog update-profile-modal-dialog">
+                        <div className="modal-content">
                           <div class="modal-header modal-header-costom">
                             <h1 class="modal-title fs-5" id="exampleModalLabel">
                               Modal title
@@ -1717,10 +1717,13 @@ const ViewClient = () => {
                                         </p>
                                         <p>Duration: 6 months</p>
                                         <p className="fs-2">₹ 40,000</p>
-                                        <button className="all-buttons">
-                                          Send proposal
-                                        </button>
-                                      </div>
+
+                                        <Link to="/elitepdf">
+                                       <button className="all-buttons">
+                                       Send proposal
+                                     </button>
+                                </Link>                    
+                              </div>
                                     </div>
                                   </div>
                                   {/* Tab Content 5 */}
