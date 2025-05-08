@@ -31,9 +31,9 @@
         {/* <Topbar toggleSidebar={toggleSidebar} />   ✅ correctly passing */}
       <div className="d-flex gap-3 align-items-center">
         {/* Hamburger Menu */}
-        <div className={`hamburger ${isSidebarOpen ? 'active' : ''}`} >
+        {/* <div className={`hamburger ${isSidebarOpen ? 'active' : ''}`} >
           <i className="bi bi-list"></i>
-        </div>
+        </div> */}
 
           {/* Search */}
           <div className="topbar-search">

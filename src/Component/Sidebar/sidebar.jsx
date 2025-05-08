@@ -5,211 +5,243 @@ import "./sidebar.css";
 
 const Sidebar = () => {
   const [dropdown, setDropdown] = useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const toggleDropdown = (dropdownName) => {
-    setDropdown(dropdown === dropdownName ? null : dropdownName);
+    setDropdown(dropdown === dropdownName? null : dropdownName);
+  };
+
+/*************  ✨ Windsurf Command ⭐  *************/
+  /**
+   * Toggles the sidebar to open or close.
+   * @function
+   */
+/*******  eac9575b-029b-4f55-8f3f-1199dc344e09  *******/
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
   return (
-    <div className="sidebar">
-      <div>
-        <Link to="/" className="text-center">
-          <img src={logo} className="logo" alt="dashboard logo" />
-        </Link>
+    <div className={`flex ${isSidebarOpen? "" : "sidebar-closed"}`}>
+      {/* Sidebar */}
+      <div className={`sidebar ${isSidebarOpen? "" : "closed"}`}>
+        <div className="sidebar-header">
+          <Link to="/" className="text-center">
+            <img src={logo} className="logo" alt="dashboard logo" />
+          </Link>
+          <i
+            className="fas fa-times close-btn"
+            style={{
+              cursor: "pointer",
+              marginLeft: "auto",
+              display: isSidebarOpen ? "none" : "block",
+            }}
+            onClick={toggleSidebar}
+          ></i>
+        </div>
+        <h5
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Link
+            to="/login"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              textDecoration: "none",
+              color: "inherit",
+            }}
+          >
+            <i className="bi bi-speedometer2"></i> Dashboard
+          </Link>
+          <i
+            className="fas fa-bars open-btn"
+            style={{
+              cursor: "pointer",
+              marginLeft: "auto",
+              display: isSidebarOpen? "block" : "none",
+            }}
+            onClick={toggleSidebar}
+          ></i>
+        </h5>
+
+        <ul className="sidebar-menu">
+          {/* Client Menu */}
+          <li>
+            <div onClick={() => toggleDropdown("clients")}>
+              <Link to="#">
+                <i className="bi bi-people-fill"></i> Clients
+              </Link>
+            </div>
+            <ul className={`dropdown ${dropdown === "clients" ? "open" : ""}`}>
+              <li>
+                <Link to="/Testing">
+                  <i className="bi bi-eye-fill"></i> View Clients
+                </Link>
+              </li>
+              <li>
+                <Link to="/add-client">
+                  <i className="bi bi-person-plus-fill"></i> Add Client
+                </Link>
+              </li>
+              <li>
+                <Link to="/client-report">
+                  <i className="bi bi-bar-chart-fill"></i> Client Report
+                </Link>
+              </li>
+            </ul>
+          </li>
+
+          {/* Shortlist Menu */}
+          <li>
+            <div onClick={() => toggleDropdown("shortlist")}>
+              <Link to="#">
+                <i className="bi bi-check2-square"></i> Shortlist
+              </Link>
+            </div>
+            <ul className={`dropdown ${dropdown === "shortlist" ? "open" : ""}`}>
+              <li>
+                <Link to="/shortlisted-profile">
+                  <i className="bi bi-person-check-fill"></i> Shortlisted Profiles
+                </Link>
+              </li>
+              <li>
+                <Link to="/approved-profile">
+                  <i className="bi bi-patch-check-fill"></i> Approved Profiles
+                </Link>
+              </li>
+              <li>
+                <Link to="/reject-profile">
+                  <i className="bi bi-x-circle-fill"></i> Rejected Profiles
+                </Link>
+              </li>
+            </ul>
+          </li>
+
+          {/* Leads Menu */}
+          <li>
+            <div onClick={() => toggleDropdown("Leads")}>
+              <Link to="#">
+                <i className="bi bi-person-square"></i> Leads
+              </Link>
+            </div>
+            <ul className={`dropdown ${dropdown === "Leads" ? "open" : ""}`}>
+              <li>
+                <Link to="/allLeads">
+                  <i className="bi bi-list-ul"></i> All Leads
+                </Link>
+              </li>
+              <li>
+                <Link to="/addLeads">
+                  <i className="bi bi-plus-square-fill"></i> Add Leads
+                </Link>
+              </li>
+            </ul>
+          </li>
+
+          {/* Tasks Menu */}
+          <li>
+            <div onClick={() => toggleDropdown("Tasks")}>
+              <Link to="#">
+                <i className="bi bi-list-task"></i> Tasks
+              </Link>
+            </div>
+            <ul className={`dropdown ${dropdown === "Tasks" ? "open" : ""}`}>
+              <li>
+                <Link to="/viewTask">
+                  <i className="bi bi-card-checklist"></i> View Tasks
+                </Link>
+              </li>
+              <li>
+                <Link to="/addTask">
+                  <i className="bi bi-plus-circle-fill"></i> Add Tasks
+                </Link>
+              </li>
+            </ul>
+          </li>
+
+          {/* Settings Menu */}
+          <li>
+            <div onClick={() => toggleDropdown("Settings")}>
+              <Link to="#">
+                <i className="bi bi-gear-fill"></i> Settings
+              </Link>
+            </div>
+            <ul className={`dropdown ${dropdown === "Settings" ? "open" : ""}`}>
+              <li>
+                <Link to="/activity-log">
+                  <i className="bi bi-clock-history"></i> Manage Activity Log
+                </Link>
+              </li>
+              <li>
+                <Link to="/Add-Reference">
+                  <i className="bi bi-person-plus-fill"></i> Add Reference
+                </Link>
+              </li>
+              <li>
+                <Link to="/View-preference">
+                  <i className="bi bi-person-lines-fill"></i> View Reference
+                </Link>
+              </li>
+            </ul>
+          </li>
+
+          {/* User Management Menu */}
+          <li>
+            <div onClick={() => toggleDropdown("Management")}>
+              <Link to="#">
+                <i className="bi bi-person-gear"></i> User Management
+              </Link>
+            </div>
+            <ul className={`dropdown ${dropdown === "Management" ? "open" : ""}`}>
+              <li>
+                <Link to="/staffReport">
+                  <i className="bi bi-clipboard-data-fill"></i> Staff Report
+                </Link>
+              </li>
+              <li>
+                <Link to="/userManager">
+                  <i className="bi bi-person-badge-fill"></i> User Manager
+                </Link>
+              </li>
+            </ul>
+          </li>
+
+          {/* Proposal Menu */}
+          <li>
+            <div onClick={() => toggleDropdown("Proposal")}>
+              <Link to="#">
+                <i className="bi bi-envelope-paper-fill"></i> Proposal
+              </Link>
+            </div>
+            <ul className={`dropdown ${dropdown === "Proposal" ? "open" : ""}`}>
+              <li>
+                <Link to="/AssignPackage">
+                  <i className="bi bi-arrow-right-circle-fill"></i> Assign Proposal
+                </Link>
+              </li>
+              <li>
+                <Link to="/package-manager">
+                  <i className="bi bi-archive-fill"></i> Proposal Manager
+                </Link>
+              </li>
+            </ul>
+          </li>
+
+          {/* Logout Menu */}
+          <li>
+            <div onClick={() => toggleDropdown("logout")}>
+              <Link to="#">
+                <i className="bi bi-box-arrow-right"></i> Logout
+              </Link>
+            </div>
+          </li>
+        </ul>
       </div>
-      <h5>
-        <Link to="/login">
-          <i className="bi bi-speedometer2"></i> Dashboard
-        </Link>
-      </h5>
-
-      <ul>
-        <li>
-          <div onClick={() => toggleDropdown("clients")}>
-            <Link to="#">
-              <i className="bi bi-people-fill"></i> Clients
-            </Link>
-          </div>
-          <ul className={`dropdown ${dropdown === "clients" ? "open" : ""}`}>
-            <li>
-              <Link to="/Testing">
-                <i className="bi bi-eye-fill"></i> View Clients
-                
-              </Link>
-            </li>
-            <li>
-              <Link to="/add-client">
-                <i className="bi bi-person-plus-fill"></i> Add Client
-              </Link>
-            </li>
-            <li>
-              <Link to="/client-report">
-                <i className="bi bi-bar-chart-fill"></i> Client Report
-              </Link>
-            </li>
-            {/* <li>
-              <Link to="/client-response">
-                <i className="bi bi-chat-dots-fill"></i> Client Response
-              </Link>
-            </li> */}
-          </ul>
-        </li>
-
-        <li>
-          <div onClick={() => toggleDropdown("shortlist")}>
-            <Link to="#">
-              <i className="bi bi-check2-square"></i> Shortlist
-            </Link>
-          </div>
-          <ul className={`dropdown ${dropdown === "shortlist" ? "open" : ""}`}>
-            <li>
-              <Link to="/shortlisted-profile">
-                <i className="bi bi-person-check-fill"></i> Shortlisted Profiles
-              </Link>
-            </li>
-            <li>
-              <Link to="/approved-profile">
-                <i className="bi bi-patch-check-fill"></i> Approved Profiles
-              </Link>
-            </li>
-            <li>
-              <Link to="/reject-profile">
-                <i className="bi bi-x-circle-fill"></i> Rejected Profiles
-              </Link>
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          <div onClick={() => toggleDropdown("Leads")}>
-            <Link to="#">
-              <i className="bi bi-person-square"></i> Leads
-            </Link>
-          </div>
-          <ul className={`dropdown ${dropdown === "Leads" ? "open" : ""}`}>
-            <li>
-              <Link to="/allLeads">
-                <i className="bi bi-list-ul"></i> All Leads
-              </Link>
-            </li>
-            <li>
-              <Link to="/addLeads">
-                <i className="bi bi-plus-square-fill"></i> Add Leads
-              </Link>
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          <div onClick={() => toggleDropdown("Tasks")}>
-            <Link to="#">
-              <i className="bi bi-list-task"></i> Tasks
-            </Link>
-          </div>
-          <ul className={`dropdown ${dropdown === "Tasks" ? "open" : ""}`}>
-            <li>
-
-              <Link to="/viewTask">
-
-                <i className="bi bi-card-checklist"></i> View Tasks
-              </Link>
-            </li>
-            <li>
-              <Link to="/addTask">
-                <i className="bi bi-plus-circle-fill"></i> Add Tasks
-              </Link>
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          <div onClick={() => toggleDropdown("Settings")}>
-            <Link to="#">
-              <i className="bi bi-gear-fill"></i> Settings
-            </Link>
-          </div>
-          <ul className={`dropdown ${dropdown === "Settings" ? "open" : ""}`}>
-            <li>
-
-              <Link to="/activity-log">
-
-                <i className="bi bi-clock-history"></i> Manage Activity Log
-                
-              </Link>
-              
-            </li>
-            <li>
-
-
-              <Link to="/Add-Reference">
-
-                <i className="bi bi-person-plus-fill"></i> Add Reference
-              </Link>
-            </li>
-            <li>
-
-              <Link to="/View-preference">
-
-                <i className="bi bi-person-lines-fill"></i> View Reference
-              </Link>
-            </li>
-          </ul>
-        </li>
-        
-
-        <li>
-          <div onClick={() => toggleDropdown("Management")}>
-            <Link to="#">
-              <i className="bi bi-person-gear"></i> User Management
-            </Link>
-          </div>
-          <ul className={`dropdown ${dropdown === "Management" ? "open" : ""}`}>
-            <li>
-              <Link to="/staffReport">
-                <i className="bi bi-clipboard-data-fill"></i> Staff Report
-              </Link>
-            </li>
-            <li>
-              <Link to="/userManager">
-                <i className="bi bi-person-badge-fill"></i> User Manager
-              </Link>
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          <div onClick={() => toggleDropdown("Proposal")}>
-            <Link to="#">
-              <i className="bi bi-envelope-paper-fill"></i> Proposal
-            </Link>
-          </div>
-          <ul className={`dropdown ${dropdown === "Proposal" ? "open" : ""}`}>
-            <li>
-
-              <Link to="/AssignPackage">
-
-                <i className="bi bi-arrow-right-circle-fill"></i> Assign
-                Proposal
-              </Link>
-            </li>
-            <li>
-
-              <Link to="/package-manager">
-
-                <i className="bi bi-archive-fill"></i> Proposal Manager
-              </Link>
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          <div onClick={() => toggleDropdown("logout")}>
-            <Link to="#">
-              <i className="bi bi-box-arrow-right"></i> Logout
-            </Link>
-          </div>
-        </li>
-      </ul>
     </div>
   );
 };
