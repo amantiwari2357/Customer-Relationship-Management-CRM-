@@ -5,6 +5,19 @@
   const Topbar = ({ toggleSidebar }) => {
     const navigate = useNavigate();
     const [isSidebarOpen] = useState(false);
+    // const [searchQuery, setSearchQuery] = useState("");
+
+    // const handleSearch = () => {
+    //   const trimmedQuery = searchQuery.trim();
+    //   if (trimmedQuery !== "") {
+    //     navigate(`/search?query=${encodeURIComponent(trimmedQuery)}`);
+    //   }
+    // };
+    // const handleKeyPress = (e) => {
+    //   if (e.key === "Enter") {
+    //     handleSearch();
+    //   }
+    // };
 
     // const handleHamburgerClick = () => {
     //   toggleSidebar();           // Call parent's sidebar toggle
@@ -25,6 +38,9 @@
           {/* Search */}
           <div className="topbar-search">
             <input type="search" placeholder="Search..." name="search" />
+            {/* //  onChange={(e) => setSearchQuery(e.target.value)}
+            //  onKeyDown={handleKeyPress} */}
+            
           </div>
         </div>
 

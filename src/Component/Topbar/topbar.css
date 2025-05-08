@@ -20,12 +20,12 @@
   align-items: center;
   gap: 10px;
   flex-grow: 1;
-  justify-content: flex-start; /* Align to the left */
+  justify-content: flex-start;
   
 }
 
 .topbar-search input {
-  width: 300px; /* Adjust the width as per your preference */
+  width: 300px; 
   padding: 9px 10px;
   border: none;
   border-radius: 10px;
@@ -40,7 +40,7 @@ margin-left: 260%;
   justify-content: center;
   cursor: pointer;
   font-size: 40px;
-  color: var(--pink); /* Set the color for the hamburger icon */
+  color: var(--pink); 
   padding: 10px;
   transition: all 0.3s ease;
 }
@@ -48,15 +48,15 @@ margin-left: 260%;
 /* Media Query for Responsive View */
 @media (max-width: 768px) {
   .topbar {
-    padding-left: 10px; /* Reduces padding for smaller screens */
+    padding-left: 10px;
     padding-right: 10px;
   }
 
   .hamburger {
-    display: block; /* Ensures hamburger icon is visible */
+    display: block;
     position: absolute;
-    top: 15px; /* Adjust top distance for mobile */
-    left: 15px; /* Adjust left distance for mobile */
+    top: 15px; 
+    left: 15px; 
   }
 }
 
@@ -75,4 +75,4 @@ margin-left: 260%;
   cursor: pointer;
 }
 
-/* //////////////////aman//////////////// */
+/* //////////////////a//////////////// */
