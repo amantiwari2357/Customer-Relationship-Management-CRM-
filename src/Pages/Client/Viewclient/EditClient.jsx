@@ -286,6 +286,7 @@ const ViewClient = () => {
           <li><b>Occupation :</b>Engineer</li>
           <li><b>State :</b> Delhi</li>
           <li><b>Manglik :</b> No</li>
+          <li><b>Mebership :</b> Premium</li>
         </ul>
       </div>
 
