@@ -17,7 +17,6 @@
   transform: scaleY(0.95);
   pointer-events: none;
 }
-
 .client-filter-form .form-row {
   display: flex;
   flex-wrap: wrap;
@@ -118,6 +117,8 @@
   /* === TABLE STYLES === */
   .report-table-container {
     overflow-x: auto;
+    position: relative; /* Required for z-index to work */
+    z-index: 1;
   }
   
   .report-table {
@@ -247,7 +248,7 @@
     align-items: center;
     margin-bottom: 10px;
     /* /* flex-wrap: wrap; */
-    width: 228px; 
+    width: 232px; 
     border-radius: 10px;
     height: 60px;
     /* width: 300px; */
@@ -260,7 +261,7 @@
     cursor: pointer;
     font-size: 14px;
     border-radius: 10px;
-    width: 240px;
+    width: 130px;
     height: 55px;
   }
   .apply-btn:hover {
@@ -276,7 +277,7 @@
     height: 50px;
     /* width: 160px; */
   }
-  /* Optional: style for the select and button */
+
 
 
   
@@ -407,10 +408,10 @@ select[name="membershipStatus"] {
     cursor: pointer;
   }
 
-  input[type="checkbox"] {
+  /* input[type="checkbox"] {
     width: 20px;
     height: 20px;
     margin: 0 5px;
     cursor: pointer;
-    accent-color: #ff6b6b; /* Red color accent */
-  }
+    accent-color: #ff6b6b; 
+  } */
