@@ -8,6 +8,15 @@
   top: 0;
   padding: 12px 12px 12px 0px;
   z-index: 9999;
+  transition: transform 0.3s ease;
+}
+
+.sidebar.closed {
+  transform: translateX(-100%);
+}
+
+.sidebar-closed {
+  margin-left: 0;
 }
 
 .sidebar ul {

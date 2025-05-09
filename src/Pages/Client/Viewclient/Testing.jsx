@@ -253,7 +253,7 @@
               
               <button className="apply-btn">Assign</button>
             </div>
-            <div style={{ overflowX: 'auto' }}>
+            <div className="table-res-tab">
             <table className="report-table">
               <thead>
                 <tr style={{ backgroundColor: 'var(--dul-light-pink)', color: 'black' }}>
