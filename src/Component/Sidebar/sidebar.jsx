@@ -9,8 +9,7 @@ const Sidebar = () => {
 
   const toggleDropdown = (dropdownName) => {
     setDropdown(dropdown === dropdownName ? null : dropdownName);
-    // Close sidebar when any menu item is clicked
-    setIsSidebarOpen(false);
+    setIsSidebarOpen(false); // close on selection
   };
 
   const toggleSidebar = () => {
@@ -19,13 +18,11 @@ const Sidebar = () => {
 
   return (
     <div className={`flex ${isSidebarOpen ? "" : "sidebar-closed"}`}>
-      {/* Sidebar */}
       <div className={`sidebar ${isSidebarOpen ? "" : "closed"}`}>
         <div className="sidebar-header">
           <Link to="/" className="text-center">
             <img src={logo} className="logo" alt="dashboard logo" />
           </Link>
-
           <i
             className="fas fa-times close-btn"
             style={{
@@ -36,6 +33,7 @@ const Sidebar = () => {
             onClick={toggleSidebar}
           ></i>
         </div>
+
         <h5
           style={{
             display: "flex",
@@ -68,186 +66,122 @@ const Sidebar = () => {
         </h5>
 
         <ul className="sidebar-menu">
-          {/* Client Menu */}
-          <li>
-            <div onClick={() => toggleDropdown("clients")}>
-              <Link to="#">
-                <i className="bi bi-people-fill"></i> Clients
-              </Link>
-            </div>
-            <ul className={`dropdown ${dropdown === "clients" ? "open" : ""}`}>
-              <li>
-                <Link to="/Testing" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-eye-fill"></i> View Clients
-                </Link>
-              </li>
-              <li>
-                <Link to="/add-client" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-person-plus-fill"></i> Add Client
-                </Link>
-              </li>
-              <li>
-                <Link to="/client-report" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-bar-chart-fill"></i> Client Report
-                </Link>
-              </li>
-            </ul>
-          </li>
+          {/* Clients */}
+          <DropdownItem
+            label="Clients"
+            icon="bi bi-people-fill"
+            isOpen={dropdown === "clients"}
+            toggle={() => toggleDropdown("clients")}
+            links={[
+              { to: "/Testing", icon: "bi bi-eye-fill", label: "View Clients" },
+              { to: "/add-client", icon: "bi bi-person-plus-fill", label: "Add Client" },
+              { to: "/client-report", icon: "bi bi-bar-chart-fill", label: "Client Report" },
+            ]}
+          />
 
-          {/* Shortlist Menu */}
-          <li>
-            <div onClick={() => toggleDropdown("shortlist")}>
-              <Link to="#">
-                <i className="bi bi-check2-square"></i> Shortlist
-              </Link>
-            </div>
-            <ul
-              className={`dropdown ${dropdown === "shortlist" ? "open" : ""}`}
-            >
-              <li>
-                <Link to="/shortlisted-profile" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-person-check-fill"></i> Shortlisted
-                  Profiles
-                </Link>
-              </li>
-              <li>
-                <Link to="/approved-profile" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-patch-check-fill"></i> Approved Profiles
-                </Link>
-              </li>
-              <li>
-                <Link to="/reject-profile" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-x-circle-fill"></i> Rejected Profiles
-                </Link>
-              </li>
-            </ul>
-          </li>
+          {/* Shortlist */}
+          <DropdownItem
+            label="Shortlist"
+            icon="bi bi-check2-square"
+            isOpen={dropdown === "shortlist"}
+            toggle={() => toggleDropdown("shortlist")}
+            links={[
+              { to: "/shortlisted-profile", icon: "bi bi-person-check-fill", label: "Shortlisted Profiles" },
+              { to: "/approved-profile", icon: "bi bi-patch-check-fill", label: "Approved Profiles" },
+              { to: "/reject-profile", icon: "bi bi-x-circle-fill", label: "Rejected Profiles" },
+            ]}
+          />
 
-          {/* Leads Menu */}
-          <li>
-            <div onClick={() => toggleDropdown("Leads")}>
-              <Link to="#">
-                <i className="bi bi-person-square"></i> Leads
-              </Link>
-            </div>
-            <ul className={`dropdown ${dropdown === "Leads" ? "open" : ""}`}>
-              <li>
-                <Link to="/allLeads" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-list-ul"></i> All Leads
-                </Link>
-              </li>
-              <li>
-                <Link to="/addLeads" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-plus-square-fill"></i> Add Leads
-                </Link>
-              </li>
-            </ul>
-          </li>
+          {/* Leads */}
+          <DropdownItem
+            label="Leads"
+            icon="bi bi-person-square"
+            isOpen={dropdown === "Leads"}
+            toggle={() => toggleDropdown("Leads")}
+            links={[
+              { to: "/allLeads", icon: "bi bi-list-ul", label: "All Leads" },
+              { to: "/addLeads", icon: "bi bi-plus-square-fill", label: "Add Leads" },
+            ]}
+          />
 
-          {/* Tasks Menu */}
-          <li>
-            <div onClick={() => toggleDropdown("Tasks")}>
-              <Link to="#">
-                <i className="bi bi-list-task"></i> Tasks
-              </Link>
-            </div>
-            <ul className={`dropdown ${dropdown === "Tasks" ? "open" : ""}`}>
-              <li>
-                <Link to="/viewTask" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-card-checklist"></i> View Tasks
-                </Link>
-              </li>
-              <li>
-                <Link to="/addTask" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-plus-circle-fill"></i> Add Tasks
-                </Link>
-              </li>
-            </ul>
-          </li>
+          {/* Tasks */}
+          <DropdownItem
+            label="Tasks"
+            icon="bi bi-list-task"
+            isOpen={dropdown === "Tasks"}
+            toggle={() => toggleDropdown("Tasks")}
+            links={[
+              { to: "/viewTask", icon: "bi bi-card-checklist", label: "View Tasks" },
+              { to: "/addTask", icon: "bi bi-plus-circle-fill", label: "Add Tasks" },
+            ]}
+          />
 
-          {/* Settings Menu */}
-          <li>
-            <div onClick={() => toggleDropdown("Settings")}>
-              <Link to="#">
-                <i className="bi bi-gear-fill"></i> Settings
-              </Link>
-            </div>
-            <ul className={`dropdown ${dropdown === "Settings" ? "open" : ""}`}>
-              <li>
-                <Link to="/activity-log" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-clock-history"></i> Manage Activity Log
-                </Link>
-              </li>
-              <li>
-                <Link to="/Add-Reference" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-person-plus-fill"></i> Add Reference
-                </Link>
-              </li>
-              <li>
-                <Link to="/View-preference" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-person-lines-fill"></i> View Reference
-                </Link>
-              </li>
-            </ul>
-          </li>
+          {/* Settings */}
+          <DropdownItem
+            label="Settings"
+            icon="bi bi-gear-fill"
+            isOpen={dropdown === "Settings"}
+            toggle={() => toggleDropdown("Settings")}
+            links={[
+              { to: "/activity-log", icon: "bi bi-clock-history", label: "Manage Activity Log" },
+              { to: "/Add-Reference", icon: "bi bi-person-plus-fill", label: "Add Reference" },
+              { to: "/View-preference", icon: "bi bi-person-lines-fill", label: "View Reference" },
+            ]}
+          />
 
-          {/* User Management Menu */}
-          <li>
-            <div onClick={() => toggleDropdown("Management")}>
-              <Link to="#">
-                <i className="bi bi-person-gear"></i> User Management
-              </Link>
-            </div>
-            <ul
-              className={`dropdown ${dropdown === "Management" ? "open" : ""}`}
-            >
-              <li>
-                <Link to="/staffReport" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-clipboard-data-fill"></i> Staff Report
-                </Link>
-              </li>
-              <li>
-                <Link to="/userManager" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-person-badge-fill"></i> User Manager
-                </Link>
-              </li>
-            </ul>
-          </li>
+          {/* User Management */}
+          <DropdownItem
+            label="User Management"
+            icon="bi bi-person-gear"
+            isOpen={dropdown === "Management"}
+            toggle={() => toggleDropdown("Management")}
+            links={[
+              { to: "/staffReport", icon: "bi bi-clipboard-data-fill", label: "Staff Report" },
+              { to: "/userManager", icon: "bi bi-person-badge-fill", label: "User Manager" },
+            ]}
+          />
 
-          {/* Proposal Menu */}
-          <li>
-            <div onClick={() => toggleDropdown("Proposal")}>
-              <Link to="#">
-                <i className="bi bi-envelope-paper-fill"></i> Proposal
-              </Link>
-            </div>
-            <ul className={`dropdown ${dropdown === "Proposal" ? "open" : ""}`}>
-              <li>
-                <Link to="/AssignPackage" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-arrow-right-circle-fill"></i> Assign
-                  Proposal
-                </Link>
-              </li>
-              <li>
-                <Link to="/package-manager" onClick={() => setIsSidebarOpen(false)}>
-                  <i className="bi bi-archive-fill"></i> Proposal Manager
-                </Link>
-              </li>
-            </ul>
-          </li>
+          {/* Proposal */}
+          <DropdownItem
+            label="Proposal"
+            icon="bi bi-envelope-paper-fill"
+            isOpen={dropdown === "Proposal"}
+            toggle={() => toggleDropdown("Proposal")}
+            links={[
+              { to: "/AssignPackage", icon: "bi bi-arrow-right-circle-fill", label: "Assign Proposal" },
+              { to: "/package-manager", icon: "bi bi-archive-fill", label: "Proposal Manager" },
+            ]}
+          />
 
-          {/* Logout Menu */}
+          {/* Logout */}
           <li>
-            <div onClick={() => toggleDropdown("logout")}>
-              <Link to="#">
-                <i className="bi bi-box-arrow-right"></i> Logout
-              </Link>
-            </div>
+            <Link to="/logout" onClick={() => setIsSidebarOpen(false)}>
+              <i className="bi bi-box-arrow-right"></i> Logout
+            </Link>
           </li>
         </ul>
       </div>
     </div>
   );
 };
+
+const DropdownItem = ({ label, icon, isOpen, toggle, links }) => (
+  <li>
+    <div onClick={toggle}>
+      <Link to="#">
+        <i className={icon}></i> {label}
+      </Link>
+    </div>
+    <ul className={`dropdown ${isOpen ? "open" : ""}`}>
+      {links.map(({ to, icon, label }) => (
+        <li key={to}>
+          <Link to={to} onClick={() => toggle(null)}>
+            <i className={icon}></i> {label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </li>
+);
 
 export default Sidebar;

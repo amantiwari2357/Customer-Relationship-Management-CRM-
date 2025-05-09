@@ -1,9 +1,8 @@
 // App.tsx or App.jsx
 
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
-import Sidebar from "./Component/Sidebar/sidebar";
 import Topbar from "./Component/Topbar/topbar";
 import Dashboard from "./Pages/Dashboard/dashboard";
 import Login from "./Pages/Login/login";
@@ -48,84 +47,70 @@ import AssignPackage from "./Pages/Proposal/AssignPackage";
 import AssignPackageDetails from "./Pages/Proposal/AssignPackageDetails";
 
 import UserProfilePage from "./Pages/Client/Viewclient/UserProfilePage";
-// import Practice from "./Pages/Practice";
 
 import "./App.css";
 
 const App = () => {
   const location = useLocation();
   const isLoginPage = location.pathname === "/login";
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
 
   return (
     <div className={`app-container ${isLoginPage ? "login-page" : ""}`}>
-      {!isLoginPage && (
-        <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-      )}
-      <div className={`main-container ${isSidebarOpen ? "sidebar-open" : ""}`}>
-        {!isLoginPage && <Topbar toggleSidebar={toggleSidebar} />}
-        <div className="content-area">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/admin-profile" element={<AdminProfile />} />
-            <Route path="/notification" element={<Notification />} />
+      {!isLoginPage && <Topbar />}
+      <div className="content-area">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin-profile" element={<AdminProfile />} />
+          <Route path="/notification" element={<Notification />} />
 
-            {/* Client Section */}
-            <Route path="/add-client" element={<AddClient />} />
-            <Route path="/viewclient" element={<ViewClient />} />
-            <Route path="/client-report" element={<ClientReport />} />
-            <Route path="/client-response" element={<ClientResponse />} />
-            <Route path="/Editclient" element={<EditClient />} />
-            <Route path="/Shareclient" element={<ShareClient />} />
-            <Route path="/modal" element={<Modal />} />
-            <Route path="/testing" element={<Testing />} />
+          {/* Client Section */}
+          <Route path="/add-client" element={<AddClient />} />
+          <Route path="/viewclient" element={<ViewClient />} />
+          <Route path="/client-report" element={<ClientReport />} />
+          <Route path="/client-response" element={<ClientResponse />} />
+          <Route path="/Editclient" element={<EditClient />} />
+          <Route path="/Shareclient" element={<ShareClient />} />
+          <Route path="/modal" element={<Modal />} />
+          <Route path="/testing" element={<Testing />} />
 
-            {/* Shortlist Section */}
-            <Route path="/shortlisted-profile" element={<ShortlistProfile />} />
-            <Route path="/approved-profile" element={<ApprovedProfile />} />
-            <Route path="/reject-profile" element={<RejectProfile />} />
-            <Route path="/user-listed" element={<UserListed />} />
+          {/* Shortlist Section */}
+          <Route path="/shortlisted-profile" element={<ShortlistProfile />} />
+          <Route path="/approved-profile" element={<ApprovedProfile />} />
+          <Route path="/reject-profile" element={<RejectProfile />} />
+          <Route path="/user-listed" element={<UserListed />} />
 
-            {/* PDFs */}
-            <Route path="/pdf" element={<PDF />} />
-            <Route path="/elitepdf" element={<ElitePdf />} />
-            <Route path="/personalizepdf" element={<PersonalizePdf />} />
+          {/* PDFs */}
+          <Route path="/pdf" element={<PDF />} />
+          <Route path="/elitepdf" element={<ElitePdf />} />
+          <Route path="/personalizepdf" element={<PersonalizePdf />} />
 
-            {/* Leads */}
-            <Route path="/addLeads" element={<AddLeads />} />
-            <Route path="/allLeads" element={<AllLeads />} />
+          {/* Leads */}
+          <Route path="/addLeads" element={<AddLeads />} />
+          <Route path="/allLeads" element={<AllLeads />} />
 
-            {/* Tasks */}
-            <Route path="/addTask" element={<AddTask />} />
-            <Route path="/viewTask" element={<ViewTask />} />
+          {/* Tasks */}
+          <Route path="/addTask" element={<AddTask />} />
+          <Route path="/viewTask" element={<ViewTask />} />
 
-            {/* User Management */}
-            <Route path="/staffReport" element={<StaffReport />} />
-            <Route path="/userManager" element={<UserManager />} />
-            <Route path="/editUser" element={<EditUser />} />
+          {/* User Management */}
+          <Route path="/staffReport" element={<StaffReport />} />
+          <Route path="/userManager" element={<UserManager />} />
+          <Route path="/editUser" element={<EditUser />} />
 
-            {/* Settings */}
-            <Route path="/activity-log" element={<ActivityLog />} />
-            <Route path="/add-reference" element={<AddReference />} />
-            <Route path="/view-preference" element={<ViewReferences />} />
+          {/* Settings */}
+          <Route path="/activity-log" element={<ActivityLog />} />
+          <Route path="/add-reference" element={<AddReference />} />
+          <Route path="/view-preference" element={<ViewReferences />} />
 
-            {/* Proposal Packages */}
-            <Route path="/package-manager" element={<PackageManager />} />
-            <Route path="/addPackage" element={<AddPackage />} />
-            <Route path="/assignPackage" element={<AssignPackage />} />
-            <Route path="/assignPackageDetails" element={<AssignPackageDetails />} />
+          {/* Proposal Packages */}
+          <Route path="/package-manager" element={<PackageManager />} />
+          <Route path="/addPackage" element={<AddPackage />} />
+          <Route path="/assignPackage" element={<AssignPackage />} />
+          <Route path="/assignPackageDetails" element={<AssignPackageDetails />} />
 
-            <Route path="/UserProfilePage" element={<UserProfilePage />} />
-            {/* <Route path="/practice" element={<Practice />} /> */}
-
-            {/* Fallback route */}
-          </Routes>
-        </div>
+          <Route path="/UserProfilePage" element={<UserProfilePage />} />
+        </Routes>
       </div>
     </div>
   );
