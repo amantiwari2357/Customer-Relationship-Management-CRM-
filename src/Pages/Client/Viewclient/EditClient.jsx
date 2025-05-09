@@ -266,7 +266,8 @@ const ViewClient = () => {
       </div> */}
 
           {/* /////////////////2///////////// */}
-  <div className="modal-body">
+          <hr className="mb-0" />
+  <div className="modal-body pt-0">
   <section className="update-profile">
     <div className="update-profile-section">
       <div>

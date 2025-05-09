@@ -50,6 +50,41 @@ const RejectProfile = () => {
       date: "06/10/2024",
     },
   ];
+// Pagination logic
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(10); // Set a default value for items per page
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  // Sample client data for demonstration
+  const [clientData] = useState([
+    { id: 1, name: 'Rohan Sharma', gender: 'Male', membershipStatus: 'Premium' },
+    { id: 2, name: 'Priya Singh', gender: 'Female', membershipStatus: 'Basic' },
+    // Add more sample data as needed
+  ]);
+  
+  const currentItems = clientData.slice(indexOfFirstItem, indexOfLastItem);
+  
+  const totalPages = Math.ceil(clientData.length / itemsPerPage);
+  
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+  
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+  
+  // Generate page numbers
+  const pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
 
   return (
     <>
@@ -103,6 +138,32 @@ const RejectProfile = () => {
               </tbody>
             </table>
           </div>
+          {/* Pagination Controls */}
+          <div className="pagination">
+              <button
+                onClick={handlePreviousPage}
+                disabled={currentPage === 1}
+                className="pagination-btn"
+              >
+                Previous
+              </button>
+              {pageNumbers.map(number => (
+                <button
+                  key={number}
+                  onClick={() => paginate(number)}
+                  className={`pagination-btn ${currentPage === number ? 'active' : ''}`}
+                >
+                  {number}
+                </button>
+              ))}
+              <button
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+                className="pagination-btn"
+              >
+                Next
+              </button>
+            </div>
         </div>
       </section>
     </>
