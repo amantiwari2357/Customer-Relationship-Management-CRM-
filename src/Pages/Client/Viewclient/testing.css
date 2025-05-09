@@ -115,12 +115,11 @@
   }
   
   /* === TABLE STYLES === */
-  .report-table-container {
-    overflow-x: auto;
-    position: relative; /* Required for z-index to work */
-    z-index: 1;
-  }
   
+  .table-res-tab{
+    overflow-x: scroll;
+    height: 70vh;
+  }
   .report-table {
     width: 100%;
     min-width: 1400px;

@@ -8,7 +8,9 @@ const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const toggleDropdown = (dropdownName) => {
-    setDropdown(dropdown === dropdownName? null : dropdownName);
+    setDropdown(dropdown === dropdownName ? null : dropdownName);
+    // Close sidebar when any menu item is clicked
+    setIsSidebarOpen(false);
   };
 
   const toggleSidebar = () => {
@@ -16,14 +18,14 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`flex ${isSidebarOpen? "" : "sidebar-closed"}`}>
+    <div className={`flex ${isSidebarOpen ? "" : "sidebar-closed"}`}>
       {/* Sidebar */}
-      <div className={`sidebar ${isSidebarOpen? "" : "closed"}`}>
+      <div className={`sidebar ${isSidebarOpen ? "" : "closed"}`}>
         <div className="sidebar-header">
           <Link to="/" className="text-center">
             <img src={logo} className="logo" alt="dashboard logo" />
           </Link>
-          
+
           <i
             className="fas fa-times close-btn"
             style={{
@@ -50,6 +52,7 @@ const Sidebar = () => {
               textDecoration: "none",
               color: "inherit",
             }}
+            onClick={() => setIsSidebarOpen(false)}
           >
             <i className="bi bi-speedometer2"></i> Dashboard
           </Link>
@@ -58,7 +61,7 @@ const Sidebar = () => {
             style={{
               cursor: "pointer",
               marginLeft: "auto",
-              display: isSidebarOpen? "block" : "none",
+              display: isSidebarOpen ? "block" : "none",
             }}
             onClick={toggleSidebar}
           ></i>
@@ -74,17 +77,17 @@ const Sidebar = () => {
             </div>
             <ul className={`dropdown ${dropdown === "clients" ? "open" : ""}`}>
               <li>
-                <Link to="/Testing">
+                <Link to="/Testing" onClick={() => setIsSidebarOpen(false)}>
                   <i className="bi bi-eye-fill"></i> View Clients
                 </Link>
               </li>
               <li>
-                <Link to="/add-client">
+                <Link to="/add-client" onClick={() => setIsSidebarOpen(false)}>
                   <i className="bi bi-person-plus-fill"></i> Add Client
                 </Link>
               </li>
               <li>
-                <Link to="/client-report">
+                <Link to="/client-report" onClick={() => setIsSidebarOpen(false)}>
                   <i className="bi bi-bar-chart-fill"></i> Client Report
                 </Link>
               </li>
@@ -98,19 +101,22 @@ const Sidebar = () => {
                 <i className="bi bi-check2-square"></i> Shortlist
               </Link>
             </div>
-            <ul className={`dropdown ${dropdown === "shortlist" ? "open" : ""}`}>
+            <ul
+              className={`dropdown ${dropdown === "shortlist" ? "open" : ""}`}
+            >
               <li>
-                <Link to="/shortlisted-profile">
-                  <i className="bi bi-person-check-fill"></i> Shortlisted Profiles
+                <Link to="/shortlisted-profile" onClick={() => setIsSidebarOpen(false)}>
+                  <i className="bi bi-person-check-fill"></i> Shortlisted
+                  Profiles
                 </Link>
               </li>
               <li>
-                <Link to="/approved-profile">
+                <Link to="/approved-profile" onClick={() => setIsSidebarOpen(false)}>
                   <i className="bi bi-patch-check-fill"></i> Approved Profiles
                 </Link>
               </li>
               <li>
-                <Link to="/reject-profile">
+                <Link to="/reject-profile" onClick={() => setIsSidebarOpen(false)}>
                   <i className="bi bi-x-circle-fill"></i> Rejected Profiles
                 </Link>
               </li>
@@ -126,12 +132,12 @@ const Sidebar = () => {
             </div>
             <ul className={`dropdown ${dropdown === "Leads" ? "open" : ""}`}>
               <li>
-                <Link to="/allLeads">
+                <Link to="/allLeads" onClick={() => setIsSidebarOpen(false)}>
                   <i className="bi bi-list-ul"></i> All Leads
                 </Link>
               </li>
               <li>
-                <Link to="/addLeads">
+                <Link to="/addLeads" onClick={() => setIsSidebarOpen(false)}>
                   <i className="bi bi-plus-square-fill"></i> Add Leads
                 </Link>
               </li>
@@ -147,12 +153,12 @@ const Sidebar = () => {
             </div>
             <ul className={`dropdown ${dropdown === "Tasks" ? "open" : ""}`}>
               <li>
-                <Link to="/viewTask">
+                <Link to="/viewTask" onClick={() => setIsSidebarOpen(false)}>
                   <i className="bi bi-card-checklist"></i> View Tasks
                 </Link>
               </li>
               <li>
-                <Link to="/addTask">
+                <Link to="/addTask" onClick={() => setIsSidebarOpen(false)}>
                   <i className="bi bi-plus-circle-fill"></i> Add Tasks
                 </Link>
               </li>
@@ -168,17 +174,17 @@ const Sidebar = () => {
             </div>
             <ul className={`dropdown ${dropdown === "Settings" ? "open" : ""}`}>
               <li>
-                <Link to="/activity-log">
+                <Link to="/activity-log" onClick={() => setIsSidebarOpen(false)}>
                   <i className="bi bi-clock-history"></i> Manage Activity Log
                 </Link>
               </li>
               <li>
-                <Link to="/Add-Reference">
+                <Link to="/Add-Reference" onClick={() => setIsSidebarOpen(false)}>
                   <i className="bi bi-person-plus-fill"></i> Add Reference
                 </Link>
               </li>
               <li>
-                <Link to="/View-preference">
+                <Link to="/View-preference" onClick={() => setIsSidebarOpen(false)}>
                   <i className="bi bi-person-lines-fill"></i> View Reference
                 </Link>
               </li>
@@ -192,14 +198,16 @@ const Sidebar = () => {
                 <i className="bi bi-person-gear"></i> User Management
               </Link>
             </div>
-            <ul className={`dropdown ${dropdown === "Management" ? "open" : ""}`}>
+            <ul
+              className={`dropdown ${dropdown === "Management" ? "open" : ""}`}
+            >
               <li>
-                <Link to="/staffReport">
+                <Link to="/staffReport" onClick={() => setIsSidebarOpen(false)}>
                   <i className="bi bi-clipboard-data-fill"></i> Staff Report
                 </Link>
               </li>
               <li>
-                <Link to="/userManager">
+                <Link to="/userManager" onClick={() => setIsSidebarOpen(false)}>
                   <i className="bi bi-person-badge-fill"></i> User Manager
                 </Link>
               </li>
@@ -215,12 +223,13 @@ const Sidebar = () => {
             </div>
             <ul className={`dropdown ${dropdown === "Proposal" ? "open" : ""}`}>
               <li>
-                <Link to="/AssignPackage">
-                  <i className="bi bi-arrow-right-circle-fill"></i> Assign Proposal
+                <Link to="/AssignPackage" onClick={() => setIsSidebarOpen(false)}>
+                  <i className="bi bi-arrow-right-circle-fill"></i> Assign
+                  Proposal
                 </Link>
               </li>
               <li>
-                <Link to="/package-manager">
+                <Link to="/package-manager" onClick={() => setIsSidebarOpen(false)}>
                   <i className="bi bi-archive-fill"></i> Proposal Manager
                 </Link>
               </li>
