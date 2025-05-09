@@ -4,6 +4,8 @@ import './activity-log.css';
 const ActivityLog = () => {
   const [userType, setUserType] = useState('All Users');
   const [module, setModule] = useState('All Modules');
+  const [currentPage, setCurrentPage] = useState(1); // Added state for current page
+  const itemsPerPage = 5; // Define items per page
 
   const activityData = [
     {
@@ -98,6 +100,36 @@ const ActivityLog = () => {
     );
   });
 
+
+  // Pagination logic
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  // Generate page numbers
+  const pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
+
+  
+
   return (
     <div className="activity-log-container">
       <h2 className="activity-log-title">Activity Log</h2>
@@ -168,7 +200,35 @@ const ActivityLog = () => {
           )}
         </tbody>
       </table>
+       {/* Pagination Controls */}
+       <div className="pagination">
+              <button
+                onClick={handlePreviousPage}
+                disabled={currentPage === 1}
+                className="pagination-btn"
+              >
+                Previous
+              </button>
+              {pageNumbers.map(number => (
+                <button
+                  key={number}
+                  onClick={() => paginate(number)}
+                  className={`pagination-btn ${currentPage === number ? 'active' : ''}`}
+                >
+                  {number}
+                </button>
+              ))}
+              <button
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+                className="pagination-btn"
+              >
+                Next
+              </button>
+            </div>
+            {/* ///////// */}
     </div>
+    
   );
 };
 

@@ -2,6 +2,7 @@
   import '@fortawesome/fontawesome-free/css/all.min.css';
   import './testing.css';
 
+  
   const ClientReport = () => {
     const [filterData, setFilterData] = useState({
       clientName: '',
@@ -22,6 +23,13 @@
     });
 
     const [showFilterForm, setShowFilterForm] = useState(false);
+    
+     // Pagination states
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(2); // Display 2 items per page
+
+  // Removed duplicate declaration of toggleFilterForm
+
 
     const toggleFilterForm = () => {
       setShowFilterForm(!showFilterForm);
@@ -93,87 +101,116 @@
         city: 'Mumbai',
         isNRI: 'NRI'
       },
+
       {
-        id: 2,
+        id: 1,
         profilePhoto: '/images/user4.jpg',
-        name: 'Aman Tiwari',
+        name: 'Rohan Sharma',
         gender: 'Male',
-        contact: '9031359720',
-        email: 'aman@gmail.com',
-        clientId: 'DUL12342',
+        contact: '9876543210',
+        email: 'rohan.sharma@example.com',
+        clientId: 'DUL12345',
         membershipStatus: 'Premium',
         maritalStatus: 'Single',
-        profileSent: '1 sent',
-        handledBy: 'akash',
+        profileSent: '4 sent',
+        handledBy: 'Geeta',
         lastRemark: 'Interested family',
-        dob: '15/06/2001',
-        age: 24,
+        dob: '15/06/1992',
+        age: 32,
         height: "5'9\"",
         manglik: 'Manglik',
         caste: 'Brahmin',
         religion: 'Hindu',
-        education: 'BTech',
-        occupation: 'Full stack',
+        education: 'MBA',
+        occupation: 'Business Analyst',
         income: '₹15 LPA',
         budget: '₹10-15 LPA',
-        city: 'Kanpur',
+        city: 'Mumbai',
         isNRI: 'NRI'
       },
+
       {
-        id: 3,
+        id: 1,
         profilePhoto: '/images/user4.jpg',
-        name: 'Anjali Verma',
-        gender: 'Female',
-        contact: '9988776655',
-        email: 'anjali.verma@example.com',
-        clientId: 'DUL54321',
-        membershipStatus: 'Active',
-        maritalStatus: 'Divorced',
-        profileSent: '5 sent',
-        handledBy: 'Aman',
-        lastRemark: 'Follow-up required',
-        dob: '22/03/1990',
-        age: 34,
-        height: "5'5\"",
-        manglik: 'Non-Manglik',
-        caste: 'Gupta',
-        religion: 'Hindu',
-        education: 'B.Tech',
-        occupation: 'Software Engineer',
-        income: '₹12 LPA',
-        budget: '₹8-12 LPA',
-        city: 'Delhi',
-        nriStatus: 'No',
-        photo: '/images/user2.jpg'
-      },
-      {
-        id: 4,
-        profilePhoto: '/images/user4.jpg',
-        name: 'Vikram Singh',
+        name: 'Rohan Sharma',
         gender: 'Male',
-        contact: '9090909090',
-        email: 'vikram.singh@example.com',
-        clientId: 'DUL67890',
-        membershipStatus: 'Inactive',
+        contact: '9876543210',
+        email: 'rohan.sharma@example.com',
+        clientId: 'DUL12345',
+        membershipStatus: 'Premium',
         maritalStatus: 'Single',
-        profileSent: '0 sent',
-        handledBy: 'Deepak',
-        lastRemark: 'Not reachable',
-        dob: '12/11/1988',
-        age: 36,
-        height: "6'0\"",
+        profileSent: '4 sent',
+        handledBy: 'Geeta',
+        lastRemark: 'Interested family',
+        dob: '15/06/1992',
+        age: 32,
+        height: "5'9\"",
         manglik: 'Manglik',
-        caste: 'Jaat',
+        caste: 'Brahmin',
         religion: 'Hindu',
-        education: 'M.Com',
-        occupation: 'Accountant',
-        income: '₹7 LPA',
-        budget: '₹5-10 LPA',
-        city: 'Lucknow',
-        nriStatus: 'No',
-        photo: '/images/user3.jpg'
-      }
+        education: 'MBA',
+        occupation: 'Business Analyst',
+        income: '₹15 LPA',
+        budget: '₹10-15 LPA',
+        city: 'Mumbai',
+        isNRI: 'NRI'
+      },
+
+      {
+        id: 1,
+        profilePhoto: '/images/user4.jpg',
+        name: 'Rohan Sharma',
+        gender: 'Male',
+        contact: '9876543210',
+        email: 'rohan.sharma@example.com',
+        clientId: 'DUL12345',
+        membershipStatus: 'Premium',
+        maritalStatus: 'Single',
+        profileSent: '4 sent',
+        handledBy: 'Geeta',
+        lastRemark: 'Interested family',
+        dob: '15/06/1992',
+        age: 32,
+        height: "5'9\"",
+        manglik: 'Manglik',
+        caste: 'Brahmin',
+        religion: 'Hindu',
+        education: 'MBA',
+        occupation: 'Business Analyst',
+        income: '₹15 LPA',
+        budget: '₹10-15 LPA',
+        city: 'Mumbai',
+        isNRI: 'NRI'
+      },
+    
     ];
+    
+ // Pagination logic
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = clientData.slice(indexOfFirstItem, indexOfLastItem);
+
+  const totalPages = Math.ceil(clientData.length / itemsPerPage);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  // Generate page numbers
+  const pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
 
     return (
       <div className="client-report-container">
@@ -325,6 +362,35 @@
               </tbody>
             </table>
           </div>
+
+          {/* Pagination Controls */}
+            <div className="pagination">
+              <button
+                onClick={handlePreviousPage}
+                disabled={currentPage === 1}
+                className="pagination-btn"
+              >
+                Previous
+              </button>
+              {pageNumbers.map(number => (
+                <button
+                  key={number}
+                  onClick={() => paginate(number)}
+                  className={`pagination-btn ${currentPage === number ? 'active' : ''}`}
+                >
+                  {number}
+                </button>
+              ))}
+              <button
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+                className="pagination-btn"
+              >
+                Next
+              </button>
+            </div>
+            {/* ///////// */}
+       
         </div>
       </div>
       </div>
