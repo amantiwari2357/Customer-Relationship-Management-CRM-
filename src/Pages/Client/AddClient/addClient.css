@@ -3,6 +3,7 @@
   background-size: cover;
   background-position: top;
   width: 100%;
+  margin-bottom: 10px;
 }
 .add-client-overlay {
   background-color: rgba(255, 255, 255, 0.366);
@@ -10,6 +11,8 @@
   width: 100%;
   padding: 0 0 1rem;
   background-size: cover;
+  margin-left: 4px;
+  /* position: fixed; */
 }
 
 .breadcrumb {

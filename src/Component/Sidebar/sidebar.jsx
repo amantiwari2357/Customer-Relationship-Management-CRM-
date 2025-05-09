@@ -11,12 +11,6 @@ const Sidebar = () => {
     setDropdown(dropdown === dropdownName? null : dropdownName);
   };
 
-/*************  ✨ Windsurf Command ⭐  *************/
-  /**
-   * Toggles the sidebar to open or close.
-   * @function
-   */
-/*******  eac9575b-029b-4f55-8f3f-1199dc344e09  *******/
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -29,6 +23,7 @@ const Sidebar = () => {
           <Link to="/" className="text-center">
             <img src={logo} className="logo" alt="dashboard logo" />
           </Link>
+          
           <i
             className="fas fa-times close-btn"
             style={{

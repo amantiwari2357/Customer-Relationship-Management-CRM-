@@ -128,12 +128,12 @@ const ClientReport = () => {
         <div className="report-table-container">
           <div className="filter-bar">
             <select className="filter-select">
-              <option value="">Filter by Assign</option>
+              <option value="">Selected for Assign</option>
               <option value="male">Akash TL</option>
               <option value="female">Aman Tiwari RM</option>
               <option value="other">Deepak RM</option>
             </select>
-            <button className="apply-btn">Assign By Selected</button>
+            <button className="apply-btn">Assign</button>
           </div>
 
           <table className="report-table">

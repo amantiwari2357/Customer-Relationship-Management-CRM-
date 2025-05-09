@@ -244,16 +244,16 @@
           <div className="report-table-container">
             <div className="filter-bar">
               <select className="filter-select">
-                <option value="">Filter by Assign</option>
+                <option value="">Select For Assign</option>
                 <option value="akash">Akash TL</option>
                 <option value="aman">Aman Tiwari RM</option>
                 <option value="deepak">Deepak RM</option>
                 <option value="geeta">Geeta</option>
               </select>
               
-              <button className="apply-btn">Assign By Selected</button>
+              <button className="apply-btn">Assign</button>
             </div>
-
+            <div style={{ overflowX: 'auto' }}>
             <table className="report-table">
               <thead>
                 <tr style={{ backgroundColor: 'var(--dul-light-pink)', color: 'black' }}>
@@ -326,6 +326,7 @@
             </table>
           </div>
         </div>
+      </div>
       </div>
     );
   };
