@@ -23,6 +23,7 @@ const Sidebar = () => {
           <Link to="/" className="text-center">
             <img src={logo} className="logo" alt="dashboard logo" />
           </Link>
+          
           <i
             className="fas fa-times close-btn"
             style={{
