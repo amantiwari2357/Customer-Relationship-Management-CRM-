@@ -351,13 +351,17 @@ const handleCloseModal = () => {
                       <div className="small-text">{client.contact}</div>
                       <div className="small-text">{client.email}</div>
                     </td> 
-{/* cliend id ko clibale banay hu */}
+{/* cliend id ko clickable banay hu */}
+<td>
                     <Link
                 to={`/UserProfilePage`}>
           {client.clientId}
         </Link>
-{/*  */}
+        
+
         <div className="green">{client.membershipStatus}</div>
+        </td>
+        {/* cliend id ko clickable banay hu */}
                     <td>
                       <div>{client.maritalStatus}</div>
                       <a href="/Modal" className="green" target="_blank" rel="noopener noreferrer">{client.profileSent}</a>
