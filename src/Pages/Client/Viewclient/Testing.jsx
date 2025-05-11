@@ -354,7 +354,10 @@ const handleCloseModal = () => {
 {/* cliend id ko clickable banay hu */}
 <td>
                     <Link
-                to={`/UserProfilePage`}>
+                to={`/UserProfilePage`}
+                className="avatar"
+  target="_blank">
+           
           {client.clientId}
         </Link>
         
