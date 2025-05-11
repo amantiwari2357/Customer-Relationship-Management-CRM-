@@ -6,7 +6,7 @@ import './ClientReport.css';
 const ClientReport = () => {
   const [filterData, setFilterData] = useState({
     clientName: '',
-    gender: '',
+    clientId: '',
     caste: '',
     occupation: '',
     mobileNumber: '',
@@ -122,7 +122,7 @@ const handleCloseModal = () => {
                 { label: 'Client Name', name: 'clientName', type: 'text' },
                 // { label: 'Mobile Number', name: 'mobileNumber', type: 'text' },
                 // { label: 'Profile ID', name: 'profileId', type: 'text' },
-                { label: 'Gender', name: 'gender', options: ['', 'male', 'female', 'other'] },
+                { label: 'Profile Id', name: 'Id', type: 'text' },
                 { label: 'From Date', name: 'fromDate', type: 'date' },
                 { label: 'To Date', name: 'toDate', type: 'date' },
               ].map(({ label, name, type }) => (
@@ -146,7 +146,7 @@ const handleCloseModal = () => {
                 // { label: 'Country', name: 'country', options: ['', 'india', 'pakistan'] },
                 // { label: 'State', name: 'state', options: ['', 'up', 'bihar', 'delhi'] },
                 // { label: 'City', name: 'city', options: ['', 'banaras', 'lucknow', 'delhi'] },
-                { label: 'Membership Status', name: 'membershipStatus', options: ['', 'active', 'inactive'] },
+                // { label: 'Membership Status', name: 'membershipStatus', options: ['', 'active', 'inactive'] },
               ].map(({ label, name, options }) => (
                 <div className="form-group" key={name}>
                   <label>{label}</label>
@@ -163,22 +163,34 @@ const handleCloseModal = () => {
 
             <div className="form-actions">
               <button type="submit" className="search-button">SEARCH</button>
-              <button type="button" onClick={handleReset} className="reset-button">RESET</button>
+              {/* <button type="button" onClick={handleReset} className="reset-button">RESET</button> */}
             </div>
           </form>
         )}
 
-        {/* Report Table Section */}
-        <div className="report-table-container">
-          <div className="filter-bar">
-            <select className="filter-select">
-              <option value="">Selected for Assign</option>
-              <option value="male">Akash TL</option>
-              <option value="female">Aman Tiwari RM</option>
-              <option value="other">Deepak RM</option>
-            </select>
-            <button className="apply-btn">Assign</button>
-          </div>
+<div class="report-table-container">
+  <div class="filter-bar">
+    <div class="filter-group">
+      <select class="filter-select">
+        <option value="">Selected for Assign</option>
+        <option value="male">Akash TL</option>
+        <option value="female">Aman Tiwari RM</option>
+        <option value="other">Deepak RM</option>
+      </select>
+      <button class="apply-btn">Assign</button>
+    </div>
+
+    <div class="filter-group">
+      <select class="filter-select">
+        <option value="">Handled by</option>
+        <option value="aman">Aman</option>
+        <option value="anki">Anki</option>
+        <option value="anman">Anman</option>
+      </select>
+      <button class="apply-btn">Apply</button>
+    </div>
+  </div>
+{/* </div> */}
 
           <table className="report-table">
             <thead>

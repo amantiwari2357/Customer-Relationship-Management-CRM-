@@ -59,7 +59,21 @@ const AllLeads = () => {
   
   return (
     <div className="leads-page">
-      <h2 className="page-title">All Leads</h2>
+      {/* <h2 className="page-title">All Leads</h2> */}
+
+      <div className="leads-header">
+  <h2 className="page-title">All Leads</h2>
+  <button
+    className="btn-add-lead"
+    onClick={() => {
+      // Redirect logic (use navigate if using react-router-dom v6)
+      window.location.href = "/addLeads";
+    }}
+  >
+    ➕ Add Lead
+  </button>
+</div>
+
 
       <form className="leads-filter-form">
         <h5 className="form-heading">Filter Leads</h5>

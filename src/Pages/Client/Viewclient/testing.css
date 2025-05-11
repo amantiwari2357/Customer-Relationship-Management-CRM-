@@ -1,4 +1,5 @@
 .client-filter-form {
+  padding: 20px;
   overflow: hidden;
   transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
   max-height: 2200px;
@@ -26,7 +27,7 @@
 }
 
 .client-filter-form .form-group {
-  flex: 0 0 calc((100% - 100px) / 6); /* 6 items with 5 gaps (5*20px = 100px) */
+  flex: 1 0 calc((100% - 100px) / 6); /* 6 items with 5 gaps (5*20px = 100px) */
   min-width: 120px; /* allow flexibility on smaller screens */
   display: flex;
   flex-direction: column;
