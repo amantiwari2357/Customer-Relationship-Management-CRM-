@@ -184,7 +184,7 @@
       },
     
     ];
-    
+
  // Pagination logic
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -211,6 +211,16 @@
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
+
+  const [selectedImage, setSelectedImage] = useState(null);
+
+const handleImageClick = (imageUrl) => {
+  setSelectedImage(imageUrl);
+};
+
+const handleCloseModal = () => {
+  setSelectedImage(null);
+};
 
     return (
       <div className="client-report-container">
@@ -314,11 +324,23 @@
                 {clientData.map(client => (
                   <tr key={client.id}>
                     <td><input type="checkbox" className="row-checkbox" /></td>
+
                     <td>
-                      <a href="/UserProfilePage" target="_blank" rel="noopener noreferrer">
-                        <img src={client.profilePhoto} alt="Profile" className="profile-img" />
-                      </a>
-                    </td>
+  <img
+    src={client.profilePhoto}
+    alt="Profile"
+    className="profile-img"
+    onClick={() => handleImageClick(client.profilePhoto)}
+    style={{ cursor: 'pointer' }}
+  />
+</td>
+{selectedImage && (
+  <div className="image-modal" onClick={handleCloseModal}>
+    <img src={selectedImage} alt="Enlarged" className="modal-img" />
+  </div>
+)}
+
+
                     <td>
                       <div className="bold">{client.name}</div>
                       <div className={`gender ${client.gender.toLowerCase()}`}>{client.gender}</div>

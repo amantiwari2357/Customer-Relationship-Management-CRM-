@@ -450,3 +450,31 @@ select[name="membershipStatus"] {
     border-color: #3b82f6;
   }
   
+  .profile-img {
+    width: 40px;
+    height: 40px;
+    /* border-radius: 9999px; */
+    object-fit: cover;
+  }
+  
+  /* Modal styles */
+  .image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    cursor: pointer;
+  }
+  
+  .modal-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+  }
+  
