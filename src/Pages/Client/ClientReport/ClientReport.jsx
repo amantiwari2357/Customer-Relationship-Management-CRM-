@@ -263,6 +263,9 @@ const handleCloseModal = () => {
   <Link to={`/ShareClient`}>    
     <i className="fas fa-share-from-square" title="Share"></i>
     </Link>
+    <a href="/UserProfilePage" target="_blank" rel="noopener noreferrer">
+                          <i className="fas fa-file-pdf" title="PDF Profile"></i>
+                        </a>
     <Link to={`/EditClient`}>
       <i className="fas fa-pen-to-square" title="Edit"></i>
     </Link>

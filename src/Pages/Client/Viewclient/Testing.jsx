@@ -356,9 +356,8 @@ const handleCloseModal = () => {
                     <Link
                 to={`/UserProfilePage`}
                 className="avatar"
-  target="_blank">
-           
-          {client.clientId}
+                target="_blank">   
+                 {client.clientId}
         </Link>
         
 
