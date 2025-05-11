@@ -1,6 +1,7 @@
   import React, { useState } from 'react';
   import '@fortawesome/fontawesome-free/css/all.min.css';
   import './testing.css';
+  import { Link } from 'react-router-dom';
 
   
   const ClientReport = () => {
@@ -212,7 +213,9 @@
     pageNumbers.push(i);
   }
 
-  const [selectedImage, setSelectedImage] = useState(null);
+  // image ko click karne par bada dikhana
+
+const [selectedImage, setSelectedImage] = useState(null);
 
 const handleImageClick = (imageUrl) => {
   setSelectedImage(imageUrl);
@@ -237,7 +240,7 @@ const handleCloseModal = () => {
                   { label: 'Profile ID', name: 'profileId', type: 'text' },
                   
                   { label: 'From Date', name: 'fromDate', type: 'date' },
-                  { label: 'To Date', name: 'toDate', type: 'date' },
+                  { label: 'To Date', name: 'toDate', type: 'date' }, 
                 ].map(({ label, name, type }) => (
                   <div className="form-group" key={name}>
                     <label>{label}</label>
@@ -325,7 +328,8 @@ const handleCloseModal = () => {
                   <tr key={client.id}>
                     <td><input type="checkbox" className="row-checkbox" /></td>
 
-                    <td>
+{/* image ko modal me dikhana bda dikha ke */}
+  <td>
   <img
     src={client.profilePhoto}
     alt="Profile"
@@ -339,18 +343,21 @@ const handleCloseModal = () => {
     <img src={selectedImage} alt="Enlarged" className="modal-img" />
   </div>
 )}
-
+{/* image ko modal me dikhana bda dikha ke */}
 
                     <td>
                       <div className="bold">{client.name}</div>
                       <div className={`gender ${client.gender.toLowerCase()}`}>{client.gender}</div>
                       <div className="small-text">{client.contact}</div>
                       <div className="small-text">{client.email}</div>
-                    </td>
-                    <td>
-                      <div className="bold">{client.clientId}</div>
-                      <div className="green">{client.membershipStatus}</div>
-                    </td>
+                    </td> 
+{/* cliend id ko clibale banay hu */}
+                    <Link
+                to={`/UserProfilePage`}>
+          {client.clientId}
+        </Link>
+{/*  */}
+        <div className="green">{client.membershipStatus}</div>
                     <td>
                       <div>{client.maritalStatus}</div>
                       <a href="/Modal" className="green" target="_blank" rel="noopener noreferrer">{client.profileSent}</a>

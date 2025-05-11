@@ -478,3 +478,8 @@ select[name="membershipStatus"] {
     border-radius: 8px;
   }
   
+a {
+    color: #cc2b85;
+    text-decoration: none;
+    font-weight: 600;
+}
