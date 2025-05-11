@@ -235,7 +235,7 @@ const handleCloseModal = () => {
                 </td>
                 <td>
              <Link
-                             to={`/UserProfilePage`}>
+                             to={`/UserProfilePage`} target='_blank'>
                        {'DUL1234'}
                      </Link>
              <div className="green">Premium</div>   {/* ✅ Membership Status */}
