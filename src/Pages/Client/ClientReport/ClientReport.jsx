@@ -57,7 +57,6 @@ const ClientReport = () => {
     });
   };
 
-//   /////////////////////copy///////////////////////
 // Pagination logic
 const [currentPage, setCurrentPage] = useState(1);
 const [itemsPerPage] = useState(10); // Set a default value for items per page
@@ -93,6 +92,16 @@ const pageNumbers = [];
 for (let i = 1; i <= totalPages; i++) {
   pageNumbers.push(i);
 }
+
+const [selectedImage, setSelectedImage] = useState(null);
+
+const handleImageClick = (imageSrc) => {
+  setSelectedImage(imageSrc);
+};
+
+const handleCloseModal = () => {
+  setSelectedImage(null);
+};
 
 /////////////////////////////copy gourav//////////////
   return (
@@ -204,14 +213,31 @@ for (let i = 1; i <= totalPages; i++) {
             <tbody>
               <tr>
                 <td><input type="checkbox" className="row-checkbox" /></td>
-                <td><img src="/images/user4.jpg" alt="Profile" className="profile-img" /></td>
+                {/* <td><img src="/images/user4.jpg" alt="Profile" className="profile-img" /></td> */}
+                <td>
+  <img
+    src="/images/user4.jpg" // Replace with a valid source or variable
+    alt="Profile"
+    className="profile-img"
+    onClick={() => handleImageClick('/images/user4.jpg')}
+    style={{ cursor: 'pointer' }}
+  />
+</td>
+{selectedImage && (
+  <div className="image-modal" onClick={handleCloseModal}>
+    <img src={selectedImage} alt="Enlarged" className="modal-img" />
+  </div>
+)}
                 <td>
                   <div className="bold">Rohan Sharma</div>
                   <div className="gender male">Male</div>
                   <div className="small-text">9876543210</div>
                 </td>
                 <td>
-             <div className="bold">DUL12345</div> {/* ✅ Client ID */}
+             <Link
+                             to={`/UserProfilePage`}>
+                       {'DUL1234'}
+                     </Link>
              <div className="green">Premium</div>   {/* ✅ Membership Status */}
               </td>
                 <td>
@@ -231,8 +257,8 @@ for (let i = 1; i <= totalPages; i++) {
                 <td>₹15 LPA</td>
                 <td>₹10-15 LPA</td>
                 <td>Mumbai<br /><span className="purple">NRI</span></td>
-
                 <td>
+                  
   <div className="actions">
   <Link to={`/ShareClient`}>    
     <i className="fas fa-share-from-square" title="Share"></i>
