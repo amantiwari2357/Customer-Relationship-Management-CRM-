@@ -13,6 +13,7 @@
 .sidebar ul {
   list-style: none;
   padding: 0;
+
 }
 
 .sidebar ul li{
@@ -25,6 +26,23 @@
 .sidebar h5 {
   margin: 10px 0;
 }
+/* Menu Link (e.g., Leads, Tasks) */
+.sidebar ul li > div > a {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  font-size: 16px;
+  color: var(--pink);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Icon inside Menu Link */
+.sidebar ul li > div > a i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
 
 .sidebar a {
   text-decoration: none;
