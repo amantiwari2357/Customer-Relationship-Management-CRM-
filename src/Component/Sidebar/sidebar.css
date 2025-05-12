@@ -84,3 +84,21 @@
   height: 100%;
   width: 140px;
 }
+
+.sidebar ul li a.active {
+  background-color: var(--pink);
+  color: white !important;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(255, 105, 135, 0.2); /* Soft pinkish shadow */
+  font-weight: 600;
+  transition: all 0.3s ease;
+  transform: scale(1.02);
+  position: relative;
+  z-index: 1;
+}
+.sidebar ul li a.active:hover {
+  background-color: #ff578f; /* Slightly darker pink */
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 105, 135, 0.3);
+}
+

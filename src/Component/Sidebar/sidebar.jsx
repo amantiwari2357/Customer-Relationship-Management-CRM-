@@ -1,24 +1,26 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../Images/logo.png";
 import "./sidebar.css";
 
 const Sidebar = () => {
+  const location = useLocation();
   const [dropdown, setDropdown] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const toggleDropdown = (dropdownName) => {
-    setDropdown(dropdown === dropdownName? null : dropdownName);
+    setDropdown(dropdown === dropdownName ? null : dropdownName);
   };
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const isActive = (path) => location.pathname === path;
+
   return (
-    <div className={`flex ${isSidebarOpen? "" : "sidebar-closed"}`}>
-      {/* Sidebar */}
-      <div className={`sidebar ${isSidebarOpen? "" : "closed"}`}>
+    <div className={`flex ${isSidebarOpen ? "" : "sidebar-closed"}`}>
+      <div className={`sidebar ${isSidebarOpen ? "" : "closed"}`}>
         <div className="sidebar-header">
           <Link to="/" className="text-center">
             <img src={logo} className="logo" alt="dashboard logo" />
@@ -42,6 +44,7 @@ const Sidebar = () => {
         >
           <Link
             to="/login"
+            className={isActive("/login") ? "active" : ""}
             style={{
               display: "flex",
               alignItems: "center",
@@ -57,14 +60,14 @@ const Sidebar = () => {
             style={{
               cursor: "pointer",
               marginLeft: "auto",
-              display: isSidebarOpen? "block" : "none",
+              display: isSidebarOpen ? "block" : "none",
             }}
             onClick={toggleSidebar}
           ></i>
         </h5>
 
         <ul className="sidebar-menu">
-          {/* Client Menu */}
+          {/* Clients */}
           <li>
             <div onClick={() => toggleDropdown("clients")}>
               <Link to="#">
@@ -73,24 +76,24 @@ const Sidebar = () => {
             </div>
             <ul className={`dropdown ${dropdown === "clients" ? "open" : ""}`}>
               <li>
-                <Link to="/Testing">
+                <Link to="/Testing" className={isActive("/Testing") ? "active" : ""}>
                   <i className="bi bi-eye-fill"></i> View Clients
                 </Link>
               </li>
               <li>
-                <Link to="/add-client">
+                <Link to="/add-client" className={isActive("/add-client") ? "active" : ""}>
                   <i className="bi bi-person-plus-fill"></i> Add Client
                 </Link>
               </li>
               <li>
-                <Link to="/client-report">
+                <Link to="/client-report" className={isActive("/client-report") ? "active" : ""}>
                   <i className="bi bi-bar-chart-fill"></i> Client Report
                 </Link>
               </li>
             </ul>
           </li>
 
-          {/* Shortlist Menu */}
+          {/* Shortlist */}
           <li>
             <div onClick={() => toggleDropdown("shortlist")}>
               <Link to="#">
@@ -99,24 +102,24 @@ const Sidebar = () => {
             </div>
             <ul className={`dropdown ${dropdown === "shortlist" ? "open" : ""}`}>
               <li>
-                <Link to="/shortlisted-profile">
+                <Link to="/shortlisted-profile" className={isActive("/shortlisted-profile") ? "active" : ""}>
                   <i className="bi bi-person-check-fill"></i> Shortlisted Profiles
                 </Link>
               </li>
               <li>
-                <Link to="/approved-profile">
+                <Link to="/approved-profile" className={isActive("/approved-profile") ? "active" : ""}>
                   <i className="bi bi-patch-check-fill"></i> Approved Profiles
                 </Link>
               </li>
               <li>
-                <Link to="/reject-profile">
+                <Link to="/reject-profile" className={isActive("/reject-profile") ? "active" : ""}>
                   <i className="bi bi-x-circle-fill"></i> Rejected Profiles
                 </Link>
               </li>
             </ul>
           </li>
 
-          {/* Leads Menu */}
+          {/* Leads */}
           <li>
             <div onClick={() => toggleDropdown("Leads")}>
               <Link to="#">
@@ -125,19 +128,19 @@ const Sidebar = () => {
             </div>
             <ul className={`dropdown ${dropdown === "Leads" ? "open" : ""}`}>
               <li>
-                <Link to="/allLeads">
+                <Link to="/allLeads" className={isActive("/allLeads") ? "active" : ""}>
                   <i className="bi bi-list-ul"></i> All Leads
                 </Link>
               </li>
               <li>
-                <Link to="/addLeads">
+                <Link to="/addLeads" className={isActive("/addLeads") ? "active" : ""}>
                   <i className="bi bi-plus-square-fill"></i> Add Leads
                 </Link>
               </li>
             </ul>
           </li>
 
-          {/* Tasks Menu */}
+          {/* Tasks */}
           <li>
             <div onClick={() => toggleDropdown("Tasks")}>
               <Link to="#">
@@ -146,19 +149,19 @@ const Sidebar = () => {
             </div>
             <ul className={`dropdown ${dropdown === "Tasks" ? "open" : ""}`}>
               <li>
-                <Link to="/viewTask">
+                <Link to="/viewTask" className={isActive("/viewTask") ? "active" : ""}>
                   <i className="bi bi-card-checklist"></i> View Tasks
                 </Link>
               </li>
               <li>
-                <Link to="/addTask">
+                <Link to="/addTask" className={isActive("/addTask") ? "active" : ""}>
                   <i className="bi bi-plus-circle-fill"></i> Add Tasks
                 </Link>
               </li>
             </ul>
           </li>
 
-          {/* Settings Menu */}
+          {/* Settings */}
           <li>
             <div onClick={() => toggleDropdown("Settings")}>
               <Link to="#">
@@ -167,24 +170,24 @@ const Sidebar = () => {
             </div>
             <ul className={`dropdown ${dropdown === "Settings" ? "open" : ""}`}>
               <li>
-                <Link to="/activity-log">
+                <Link to="/activity-log" className={isActive("/activity-log") ? "active" : ""}>
                   <i className="bi bi-clock-history"></i> Manage Activity Log
                 </Link>
               </li>
               <li>
-                <Link to="/Add-Reference">
+                <Link to="/Add-Reference" className={isActive("/Add-Reference") ? "active" : ""}>
                   <i className="bi bi-person-plus-fill"></i> Add Reference
                 </Link>
               </li>
               <li>
-                <Link to="/View-preference">
+                <Link to="/View-preference" className={isActive("/View-preference") ? "active" : ""}>
                   <i className="bi bi-person-lines-fill"></i> View Reference
                 </Link>
               </li>
             </ul>
           </li>
 
-          {/* User Management Menu */}
+          {/* User Management */}
           <li>
             <div onClick={() => toggleDropdown("Management")}>
               <Link to="#">
@@ -193,19 +196,19 @@ const Sidebar = () => {
             </div>
             <ul className={`dropdown ${dropdown === "Management" ? "open" : ""}`}>
               <li>
-                <Link to="/staffReport">
+                <Link to="/staffReport" className={isActive("/staffReport") ? "active" : ""}>
                   <i className="bi bi-clipboard-data-fill"></i> Staff Report
                 </Link>
               </li>
               <li>
-                <Link to="/userManager">
+                <Link to="/userManager" className={isActive("/userManager") ? "active" : ""}>
                   <i className="bi bi-person-badge-fill"></i> User Manager
                 </Link>
               </li>
             </ul>
           </li>
 
-          {/* Proposal Menu */}
+          {/* Proposal */}
           <li>
             <div onClick={() => toggleDropdown("Proposal")}>
               <Link to="#">
@@ -214,19 +217,19 @@ const Sidebar = () => {
             </div>
             <ul className={`dropdown ${dropdown === "Proposal" ? "open" : ""}`}>
               <li>
-                <Link to="/AssignPackage">
+                <Link to="/AssignPackage" className={isActive("/AssignPackage") ? "active" : ""}>
                   <i className="bi bi-arrow-right-circle-fill"></i> Assign Proposal
                 </Link>
               </li>
               <li>
-                <Link to="/package-manager">
+                <Link to="/package-manager" className={isActive("/package-manager") ? "active" : ""}>
                   <i className="bi bi-archive-fill"></i> Proposal Manager
                 </Link>
               </li>
             </ul>
           </li>
 
-          {/* Logout Menu */}
+          {/* Logout */}
           <li>
             <div onClick={() => toggleDropdown("logout")}>
               <Link to="#">
