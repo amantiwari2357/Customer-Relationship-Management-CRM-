@@ -45,6 +45,7 @@
   border-radius: 6px;
   outline: none;
   transition: border-color 0.3s;
+  
 }
 
 .filter-group select:focus {
