@@ -1,10 +1,12 @@
-import React from "react";
-import "../Shortlist/shortlist.css"; // Add custom styles here
+import React, { useState, useEffect } from "react";
+import "../Shortlist/shortlist.css";
 import { useNavigate } from "react-router-dom";
-import client from '../../Images/client1.png'
+import client from '../../Images/client1.png';
+
 const UserListed = () => {
   const navigate = useNavigate();
 
+  // Profiles data
   const profiles = [
     {
       name: "Name 123",
@@ -59,14 +61,53 @@ const UserListed = () => {
     },
   ];
 
+  // Initialize profileStatuses with the same length as profiles, setting default "Pending" status
+  const [profileStatuses, setProfileStatuses] = useState(
+    profiles.map(() => ({ status: "Pending" }))
+  );
+
+  const handleStatusChange = (index: number, value: string) => {
+    const updatedStatuses = [...profileStatuses];
+    updatedStatuses[index].status = value;
+    setProfileStatuses(updatedStatuses);
+  };
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10; // Define items per page
+  const indexOfFirstItem = (currentPage - 1) * itemsPerPage;
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const currentItems = profiles.slice(indexOfFirstItem, indexOfLastItem);
+  
+  const totalPages = Math.ceil(profiles.length / itemsPerPage);
+  
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+  
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+  
+  // Generate page numbers
+  const pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
+
   return (
     <>
       <section className="shortlist-profiles">
         <div className="container">
-            <div className="d-flex justify-content-between">
-          <h2 className="section-title">Profiles Shortlisted - Pending Approval</h2>
-<button className="all-buttons">Back</button>
-            </div>
+          <div className="d-flex justify-content-between align-items-center mb-3">
+            <h2 className="section-title">Profiles Shortlisted - Pending Approval</h2>
+            <button className="all-buttons" onClick={() => navigate(-1)}>Back</button>
+          </div>
           <div className="table-responsive">
             <table className="table table-bordered">
               <thead className="admin-table">
@@ -84,6 +125,7 @@ const UserListed = () => {
                   <th>Residence</th>
                   <th>Partner Preference</th>
                   <th>Annual Income</th>
+                  <th>Status</th>
                 </tr>
               </thead>
               <tbody>
@@ -108,11 +150,48 @@ const UserListed = () => {
                     <td>{profile.residence}</td>
                     <td>{profile.partnerPreference}</td>
                     <td>{profile.annualIncome}</td>
+                    <td>
+                      <select
+                        className="form-select"
+                        value={profileStatuses[index]?.status}
+                        onChange={(e) => handleStatusChange(index, e.target.value)}
+                      >
+                        <option value="Pending">Pending</option>
+                        <option value="Approved">Approved</option>
+                        <option value="Rejected">Rejected</option>
+                      </select>
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
+           {/* Pagination Controls */}
+          <div className="pagination">
+              <button
+                onClick={handlePreviousPage}
+                disabled={currentPage === 1}
+                className="pagination-btn"
+              >
+                Previous
+              </button>
+              {pageNumbers.map(number => (
+                <button
+                  key={number}
+                  onClick={() => paginate(number)}
+                  className={`pagination-btn ${currentPage === number ? 'active' : ''}`}
+                >
+                  {number}
+                </button>
+              ))}
+              <button
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages}
+                className="pagination-btn"
+              >
+                Next
+              </button>
+            </div>
         </div>
       </section>
     </>

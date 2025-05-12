@@ -281,61 +281,50 @@
       font-size: 20px;
     }
     
-    /* === FILTER BAR === */
-    .filter-bar {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 10px;
-      /* /* flex-wrap: wrap; */
-      width: 228px; 
-      border-radius: 10px;
-      height: 60px;
-      /* width: 300px; */
-    }
-    .apply-btn {
-      padding: 8px 16px;
-      background-color: #cc2b85;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-      border-radius: 10px;
-      width: 240px;
-      height: 55px;
-      display: 1 1 flex;
-    }
-    .apply-btn:hover {
-      background-color: #0056b3;
-    }
-    .filter-select {
-      padding: 8px 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .filter-select,
-    .search-input {
-      padding: 6px 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 14px;
-      height: 50px;
-      width: 160px;
-      /* display: flex; */
-    }
-    .filter-row {
-      display: flex;
-      align-items: center;
-      gap: 20px; /* space between groups */
-      margin-bottom: 1rem;
-      flex-wrap: wrap; /* allows wrapping on small screens */
-    }
-    .filter-group {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    /* Optional: style for the select and button */
+   /* === FILTER ROW to keep all filters in one line === */
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between groups */
+  margin-bottom: 1rem;
+  flex-wrap: nowrap; /* force one line unless absolutely needed */
+  overflow-x: auto; /* scrolls horizontally on very small screens */
+}
+
+/* === FILTER GROUP === */
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* === SELECT DROPDOWNS === */
+.filter-select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  height: 50px;
+  width: 180px;
+}
+
+/* === APPLY BUTTON === */
+.apply-btn {
+  padding: 8px 16px;
+  background-color: #cc2b85;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 10px;
+  width: 140px;
+  height: 50px;
+}
+
+.apply-btn:hover {
+  background-color: #a11e6b;
+}
+
   
   
     
@@ -448,3 +437,7 @@
     }
     
     
+
+    /* shd */
+
+    /* Container for the whole table + filters */

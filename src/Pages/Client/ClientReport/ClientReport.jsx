@@ -59,7 +59,12 @@ const ClientReport = () => {
 
 // Pagination logic
 const [currentPage, setCurrentPage] = useState(1);
-const [itemsPerPage] = useState(10); // Set a default value for items per page
+const [itemsPerPage, setItemsPerPage] = useState(10); // Set a default value for items per page
+
+const handlePageSizeChange = (pageSize) => {
+  setItemsPerPage(Number(pageSize));
+  setCurrentPage(1); // Reset to the first page
+};
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 // Sample client data for demonstration
@@ -168,28 +173,41 @@ const handleCloseModal = () => {
           </form>
         )}
 
-<div class="report-table-container">
-  <div class="filter-bar">
-    <div class="filter-group">
-      <select class="filter-select">
+<div className="report-table-container">
+  <div className="filter-row">
+    <div className="filter-group">
+      <select className="filter-select">
         <option value="">Selected for Assign</option>
         <option value="male">Akash TL</option>
         <option value="female">Aman Tiwari RM</option>
         <option value="other">Deepak RM</option>
       </select>
-      <button class="apply-btn">Assign</button>
+      <button className="apply-btn">Assign</button>
     </div>
 
-    <div class="filter-group">
-      <select class="filter-select">
-        <option value="">Handled by</option>
+    <div className="filter-group">
+      <select className="filter-select">
+        <option value="hand">Handled by</option>
         <option value="aman">Aman</option>
         <option value="anki">Anki</option>
         <option value="anman">Anman</option>
       </select>
-      <button class="apply-btn">Apply</button>
+      <button className="apply-btn">Apply</button>
     </div>
   </div>
+</div>
+
+<div className="filter-group">
+      <label htmlFor="pageSize" className="page-label">Manage Pagination</label>
+      <select className="filter-select" id="pageSize" onChange={(e) => handlePageSizeChange(e.target.value)}>
+        <option value="10">10 per page</option>
+        <option value="25">25 per page</option>
+        <option value="50">50 per page</option>
+        <option value="100">100 per page</option>
+      </select>
+    </div>
+
+
 {/* </div> */}
 
           <table className="report-table">
@@ -315,7 +333,7 @@ const handleCloseModal = () => {
               </button>
             </div>
       </div>
-    </div>
+    
   );
 };
 

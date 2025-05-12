@@ -243,7 +243,7 @@
   
   /* === FILTER BAR === */
   .filter-bar {
-    display: flex;
+    display: 1 1 flex;
     gap: 10px;
     align-items: center;
     margin-bottom: 10px;
@@ -254,6 +254,7 @@
     /* width: 300px; */
   }
   .apply-btn {
+    display: 1 1 flex;
     padding: 8px 16px;
     background-color: #cc2b85;
     color: white;
@@ -484,3 +485,5 @@ a {
     text-decoration: none;
     font-weight: 600;
 }
+
+
