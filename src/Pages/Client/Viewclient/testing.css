@@ -282,7 +282,7 @@
 
 
   .filter-group select {
-    margin-bottom: -18px;
+    margin-bottom: 1px;
   }
   /* === SMALL TEXT UTILITIES === */
   .bold {

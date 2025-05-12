@@ -200,6 +200,7 @@ const handleCloseModal = () => {
     {/* <select className="filter-select" id="pageSize" onChange={(e) => handlePageSizeChange(parseInt(e.target.value, 10))}></select> */}
 
 {/* Pagination size selector */}
+
     <div className="filter-group">
       <label htmlFor="pageSize" className="page-label"></label>
       <select className="filter-select w-auto" id="pageSize" onChange={(e) => handlePageSizeChange(e.target.value)}>
@@ -214,6 +215,7 @@ const handleCloseModal = () => {
   {/* </div> */}
 {/* </div> */}
 {/* </div> */}
+<div className='gourav-table'>
           <table className="report-table">
             <thead>
               <tr style={{ backgroundColor: 'var(--dul-light-pink)', color: 'black' }}>
@@ -249,6 +251,7 @@ const handleCloseModal = () => {
                 <td><input type="checkbox" className="row-checkbox" /></td>
                 {/* <td><img src="/images/user4.jpg" alt="Profile" className="profile-img" /></td> */}
                 <td>
+                  
   <img
     src="/images/user4.jpg" // Replace with a valid source or variable
     alt="Profile"
@@ -309,6 +312,7 @@ const handleCloseModal = () => {
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
         {/* Pagination Controls */}
         <div className="pagination">
