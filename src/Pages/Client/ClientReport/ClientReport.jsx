@@ -195,8 +195,17 @@ const handleCloseModal = () => {
       </select>
       <button className="apply-btn">Apply</button>
     </div>
-  </div>
-</div>
+  
+<div className='filter-group'>
+<select className="filter-select">
+  <option value="">Disposition</option>
+  <option value="male">Akash TL</option>
+  <option value="female">Aman Tiwari RM</option>
+  <option value="other">Deepak RM</option>
+</select>
+<button className="apply-btn">Apply</button>
+ </div>
+
     {/* <select className="filter-select" id="pageSize" onChange={(e) => handlePageSizeChange(parseInt(e.target.value, 10))}></select> */}
 
 {/* Pagination size selector */}
@@ -209,8 +218,10 @@ const handleCloseModal = () => {
         <option value="35">35 per page</option>
         <option value="45">45 per page</option>
         <option value="55">55 per page</option>
-
       </select>
+      <button className="apply-btn">Apply</button>
+      </div>
+</div>
     </div>
   {/* </div> */}
 {/* </div> */}
