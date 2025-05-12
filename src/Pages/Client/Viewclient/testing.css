@@ -281,7 +281,9 @@
 
 
 
-  
+  .filter-group select {
+    margin-bottom: -18px;
+  }
   /* === SMALL TEXT UTILITIES === */
   .bold {
     font-weight: 600;

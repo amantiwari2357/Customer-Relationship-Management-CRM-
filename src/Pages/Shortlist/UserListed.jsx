@@ -79,7 +79,7 @@ const UserListed = () => {
   const currentItems = profiles.slice(indexOfFirstItem, indexOfLastItem);
   
   const totalPages = Math.ceil(profiles.length / itemsPerPage);
-  
+    
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   
   const handleNextPage = () => {
