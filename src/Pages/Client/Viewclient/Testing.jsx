@@ -301,7 +301,9 @@ const handleCloseModal = () => {
           )}
 
     <div className="report-table-container">
+      
     <div className="filter-row">
+
     <div className="filter-group">
       <select className="filter-select">
         <option value="">Selected for Assign</option>
@@ -321,7 +323,17 @@ const handleCloseModal = () => {
       </select>
       <button className="apply-btn">Apply</button>
     </div>
-  </div>
+ 
+
+<div className='filter-group'>
+<select className="filter-select">
+  <option value="">Disposition</option>
+  <option value="male">Akash TL</option>
+  <option value="female">Aman Tiwari RM</option>
+  <option value="other">Deepak RM</option>
+</select>
+<button className="apply-btn">Apply</button>
+
 </div>
     {/* <select className="filter-select" id="pageSize" onChange={(e) => handlePageSizeChange(parseInt(e.target.value, 10))}></select> */}
 
@@ -336,6 +348,9 @@ const handleCloseModal = () => {
         <option value="55">55 per page</option>
 
       </select>
+      <button className="apply-btn">Apply</button>
+       </div>
+</div>
     </div>
   {/* </div> */}
 {/* </div> */}

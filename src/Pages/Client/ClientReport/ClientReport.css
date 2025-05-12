@@ -302,6 +302,7 @@
 .filter-row {
   display: flex;
   align-items: center;
+  flex-direction: row;
   gap: 20px; /* space between groups */
   margin-bottom: 1rem;
   flex-wrap: nowrap; /* force one line unless absolutely needed */
