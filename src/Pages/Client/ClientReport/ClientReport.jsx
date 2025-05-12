@@ -62,9 +62,10 @@ const [currentPage, setCurrentPage] = useState(1);
 const [itemsPerPage, setItemsPerPage] = useState(10); // Set a default value for items per page
 
 const handlePageSizeChange = (pageSize) => {
-  setItemsPerPage(Number(pageSize));
-  setCurrentPage(1); // Reset to the first page
+  setItemsPerPage(parseInt(pageSize, 10));
+  setCurrentPage(1); // Reset to the first page when page size changes
 };
+
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 // Sample client data for demonstration
@@ -173,8 +174,8 @@ const handleCloseModal = () => {
           </form>
         )}
 
-<div className="report-table-container">
-  <div className="filter-row">
+ <div className="report-table-container">
+    <div className="filter-row">
     <div className="filter-group">
       <select className="filter-select">
         <option value="">Selected for Assign</option>
@@ -196,20 +197,23 @@ const handleCloseModal = () => {
     </div>
   </div>
 </div>
+    {/* <select className="filter-select" id="pageSize" onChange={(e) => handlePageSizeChange(parseInt(e.target.value, 10))}></select> */}
 
-<div className="filter-group">
-      <label htmlFor="pageSize" className="page-label">Manage Pagination</label>
-      <select className="filter-select" id="pageSize" onChange={(e) => handlePageSizeChange(e.target.value)}>
-        <option value="10">10 per page</option>
-        <option value="25">25 per page</option>
-        <option value="50">50 per page</option>
-        <option value="100">100 per page</option>
+{/* Pagination size selector */}
+    <div className="filter-group">
+      <label htmlFor="pageSize" className="page-label"></label>
+      <select className="filter-select w-auto" id="pageSize" onChange={(e) => handlePageSizeChange(e.target.value)}>
+        <option value="5">5 per page</option>
+        <option value="15">15 per page</option>
+        <option value="35">35 per page</option>
+        <option value="45">45 per page</option>
+        <option value="55">55 per page</option>
+
       </select>
     </div>
-
-
+  {/* </div> */}
 {/* </div> */}
-
+{/* </div> */}
           <table className="report-table">
             <thead>
               <tr style={{ backgroundColor: 'var(--dul-light-pink)', color: 'black' }}>
@@ -333,7 +337,7 @@ const handleCloseModal = () => {
               </button>
             </div>
       </div>
-    
+    // </div>
   );
 };
 

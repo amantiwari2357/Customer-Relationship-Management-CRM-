@@ -23,9 +23,9 @@
       renewalDue: false // Added field for renewal due
     });
 
-    const [showFilterForm, setShowFilterForm] = useState(false);
+  const [showFilterForm, setShowFilterForm] = useState(false);
     
-     // Pagination states
+  // Pagination states
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(2); // Display 2 items per page
 
@@ -81,7 +81,8 @@
 
     // 👉 Dummy client data array
     const clientData = [
-      {
+     
+       {
         id: 1,
         profilePhoto: '/images/user4.jpg',
         name: 'Rohan Sharma',
@@ -109,7 +110,7 @@
       },
 
       {
-        id: 1,
+        id: 2,
         profilePhoto: '/images/user4.jpg',
         name: 'Rohan Sharma',
         gender: 'Male',
@@ -136,7 +137,7 @@
       },
 
       {
-        id: 1,
+        id: 3,
         profilePhoto: '/images/user4.jpg',
         name: 'Rohan Sharma',
         gender: 'Male',
@@ -163,7 +164,7 @@
       },
 
       {
-        id: 1,
+        id: 4,
         profilePhoto: '/images/user4.jpg',
         name: 'Rohan Sharma',
         gender: 'Male',
@@ -188,6 +189,7 @@
         city: 'Mumbai',
         isNRI: 'NRI'
       },
+        
     
     ];
 
@@ -298,8 +300,8 @@ const handleCloseModal = () => {
             </form>
           )}
 
-          <div className="report-table-container">
-  <div className="filter-row">
+    <div className="report-table-container">
+    <div className="filter-row">
     <div className="filter-group">
       <select className="filter-select">
         <option value="">Selected for Assign</option>
@@ -325,12 +327,14 @@ const handleCloseModal = () => {
 
 {/* Pagination size selector */}
     <div className="filter-group">
-      <label htmlFor="pageSize" className="page-label">Manage Pagination</label>
-      <select className="filter-select" id="pageSize" onChange={(e) => handlePageSizeChange(e.target.value)}>
-        <option value="10">10 per page</option>
-        <option value="25">25 per page</option>
-        <option value="50">50 per page</option>
-        <option value="100">100 per page</option>
+      <label htmlFor="pageSize" className="page-label"></label>
+      <select className="filter-select w-auto" id="pageSize" onChange={(e) => handlePageSizeChange(e.target.value)}>
+        <option value="5">5 per page</option>
+        <option value="15">15 per page</option>
+        <option value="35">35 per page</option>
+        <option value="45">45 per page</option>
+        <option value="55">55 per page</option>
+
       </select>
     </div>
   {/* </div> */}
