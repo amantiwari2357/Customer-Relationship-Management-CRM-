@@ -340,7 +340,7 @@ const handleCloseModal = () => {
   {/* </div> */}
 {/* </div> */}
 </div>
-            
+           <div className='aman-table'>
             <div className="table-res-tab">
             <table className="report-table">
               <thead>
@@ -434,6 +434,7 @@ const handleCloseModal = () => {
                 ))}
               </tbody>
             </table>
+            </div> 
           </div>
 
           {/* Pagination Controls */}

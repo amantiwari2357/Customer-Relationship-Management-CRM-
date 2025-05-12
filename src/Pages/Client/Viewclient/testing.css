@@ -489,3 +489,7 @@ a {
 }
 
 
+.aman-table {
+  width: 100%;
+  overflow-y: scroll;
+}
