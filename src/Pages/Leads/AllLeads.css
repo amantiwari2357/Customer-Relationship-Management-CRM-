@@ -10,6 +10,8 @@
     color: #333;
     font-weight: 600;
     text-align: center;
+    margin-left: 500px;
+    font-weight: 100px;
   }
   
   .leads-filter-form {
@@ -145,12 +147,36 @@
   }
   
   .btn-success {
-    background-color: #28a745;
+    background-color: #b22474;
     color: white;
     border: none;
     padding: 0.6rem 1.5rem;
     border-radius: 4px;
     cursor: pointer;
     align-self: flex-start;
+  }
+  
+
+
+  .leads-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .btn-add-lead {
+    background-color: #b22474;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .btn-add-lead:hover {
+    background-color: #b22474;
   }
   

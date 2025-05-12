@@ -27,7 +27,12 @@
     
      // Pagination states
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(2); // Display 2 items per page
+  const [itemsPerPage, setItemsPerPage] = useState(2); // Display 2 items per page
+
+  const handlePageSizeChange = (newPageSize) => {
+    setItemsPerPage(newPageSize);
+    setCurrentPage(1); // Reset to the first page
+  };
 
   // Removed duplicate declaration of toggleFilterForm
 
@@ -225,6 +230,8 @@ const handleCloseModal = () => {
   setSelectedImage(null);
 };
 
+// Removed duplicate declaration of handlePageSizeChange
+
     return (
       <div className="client-report-container">
         <div className="main-content">
@@ -292,17 +299,44 @@ const handleCloseModal = () => {
           )}
 
           <div className="report-table-container">
-            <div className="filter-bar">
-              <select className="filter-select">
-                <option value="">Select For Assign</option>
-                <option value="akash">Akash TL</option>
-                <option value="aman">Aman Tiwari RM</option>
-                <option value="deepak">Deepak RM</option>
-                <option value="geeta">Geeta</option>
-              </select>
-              
-              <button className="apply-btn">Assign</button>
-            </div>
+  <div className="filter-row">
+    <div className="filter-group">
+      <select className="filter-select">
+        <option value="">Selected for Assign</option>
+        <option value="male">Akash TL</option>
+        <option value="female">Aman Tiwari RM</option>
+        <option value="other">Deepak RM</option>
+      </select>
+      <button className="apply-btn">Assign</button>
+    </div>
+
+    <div className="filter-group">
+      <select className="filter-select">
+        <option value="hand">Handled by</option>
+        <option value="aman">Aman</option>
+        <option value="anki">Anki</option>
+        <option value="anman">Anman</option>
+      </select>
+      <button className="apply-btn">Apply</button>
+    </div>
+  </div>
+</div>
+    {/* <select className="filter-select" id="pageSize" onChange={(e) => handlePageSizeChange(parseInt(e.target.value, 10))}></select> */}
+
+{/* Pagination size selector */}
+    <div className="filter-group">
+      <label htmlFor="pageSize" className="page-label">Manage Pagination</label>
+      <select className="filter-select" id="pageSize" onChange={(e) => handlePageSizeChange(e.target.value)}>
+        <option value="10">10 per page</option>
+        <option value="25">25 per page</option>
+        <option value="50">50 per page</option>
+        <option value="100">100 per page</option>
+      </select>
+    </div>
+  {/* </div> */}
+{/* </div> */}
+</div>
+            
             <div className="table-res-tab">
             <table className="report-table">
               <thead>
@@ -353,12 +387,11 @@ const handleCloseModal = () => {
                     </td> 
 {/* cliend id ko clickable banay hu */}
 <td>
-                    <Link
+                <Link
                 to={`/UserProfilePage`}
                 className="avatar"
-  target="_blank">
-           
-          {client.clientId}
+                target="_blank">   
+                 {client.clientId}
         </Link>
         
 
@@ -428,8 +461,9 @@ const handleCloseModal = () => {
             {/* ///////// */}
        
         </div>
-      </div>
-      </div>
+      // </div>
+      // </div>
+      // </div>
     );
   };
 

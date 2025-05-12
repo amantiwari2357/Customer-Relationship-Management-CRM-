@@ -17,6 +17,10 @@ const ShortlistProfile = () => {
     { id: "K3FG45", name: "Name123", phone: "9922993344", pending: 1, by: "Kajal" },
     { id: "K3FG45", name: "Name123", phone: "9922993344", pending: 4, by: "Kajal" },
     { id: "K3FG45", name: "Name123", phone: "9922993344", pending: 1, by: "Kajal" },
+     { id: "K3FG45", name: "Name123", phone: "9922993344", pending: 2, by: "Kajal" },
+    { id: "K3FG45", name: "Name123", phone: "9922993344", pending: 1, by: "Kajal" },
+    { id: "K3FG45", name: "Name123", phone: "9922993344", pending: 4, by: "Kajal" },
+    { id: "K3FG45", name: "Name123", phone: "9922993344", pending: 1, by: "Kajal" },
   ];
 
   // Pagination logic
@@ -85,7 +89,7 @@ const ShortlistProfile = () => {
                       className="bi bi-eye-fill action-icon"
                       title="View"
                     ></i>
-                    <i
+                    {/* <i
                       onClick={() => setActionIndex(index === actionIndex ? null : index)}
                       className="bi bi-pencil-square action-icon"
                       title="Approve/Reject"
@@ -95,7 +99,7 @@ const ShortlistProfile = () => {
                         <button onClick={() => handleDecision(index, "Approved")}>Approve</button>
                         <button onClick={() => handleDecision(index, "Rejected")}>Reject</button>
                       </div>
-                    )}
+                    )} */}
                   </td>
                 </tr>
               ))}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 const ApprovedProfile = () => {
+  const navigate = useNavigate();
   const [actionIndex, setActionIndex] = useState(null);
 
   const handleDecision = (index, decision) => {
@@ -114,16 +115,20 @@ const ApprovedProfile = () => {
                   <td>{item.total}</td>
                   <td>{item.by}</td>
                   <td>{item.date}</td>
-                  <td className="d-flex gap-2 position-relative">
-                    <i className="bi bi-eye-fill action-icon" title="View"></i>
+                   <td className="d-flex gap-2 position-relative">
                     <i
+                      onClick={() => navigate("/user-listed")}
+                      className="bi bi-eye-fill action-icon"
+                      title="View"
+                    ></i>
+                    {/* <i
                       onClick={() =>
                         setActionIndex(index === actionIndex ? null : index)
                       }
                       className="bi bi-pencil-square action-icon"
-                      title="Change Approval"
-                    ></i>
-                    {actionIndex === index && (
+                      title="Change Approval" */}
+                    {/* ></i> */}
+                    {/* {actionIndex === index && (
                       <div className="action-dropdown">
                         <button onClick={() => handleDecision(index, "Approved")}>
                           Approve
@@ -132,7 +137,7 @@ const ApprovedProfile = () => {
                           Reject
                         </button>
                       </div>
-                    )}
+                    )} */}
                   </td>
                 </tr>
               ))}

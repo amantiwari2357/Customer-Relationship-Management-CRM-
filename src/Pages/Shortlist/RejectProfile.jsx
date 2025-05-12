@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 const RejectProfile = () => {
+  const navigate = useNavigate();
   const [actionIndex, setActionIndex] = useState(null);
 
   const handleDecision = (index, decision) => {
@@ -10,6 +11,46 @@ const RejectProfile = () => {
 
   const rejectedData = [
     {
+      id: "K3FG45",
+      name: "Name123",
+      phone: "9922993344",
+      total: 2,
+      by: "Kajal",
+      date: "08/12/2025",
+    },
+    {
+      id: "K3FG45",
+      name: "Name123",
+      phone: "9922993344",
+      total: 2,
+      by: "Kajal",
+      date: "08/12/2025",
+    },
+    {
+      id: "K3FG45",
+      name: "Name123",
+      phone: "9922993344",
+      total: 1,
+      by: "Kajal",
+      date: "06/10/2024",
+    },
+    {
+      id: "K3FG45",
+      name: "Name123",
+      phone: "9922993344",
+      total: 4,
+      by: "Kajal",
+      date: "06/10/2024",
+    },
+    {
+      id: "K3FG45",
+      name: "Name123",
+      phone: "9922993344",
+      total: 1,
+      by: "Kajal",
+      date: "06/10/2024",
+    },
+     {
       id: "K3FG45",
       name: "Name123",
       phone: "9922993344",
@@ -114,8 +155,12 @@ const RejectProfile = () => {
                     <td>{item.date}</td>
                     <td>{item.by}</td>
                     <td className="d-flex gap-2 position-relative">
-                      <i className="bi bi-eye-fill action-icon" title="View"></i>
-                      <i
+                    <i
+                      onClick={() => navigate("/user-listed")}
+                      className="bi bi-eye-fill action-icon"
+                      title="View"
+                    ></i>
+                      {/* <i
                         onClick={() =>
                           setActionIndex(index === actionIndex ? null : index)
                         }
@@ -131,7 +176,7 @@ const RejectProfile = () => {
                             Reject
                           </button>
                         </div>
-                      )}
+                      )} */}
                     </td>
                   </tr>
                 ))}

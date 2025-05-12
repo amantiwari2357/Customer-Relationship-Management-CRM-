@@ -6,7 +6,7 @@ import './ClientReport.css';
 const ClientReport = () => {
   const [filterData, setFilterData] = useState({
     clientName: '',
-    gender: '',
+    clientId: '',
     caste: '',
     occupation: '',
     mobileNumber: '',
@@ -59,7 +59,12 @@ const ClientReport = () => {
 
 // Pagination logic
 const [currentPage, setCurrentPage] = useState(1);
-const [itemsPerPage] = useState(10); // Set a default value for items per page
+const [itemsPerPage, setItemsPerPage] = useState(10); // Set a default value for items per page
+
+const handlePageSizeChange = (pageSize) => {
+  setItemsPerPage(Number(pageSize));
+  setCurrentPage(1); // Reset to the first page
+};
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 // Sample client data for demonstration
@@ -122,7 +127,7 @@ const handleCloseModal = () => {
                 { label: 'Client Name', name: 'clientName', type: 'text' },
                 // { label: 'Mobile Number', name: 'mobileNumber', type: 'text' },
                 // { label: 'Profile ID', name: 'profileId', type: 'text' },
-                { label: 'Gender', name: 'gender', options: ['', 'male', 'female', 'other'] },
+                { label: 'Profile Id', name: 'Id', type: 'text' },
                 { label: 'From Date', name: 'fromDate', type: 'date' },
                 { label: 'To Date', name: 'toDate', type: 'date' },
               ].map(({ label, name, type }) => (
@@ -146,7 +151,7 @@ const handleCloseModal = () => {
                 // { label: 'Country', name: 'country', options: ['', 'india', 'pakistan'] },
                 // { label: 'State', name: 'state', options: ['', 'up', 'bihar', 'delhi'] },
                 // { label: 'City', name: 'city', options: ['', 'banaras', 'lucknow', 'delhi'] },
-                { label: 'Membership Status', name: 'membershipStatus', options: ['', 'active', 'inactive'] },
+                // { label: 'Membership Status', name: 'membershipStatus', options: ['', 'active', 'inactive'] },
               ].map(({ label, name, options }) => (
                 <div className="form-group" key={name}>
                   <label>{label}</label>
@@ -163,22 +168,47 @@ const handleCloseModal = () => {
 
             <div className="form-actions">
               <button type="submit" className="search-button">SEARCH</button>
-              <button type="button" onClick={handleReset} className="reset-button">RESET</button>
+              {/* <button type="button" onClick={handleReset} className="reset-button">RESET</button> */}
             </div>
           </form>
         )}
 
-        {/* Report Table Section */}
-        <div className="report-table-container">
-          <div className="filter-bar">
-            <select className="filter-select">
-              <option value="">Selected for Assign</option>
-              <option value="male">Akash TL</option>
-              <option value="female">Aman Tiwari RM</option>
-              <option value="other">Deepak RM</option>
-            </select>
-            <button className="apply-btn">Assign</button>
-          </div>
+<div className="report-table-container">
+  <div className="filter-row">
+    <div className="filter-group">
+      <select className="filter-select">
+        <option value="">Selected for Assign</option>
+        <option value="male">Akash TL</option>
+        <option value="female">Aman Tiwari RM</option>
+        <option value="other">Deepak RM</option>
+      </select>
+      <button className="apply-btn">Assign</button>
+    </div>
+
+    <div className="filter-group">
+      <select className="filter-select">
+        <option value="hand">Handled by</option>
+        <option value="aman">Aman</option>
+        <option value="anki">Anki</option>
+        <option value="anman">Anman</option>
+      </select>
+      <button className="apply-btn">Apply</button>
+    </div>
+  </div>
+</div>
+
+<div className="filter-group">
+      <label htmlFor="pageSize" className="page-label">Manage Pagination</label>
+      <select className="filter-select" id="pageSize" onChange={(e) => handlePageSizeChange(e.target.value)}>
+        <option value="10">10 per page</option>
+        <option value="25">25 per page</option>
+        <option value="50">50 per page</option>
+        <option value="100">100 per page</option>
+      </select>
+    </div>
+
+
+{/* </div> */}
 
           <table className="report-table">
             <thead>
@@ -263,6 +293,9 @@ const handleCloseModal = () => {
   <Link to={`/ShareClient`}>    
     <i className="fas fa-share-from-square" title="Share"></i>
     </Link>
+    <a href="/UserProfilePage" target="_blank" rel="noopener noreferrer">
+                          <i className="fas fa-file-pdf" title="PDF Profile"></i>
+                        </a>
     <Link to={`/EditClient`}>
       <i className="fas fa-pen-to-square" title="Edit"></i>
     </Link>
@@ -300,7 +333,7 @@ const handleCloseModal = () => {
               </button>
             </div>
       </div>
-    </div>
+    
   );
 };
 
